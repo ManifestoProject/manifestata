@@ -28,6 +28,7 @@ General:
 - clear and meaningful error messages for potential errors 
 - detailed comments in all parts of the code 
 - support of stata 13 and higher (below might be difficult because stata 12- cannot handle unicode)
+- all files necessary to install the package from the web (see help usersite)
 
 Documentation:
 - detailed documentation with examples in stata format of all functions: execute "help examplehelpfile" in stata for an example
@@ -37,5 +38,3 @@ Documentation:
 
 Helpful:
 Stata package to read JSON data: https://ideas.repec.org/c/boc/bocode/s457407.html
-
-
