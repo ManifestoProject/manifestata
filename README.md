@@ -1,3 +1,10 @@
+# installation instruction
+
+- downlaod (branch: patch-1)
+- adopath + <add path to downloaded files here>
+- help manifestata (to open help file)
+
+
 # manifestata
 
 manifestata ~is~ will be a Stata package that provides access to and facilitates the work with the Manifesto Project Dataset and the Manifesto Corpus. 
