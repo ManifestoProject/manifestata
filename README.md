@@ -1,7 +1,7 @@
 # installation instruction
 
-- downlaod (branch: patch-1)
-- adopath + <add path to downloaded files here>
+- download (branch: patch-1)
+- adopath + "add path to downloaded files here"
 - help manifestata (to open help file)
 
 
