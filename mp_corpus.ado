@@ -1,4 +1,4 @@
-*! mp_corpus v0.3.4 20jul2016
+*! mp_corpus v0.3.5 27jul2016
 program mp_corpus
 	
 	* define version *
@@ -48,5 +48,8 @@ program mp_corpus
 		di "{err}Please specify an ID list or use the if-qualifier."
 		exit 197
 	}
+	
+	* tostring variables cmp-code and eu-code in line with handbook version 5
+	mata tostring_v5("cmp_code eu_code")
 
 end
