@@ -324,88 +324,41 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 	pointer() scalar p_url
 	p_url = findexternal("myurl")
 	
-	// define pointer 
-	pointer() scalar p_tomaindataset
+	// define pointer to store main data set in cache
 	
-	// ---------------------------- Basic structure ---------------------------- 
-	// 1. Number of observations
-	// 2. Number of variables
-	// 3. Variable names
-	// -------------------------------------------------------------------------
-	pointer() scalar p_tomaindtadataset_bstruct
-
-	// --------------------------------- Data ---------------------------------- 
-	// 1. Numerical data
-	// 2. String data
-	// -------------------------------------------------------------------------	
-	pointer() scalar p_tomaindtadataset_data
+		// define pointer (json)
+		pointer() scalar p_tomaindataset
 	
-	// -------------------------- Variable attributes -------------------------- 
-	// 1. Is numerical variable (0/1)
-	// 2. Variable index
-	// 3. Variable label
-	// 4. Variable type
-	// 5. Variable format
-	// 6. Value label name
-	// 7. Value label values
-	// 8. Value label text
-	// -------------------------------------------------------------------------
-	pointer() scalar p_tomaindtadataset_varatt
-
-
-	// Nocache option not specified and no data in cache OR nocache option specified
-	if (((cache_opt == "") & (findexternal("mymaindataset"+mpversion)) == NULL) | (cache_opt == "nocache")) {
-		if ((cache_opt == "") & (findexternal("mymaindataset"+mpversion)) == NULL) "Nocache option not specified and no data in cache"
-		if (cache_opt == "nocache") "Nocache option specified"
-		
-		// API call for main data set (base64)
-		if (json_opt == "") {
-			
-			// define url for main data set
-			url_maindataset_base64 = "quietly use " + `"""' + *p_url + "api_get_core.json" + "?api_key=" + api + "&key=" + mpversion + "&kind=dta&raw=true" + `"""' + ", " + clear_opt
-			
-			// load data set to stata memory
-			stata(url_maindataset_base64,0)
-			
-		}
-		
-		// API call for main data set (json)
-		if (json_opt != "") {
-			
-			// define url for main data set
-			url_maindataset = *p_url+"api_get_core.json"+"?api_key="+api+"&key="+mpversion
-
-			// open filehandle
-			fh_maindataset  = fopen(url_maindataset, "r")
-		
-			// call API
-			maindataset = ""
-			while ((part_maindataset=fget(fh_maindataset))!=J(0,0,"")) {
-				maindataset = maindataset + part_maindataset		
-			}
-
-			// parse json response
-			maindataset = subinstr(maindataset,"[[","")
-			maindataset = subinstr(maindataset,"]]","")			
-			if (currentversion>=1400) maindataset = subinstr(maindataset,"],[",char(13))
-			if (currentversion<1400)  maindataset = subinstr(maindataset,"],[",char(13))	
-			maindataset = subinstr(maindataset,"null",".") 
-
-			// open temp file
-			temp_file = st_tempfilename()	
-			fh_temp_file = fopen(temp_file, "w")
-		
-			// save to temp file
-			fput(fh_temp_file, maindataset)
-		
-			// close filehandles
-			fclose(fh_maindataset)
-			fclose(fh_temp_file)	
-		}
-	}
+		// define pointer (base64)
+		// -------------------------- Basic structure -------------------------- 
+		// 1. Number of observations
+		// 2. Number of variables
+		// 3. Variable names
+		// ---------------------------------------------------------------------
+		pointer() scalar p_tomaindtadataset_bstruct
 	
+		// ------------------------------- Data --------------------------------
+		// 1. Numerical data
+		// 2. String data
+		// ---------------------------------------------------------------------	
+		pointer() scalar p_tomaindtadataset_data
+		
+		// ------------------------ Variable attributes ------------------------
+		// 1. Is numerical variable (0/1)
+		// 2. Variable index
+		// 3. Variable label
+		// 4. Variable type
+		// 5. Variable format
+		// 6. Value label name
+		// 7. Value label values
+		// 8. Value label text
+		// ---------------------------------------------------------------------
+		pointer() scalar p_tomaindtadataset_varatt
+
 	// Nocache option not specified and data in cache
 	if ((cache_opt == "") & (findexternal("mymaindataset"+mpversion)) != NULL) {
+		
+		// Indicate whether cache is being used
 		"Nocache option not specified and data in cache"
 
 		// take data set from cache (base64)
@@ -425,7 +378,6 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 			stata(clear_opt)
 
 			// reconstruct data set from cache
-			
 				// Step 1: define number of observations
 				st_addobs(*vec_basic_structure[1,1])
 		
@@ -471,29 +423,30 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 			fclose(fh_temp_file)
 		}
 		
-	}	
-	
-	// pass data set to cache			
-		
-		// if pointer not set (json)
-		if (json_opt != "") {
+	}
 			
-			if ((p_tomaindataset = findexternal("mymaindataset"+mpversion)) == NULL) {
-				p_tomaindataset = crexternal("mymaindataset"+mpversion)
-			}
-			
-			// set pointer
-			*p_tomaindataset = maindataset
-		}
+	// Nocache option not specified and no data in cache OR nocache option specified
+	if (((cache_opt == "") & (findexternal("mymaindataset"+mpversion)) == NULL) | (cache_opt == "nocache")) {
 		
-		// if pointer not set (base64)
+		// Indicate whether cache is being used
+		if ((cache_opt == "") & (findexternal("mymaindataset"+mpversion)) == NULL) "Nocache option not specified and no data in cache"
+		if (cache_opt == "nocache") "Nocache option specified"
+		
+		// API call for main data set (base64)
 		if (json_opt == "") {
-
-			if ((p_tomaindataset = findexternal("mymaindataset"+mpversion)) == NULL) {
-				p_tomaindataset = crexternal("mymaindataset"+mpversion)
-			}
 			
-			// Basic structure
+			// define url for main data set
+			url_maindataset_base64 = "quietly use " + `"""' + *p_url + "api_get_core.json" + "?api_key=" + api + "&key=" + mpversion + "&kind=dta&raw=true" + `"""' + ", " + clear_opt
+			
+			// load data set to stata memory
+			stata(url_maindataset_base64,0)
+			
+			// Pass data set to cache			
+				if ((p_tomaindataset = findexternal("mymaindataset"+mpversion)) == NULL) {
+					p_tomaindataset = crexternal("mymaindataset"+mpversion)
+				}
+			
+				// Basic structure
 				if ((p_tomaindtadataset_bstruct = findexternal("mymaindataset"+mpversion+"bstruct")) == NULL) {
 					p_tomaindtadataset_bstruct = crexternal("mymaindataset"+mpversion+"bstruct")
 				}	
@@ -505,7 +458,7 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 				vec_basic_structure[1,3] = &(J(1,1,st_varname(1..st_nvar())))
 				*p_tomaindtadataset_bstruct = vec_basic_structure
 			
-			// Variable attributes
+				// Variable attributes
 				if ((p_tomaindtadataset_varatt = findexternal("mymaindataset"+mpversion+"varatt")) == NULL) {
 					p_tomaindtadataset_varatt = crexternal("mymaindataset"+mpversion+"varatt")
 				}
@@ -527,13 +480,12 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 				}
 				*p_tomaindtadataset_varatt = mat_variable_attributes 
 			
-			// Data
+				// Data
 				if ((p_tomaindtadataset_data = findexternal("mymaindataset"+mpversion+"data")) == NULL) {
 					p_tomaindtadataset_data = crexternal("mymaindataset"+mpversion+"data")
 				}	
 			
 				// set pointer
-
 				mat_numvars	= J(2,st_nvar(),.)
 				for(i=1;i<=st_nvar();i++) {
 					mat_numvars[1,i] = *mat_variable_attributes[1,i]
@@ -547,30 +499,68 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 				vec_data[1,1] = &(J(1,1,mat_datasetnum))
 				vec_data[1,2] = &(J(1,1,mat_datasetstr))
 				*p_tomaindtadataset_data = vec_data
-
-		}
-				
-		if (json_opt != "") {
-			if (externalcall == "1") {
-				st_local("file", temp_file)
-			}
-			
-			if (externalcall == "") {
-				// load data set to stata memory
-				load_comm = "import delimited " + temp_file + `", delimiter(",") varnames(1)"' + clear_opt + " stripquotes(yes)"
-				stata(load_comm,0)
-				
-				// save data set to temp file
-				// temp_dtafile = st_tempfilename()
-				// save temp_dtafile
-				// st_local("dtafile", temp_dtafile)
-			}
 		}
 		
-		// display corresponding citation message
-		printf("\n")
-		cite("",mpversion,api)
-		printf("\n")
+		// API call for main data set (json)
+		if (json_opt != "") {
+			
+			// define url for main data set
+			url_maindataset = *p_url+"api_get_core.json"+"?api_key="+api+"&key="+mpversion
+
+			// open filehandle
+			fh_maindataset  = fopen(url_maindataset, "r")
+		
+			// call API
+			maindataset = ""
+			while ((part_maindataset=fget(fh_maindataset))!=J(0,0,"")) {
+				maindataset = maindataset + part_maindataset		
+			}
+
+			// parse json response
+			maindataset = subinstr(maindataset,"[[","")
+			maindataset = subinstr(maindataset,"]]","")			
+			if (currentversion>=1400) maindataset = subinstr(maindataset,"],[",char(13))
+			if (currentversion<1400)  maindataset = subinstr(maindataset,"],[",char(13))	
+			maindataset = subinstr(maindataset,"null",".") 
+
+			// open temp file
+			temp_file = st_tempfilename()	
+			fh_temp_file = fopen(temp_file, "w")
+		
+			// save to temp file
+			fput(fh_temp_file, maindataset)
+		
+			// close filehandles
+			fclose(fh_maindataset)
+			fclose(fh_temp_file)
+			
+			// Pass data set to cache 
+			if ((p_tomaindataset = findexternal("mymaindataset"+mpversion)) == NULL) {
+				p_tomaindataset = crexternal("mymaindataset"+mpversion)
+			}
+			
+			// set pointer
+			*p_tomaindataset = maindataset			
+		}
+	}
+						
+	if (json_opt != "") {
+		if (externalcall == "1") {
+			st_local("file", temp_file)
+		}
+			
+		if (externalcall == "") {
+	
+			// load data set to stata memory
+			load_comm = "import delimited " + temp_file + `", delimiter(",") varnames(1)"' + clear_opt + " stripquotes(yes)"
+			stata(load_comm,0)
+		}
+	}
+		
+	// display respective citation message
+	printf("\n")
+	cite("",mpversion,api)
+	printf("\n")
 }
 
 void function cite(string scalar corpusversion, string scalar coreversion, string scalar apikey) {
@@ -743,14 +733,18 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 		// retrieve metadata
 			// define pointer
 			pointer() scalar p_annotations
-			
+			pointer() scalar p_manifesto_id
+
 			// call metadata function
 			metadata(key, api, "", "noresponse")
 			
 			// set pointer
 			p_annotations = findexternal("myannotations")
 			annotations = *p_annotations						
-					
+		
+			p_manifesto_id = findexternal("mymanifestourlkey")
+			urlkey = *p_manifesto_id
+		
 		if (annotations=="true") {
 		
 		// set cache-key
@@ -779,7 +773,6 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 			if (cache_opt == "nocache") "Nocache option specified"
 		
 			// define url for corpus
-			urlkey = substr(key,1,strlen(key)-2)
 			url_corpus = *p_url+"api_texts_and_annotations.json"+"?api_key="+api+"&keys[]="+urlkey+"&version="+mpversion
 			
 			// open filehandle
@@ -855,16 +848,13 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 
 	}
 		if (annotations=="false") {
-			//addinfo_vector[idcount,1] = "0"
-			//addinfo_vector[idcount,2] = substr(key,1,5)
-			//addinfo_vector[idcount,3] = substr(key,7,.)
-			//idcount = idcount + 1
+			message = ("No corpus data found for key: " + key)
+			display(message)
 		}
 	}
 	
 	if (idcount>=1) {
 		addinfo_vector = strtoreal(addinfo_vector)
-		//for (i=1;i<=totalids;++i) {
 		for (i=1;i<=idcount;++i) {
 			if(i==1) {
 				mat_ids = J(addinfo_vector[i,1],1,addinfo_vector[i,2]) , J(addinfo_vector[i,1],1,addinfo_vector[i,3])
@@ -881,6 +871,11 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 		idx = st_addvar(("double","double"),("party","date"))
 		st_store(., idx, mat_ids)
 	}
+	
+	// display respective citation message
+	printf("\n")
+	cite(mpversion,"",api)
+	printf("\n")
 	
 }
 
@@ -1037,14 +1032,20 @@ void function metadata(string scalar ids, string scalar apikey, string scalar ca
 						
 			// define pointer 
 			pointer() scalar p_annotations
-	
+			pointer() scalar p_manifesto_id
+		
 			// if pointer not set
 			if ((p_annotations = findexternal("myannotations")) == NULL) {
 				p_annotations = crexternal("myannotations")
 			}
 			
+			if ((p_manifesto_id = findexternal("mymanifestourlkey")) == NULL) {
+				p_manifesto_id = crexternal("mymanifestourlkey")
+			}
+			
 			// set pointer
 			*p_annotations = meta.annotations
+			*p_manifesto_id = meta.manifesto_id
 			
 			// call display function
 			if (noresponse == "") displaymetadata(meta,numberids,totalids)
@@ -1076,6 +1077,7 @@ function displaymetadata(struct struct_metadata scalar x, real scalar count, rea
 }
 
 void function selectsubset(touse) {
+	
 	// generate empty idlist
 	idlist = ""
 
@@ -1090,31 +1092,13 @@ void function selectsubset(touse) {
 	
 	// pass local idlist to routine
 	st_local("idlist", idlist)
+	
 }
 
-void function callmaindataset(string matrix subsetcond) {
-	/* to be included! */
-	
-	// define pointer
-	pointer() scalar p_tomaindataset
-	pointer() scalar p_tomaindatasetvars
-	
-	// if pointer not set
-	if ((p_tomaindataset = findexternal("mymaindataset")) == NULL) { 
-		maindataset("clear","","","")
+void function tostring_v5 (string scalar varnames) {
+	for(i=1;i<=cols(tokens(varnames));i++){
+		stata(("quietly tostring " + tokens(varnames)[i] + ", replace"),0)		
 	}
-	
-	p_tomaindataset = findexternal("mymaindataset")
-	p_tomaindatasetvars = findexternal("mymaindatasetvars")
-	
-	data = *p_tomaindataset
-	varnames = *p_tomaindatasetvars
-	
-	// subsetcond
-	// varindex = selectindex(varnames:==variablename)
-	// subset = select(data,data[.,varindex]:>value)
-	// subset
-	
 }
 
 mata mlib create lmanifestata, dir(PERSONAL) replace
