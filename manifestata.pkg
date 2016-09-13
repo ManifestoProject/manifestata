@@ -1,0 +1,11 @@
+v 0.1
+
+d manifestata provides access to coded election programmes from the Manifesto Corpus and to the Manifesto Project's Main Dataset.
+d The Manifesto Project (https://manifesto-project.wzb.eu) collects and analyses election programmes in over 50 countries and since 1945 to measure the political preferences of parties. 
+
+f lmanifestata.mlib
+f manifestata.sthlp
+
+h lmanifestata.mlib
+
+l manifesto-project http://manifesto-project.wzb.eu
