@@ -46,22 +46,6 @@ void function setapikey(string scalar apifilepath, string scalar apikey) {
 
 }
 
-void function genapifile(string scalar apifilepath, string scalar apikey, string scalar replace_opt) {
-	/* to be included? */
-	if (fileexists(apifilepath) == 1 & replace_opt == "") {
-		display("The API Key file already exists. Specify the replace option if you want to replace your API Key file.")
-	}
-	
-	if (fileexists(apifilepath) == 1 & replace_opt != "") {
-		mm_outsheet(apifilepath,apikey,"replace")
-	}
-	
-	if (fileexists(apifilepath) == 0) {
-		mm_outsheet(apifilepath,apikey)
-	}
-	
-}
-
 void function coreversions(string scalar apikey, | string scalar noresponse) {
 	
 	// API Key option not specified
@@ -122,6 +106,12 @@ void function coreversions(string scalar apikey, | string scalar noresponse) {
 		coreversions_tokens = tokeninit("},{","","", 0, 0)
 		tokenset(coreversions_tokens, coreversions)
 		coreversions_matrix = colshape(tokengetall(coreversions_tokens),2)
+		
+		// add hyperlink to mp_maindataset command
+		coreversions_matrix = coreversions_matrix,J(rows(coreversions_matrix),1,"")
+		for (m=1; m<=rows(coreversions_matrix); m++) {
+			coreversions_matrix[m,3] = "{stata mp_maindataset, clear version(" + coreversions_matrix[m,1] + "):   download}"
+		} 
 	
 	// define pointer 
 	pointer() scalar p_recentcoreversion
@@ -137,22 +127,22 @@ void function coreversions(string scalar apikey, | string scalar noresponse) {
 	// display result 
 	if (noresponse == "") {
 		printf("\n")
-		printf("{txt}{hline 58}\n")
-		printf("{space 2}id{space 11}name\n")
-		printf("{txt}{hline 58}\n")
+		printf("{txt}{hline 70}\n")
+		printf("{space 2}id{space 11}name{space 41}link\n")
+		printf("{txt}{hline 70}\n")
 		
 		for (m=1; m<=rows(coreversions_matrix); m++) {
-			printf("{res}{space 2}%-12s %-7s\n",
-			coreversions_matrix[m,1],coreversions_matrix[m,2])
+			printf("{res}{space 2}%-12s %-7s %-3s\n",
+			coreversions_matrix[m,1],coreversions_matrix[m,2],coreversions_matrix[m,3])
 		}
 		
-		printf("{txt}{hline 58}\n")		
+		printf("{txt}{hline 70}\n")		
 		printf("\n")
 	}
 	
 }
 
-void function corpusversions(string scalar apikey, | string scalar noresponse) {
+void function corpusversions(string scalar apikey, string scalar dev_opt, | string scalar noresponse) {
 	
 	// declarations
 	real scalar tag
@@ -258,8 +248,16 @@ void function corpusversions(string scalar apikey, | string scalar noresponse) {
 		printf("{txt}{hline 28}\n")
 		
 		for (m=1; m<=rows(corpusversions_matrix); m++) {
-			printf("{res}{space 2}%-17s %-7s\n",
-			corpusversions_matrix[m,1],corpusversions_matrix[m,2])
+			if (dev_opt != "") {
+				printf("{res}{space 2}%-17s %-7s\n",
+				corpusversions_matrix[m,1],corpusversions_matrix[m,2])
+			}
+			if (dev_opt == "") {
+				if (corpusversions_matrix[m,2] != "") {
+					printf("{res}{space 2}%-17s %-7s\n",
+					corpusversions_matrix[m,1],corpusversions_matrix[m,2])				
+				}
+			}
 		}
 		
 		printf("{txt}{hline 28}\n")
@@ -334,6 +332,7 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 		// 1. Number of observations
 		// 2. Number of variables
 		// 3. Variable names
+		// 4. Data set notes
 		// ---------------------------------------------------------------------
 		pointer() scalar p_tomaindtadataset_bstruct
 	
@@ -376,11 +375,22 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 			
 			// clear stata memory
 			stata(clear_opt)
-
+			
+			// check for data in memory
+			if ((st_updata()!=0)&(clear_opt=="")) _error("no; data in memory would be lost")
+			
 			// reconstruct data set from cache
+				// Step 0: add dataset notes
+				if(cols(vec_basic_structure)>3) {
+					st_global("_dta[note0]",strofreal(cols(vec_basic_structure)-3))
+					for(i=4;i<=cols(vec_basic_structure);i++) {
+						st_global("_dta[note" + strofreal(i-3) + "]", *vec_basic_structure[1,i])
+					}
+				}
+				
 				// Step 1: define number of observations
 				st_addobs(*vec_basic_structure[1,1])
-		
+				
 				// Step 2: define variable name, variable labels, value labels etc.
 				mat_numvars	= J(2,*vec_basic_structure[1,2],.)
 
@@ -456,6 +466,12 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 				vec_basic_structure[1,1] = &(J(1,1,st_nobs()))
 				vec_basic_structure[1,2] = &(J(1,1,st_nvar()))
 				vec_basic_structure[1,3] = &(J(1,1,st_varname(1..st_nvar())))
+				if(st_global("_dta[note0]")!="") {
+				vec_basic_structure = vec_basic_structure, J(1, strtoreal(st_global("_dta[note0]")), NULL)
+					for(i=1;i<=strtoreal(st_global("_dta[note0]"));i++) {
+						vec_basic_structure[1,3+i] = &(st_global("_dta[note" + strofreal(i) + "]"))
+					}
+				}
 				*p_tomaindtadataset_bstruct = vec_basic_structure
 			
 				// Variable attributes
@@ -711,7 +727,7 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 		
 		// if pointer not set
 		if ((p_recentcorpusversion = findexternal("myrecentcorpusversion")) == NULL) { 
-			corpusversions(api, "noresponse")	
+			corpusversions(api, "", "noresponse")	
 		}
 		
 		// set pointer
@@ -736,7 +752,7 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 			pointer() scalar p_manifesto_id
 
 			// call metadata function
-			metadata(key, api, "", "noresponse")
+			metadata(key, api, "", "", "noresponse")
 			
 			// set pointer
 			p_annotations = findexternal("myannotations")
@@ -898,7 +914,7 @@ struct struct_metadata {
 	
 }
 
-void function metadata(string scalar ids, string scalar apikey, string scalar cache, | string scalar noresponse) {
+void function metadata(string scalar ids, string scalar apikey, string scalar saving, string scalar cache, | string scalar noresponse) {
 	
 	// declarations
 	real scalar numberids
@@ -907,6 +923,12 @@ void function metadata(string scalar ids, string scalar apikey, string scalar ca
 	
 	// total number of specified ids
 	totalids = cols(tokens(ids))
+	
+	// keys for bundled call
+	keys = ""
+	for (i=1;i<=cols(tokens(ids));++i) {
+		keys = keys + "&keys[]="+tokens(ids)[1,i]
+	}
 	
 	// API Key option not specified
 	if (apikey == "") {
@@ -946,35 +968,32 @@ void function metadata(string scalar ids, string scalar apikey, string scalar ca
 		
 		// if pointer not set
 		if ((p_recentcorpusversion = findexternal("myrecentcorpusversion")) == NULL) { 
-			corpusversions(api, "noresponse")	
+			corpusversions(api, "", "noresponse")	
 		}
 		
 		// set pointer
 		p_recentcorpusversion = findexternal("myrecentcorpusversion")
 		mpversion = *p_recentcorpusversion
 		
-	// parse ID list
-	ids_tokens = tokeninit(" ","","", 0, 0)
-	tokenset(ids_tokens, ids)
-	
-	numberids = 1
-	// API call for corpus
-	while((key = tokenget(ids_tokens)) != "") {
-		
-		// define url for corpus
-		url_metadata = *p_url+"api_metadata.json"+"?api_key="+api+"&keys[]="+key+"&version="+mpversion
+	// bundled API call for metadata
+		// define url for metadata
+		url_metadata = *p_url+"api_metadata.json"+"?api_key="+api+keys+"&version="+mpversion
 		
 		// open filehandle
 		fh_metadata = fopen(url_metadata,"r")
 		
 		// call API
-		metadata = fget(fh_metadata)
+		metadata = ""
+		while ((part_metadata=fget(fh_metadata))!=J(0,0,"")) {
+			metadata = metadata + part_metadata
+		}		
 		
 		// close filehandle
-		fclose(fh_metadata)
-	
-		// parse json response
-		missingitems = substr(metadata,strpos(metadata,`""missing_items":"'),.)
+		fclose(fh_metadata)	
+				
+		// parse json response (missing ids)
+		s = strpos(metadata,`""missing_items":"')
+		missingitems = substr(metadata,s,.)
 		missingitems = subinstr(missingitems,`"""',"")
 		missingitems = subinstr(missingitems,"}","")
 		missingitems = subinstr(missingitems,"{","")
@@ -983,37 +1002,36 @@ void function metadata(string scalar ids, string scalar apikey, string scalar ca
 		missingitems = subinstr(missingitems,":"," ")
 		missingitems = tokens(missingitems)
 		
-		// if id does not exist
+		// display missing ids 
 		if (cols(missingitems) == 2) {
-			message = "\n No metadata found for key " + key + "\n"
+			nokeys = subinstr(tokens(missingitems[1,2]),","," ")
+			totalids = totalids - cols(tokens(nokeys))
+			message = "\n No metadata found for key(s) " + nokeys + "\n"
 			printf(message)
 		}
+
+		// parse json response (non-missing ids)
+		s = strlen(`"{"items":"')+2
+		metadata = substr(metadata,s,.)		
+		l = strpos(metadata,`""missing_items":"')-3
+		metadata = substr(metadata,1,l)
+		metadata = subinstr(metadata,`"""',"")
+		metadata = subinstr(metadata,"null",".")
+		metadata = subinstr(metadata,":","},{")			
 		
-		// if id exists
-		if (cols(missingitems) == 1) {
+		// display non-missing ids 
+		metadata_tokens = tokeninit("},{","","", 0, 0)
+		tokenset(metadata_tokens, metadata)
+
+		metadata_matrix = colshape(tokengetall(metadata_tokens),24)
+		metadata_matrix = metadata_matrix[.,select((1..cols(metadata_matrix)), !mod((1..cols(metadata_matrix)),2))]
 		
-			metadata = subinstr(metadata,`"{"items":[{"',"")
-			metadata = subinstr(metadata,`"}],"missing_items":[]}"',"")
-			metadata = subinstr(metadata,`"""',"")
+		content = J(1,cols(metadata_matrix),NULL)
 		
-			metadata_matrix = J(12,2,"")
-			
-			content = J(1,rows(metadata_matrix),NULL)
-		
-			tokens_metadata1 = tokeninit(",","","", 0, 0)
-			tokenset(tokens_metadata1, metadata)
-	
-			m = 1
-			while((token1 = tokenget(tokens_metadata1)) != "") {
-				tokens_metadata2 = tokeninit(":","","", 0, 0)
-				tokenset(tokens_metadata2, token1)
-				n = 1
-				while((token2 = tokenget(tokens_metadata2)) != "") {
-					metadata_matrix[m,n] = token2
-					++n
-				}
-				content[m] = &(metadata_matrix[m,2])
-				++m
+		numberids = 1
+		while(numberids<=rows(metadata_matrix)){
+			for(m=1;m<=cols(metadata_matrix);m++) {
+				content[m] = &(metadata_matrix[numberids,m])
 			}
 			
 			// populate structure
@@ -1050,11 +1068,14 @@ void function metadata(string scalar ids, string scalar apikey, string scalar ca
 			// call display function
 			if (noresponse == "") displaymetadata(meta,numberids,totalids)
 			
-			// counter
+			// increase counter
 			numberids = numberids + 1
-			
+		
 		}
-	}
+		
+		// call store function
+		if (saving != "") storemetadata(saving,metadata_matrix,numberids)
+	
 }
 
 function displaymetadata(struct struct_metadata scalar x, real scalar count, real scalar total) {
@@ -1074,6 +1095,31 @@ function displaymetadata(struct struct_metadata scalar x, real scalar count, rea
 	// if last id
 	if (count==total) printf("{txt}{hline 130}\n")
 	
+}
+
+function storemetadata(string scalar path, matrix x, real scalar obs) {
+	
+	// preserve and clear current data set
+	stata("preserve",0)
+	stata("clear",0)
+	
+	// add number of observations
+	st_addobs(obs-1)
+	
+	// generate and store numeric variables
+	idx_num = st_addvar("float",("party","date"))
+	st_store(.,idx_num,strtoreal(x[.,1..2]))
+	
+	// generate and store string variables
+	idx_str = st_addvar(10, ("language","source","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations"))	
+	st_sstore(.,idx_str,x[.,3..12])
+	
+	// store data set
+	store_comm = "save " + path
+	stata(store_comm,0)	
+	
+	// restore current data set
+	stata("restore",0)
 }
 
 void function selectsubset(touse) {
@@ -1099,6 +1145,7 @@ void function tostring_v5 (string scalar varnames) {
 	for(i=1;i<=cols(tokens(varnames));i++){
 		stata(("quietly tostring " + tokens(varnames)[i] + ", replace"),0)		
 	}
+	
 }
 
 mata mlib create lmanifestata, dir(PERSONAL) replace
