@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 0.2.0 April 14th 2016}{...}
+{* *! version 0.3.0 August 24th 2016}{...}
 {cmd: help manifestata}
 {hline}
 
@@ -45,23 +45,8 @@ register on the webpage.
 {col 5}{title:Remarks} 
 
 {col 5}{title:Examples} 
-{col 5}{cmd:. mp_setapikey using(C:\mymanifestofolder\manifesto_apikey.txt)} 
+{col 5}{cmd:. mp_setapikey using "C:\mymanifestofolder\manifesto_apikey.txt"} 
 {col 5}{cmd:. mp_setapikey, apikey({it:myapikey1234})} 
-
-
-{cmd:{dlgtab:mp_genapifile}}
-
-{col 5}{title:Syntax} 
-{pstd}{cmd:mp_genapifile} using {it:{help filename}}{cmd:} [{cmd:,}  {cmdab:api:key(}{it:string}{cmd:)}]
-
-{col 5}{title:Description} 
-
-{col 5}{title:Options} 
-
-{col 5}{title:Remarks} 
-
-{col 5}{title:Examples}
-{col 5}{cmd:. mp_genapifile using "manifesto_apikey.txt", apikey({it:myapikey1234})}   
 
  {marker 2}  
    {c TLC}{hline 49}{c TRC}
@@ -105,7 +90,6 @@ register on the webpage.
 
 {pstd}{cmdab:json} non-documented option retrieving data via JSON (to be removed).
 
-
 {col 5}{title:Remarks} 
 
 {col 5}{title:Examples}
@@ -121,13 +105,15 @@ register on the webpage.
 {cmd:{dlgtab:mp_corpusversions}}
 
 {col 5}{title:Syntax} 
-{pstd}{cmd:mp_corpusversions} [{cmd:,}  {cmdab:api:key(}{it:string}{cmd:)}]
+{pstd}{cmd:mp_corpusversions} [{cmd:,}  {cmdab:api:key(}{it:string}{cmd:)} {cmdab:dev:elopment}]
 
 {col 5}{title:Description} 
 {pstd}The Manifesto Project Database API assigns a new version code whenever changes to the corpus texts or metadata are made.
 
 {col 5}{title:Options} 
 {pstd}{cmdab:apikey(}{it:string}{cmd:)} specifies the API key to use for this command.
+
+{pstd}{cmdab:development} lists all development versions.
 
 {col 5}{title:Remarks} 
 
@@ -142,7 +128,7 @@ register on the webpage.
 
 {col 5}Access metadata via {it:idlist}:
 
-{pstd}{cmd:mp_metadata} {it:idlist} [{cmd:, }{cmdab:api:key(}{it:string}{cmd:)}]
+{pstd}{cmd:mp_metadata} {it:idlist} [{cmd:, }{cmdab:api:key(}{it:string}{cmd:)} {cmdab:sav:ing(}{it:{help filename}.dta}{cmd:[, replace])}]
 
 {pstd} where {it:idlist} is a list of parties (as five-digit ids) and dates (as six-digit dates [yyyymm]), paired by an underscore character (see examples below).
 
@@ -158,6 +144,8 @@ register on the webpage.
 
 {col 5}{title:Options} 
 {pstd}{cmdab:apikey(}{it:string}{cmd:)} specifies the API key to use for this command.
+
+{pstd}{cmdab:saving} stores the metadata in {it:{help filename}.dta}. Specify the suboption {cmd:replace} to overwrite the existing dataset.
 
 {col 5}{title:Remarks} 
 
