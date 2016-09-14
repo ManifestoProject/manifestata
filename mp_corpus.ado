@@ -1,4 +1,4 @@
-*! mp_corpus v0.3.5 27jul2016
+*! mp_corpus v0.3.6 29august2016
 program mp_corpus
 	
 	* define version *
@@ -38,7 +38,7 @@ program mp_corpus
 		* restore current data set *
 		restore
 		
-		* call metadata function *
+		* call corpus function *
 		mata corpus("`idlist'","`clear'","`apikey'","`cache'")
 		di "if-qualifier"
 	}
