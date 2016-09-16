@@ -257,7 +257,7 @@ To access the data in the Manifesto Corpus, an account for the Manifesto Project
 For every Stata session using manifestata and connecting to the Manifesto Corpus database, you need to set the API key in your work environment. This can be done by passing either a key or the name of a file containing the key using manifestata's {cmd:mp_setapikey} command. Thus, your Stata Do-File using manifestata usually will start like this: 
 
 {p 4 4 2} 
-{cmd:. mp_setapikey using("manifesto_apikey.txt")}
+{cmd:. mp_setapikey using "manifesto_apikey.txt"}
 
 {p 4 4 2}
 This Stata code presumes that you have stored and downloaded the API key in a file name manifesto_apikey.txt in your current Stata working directory. Note that it is a security risk to store the API key file or a script containing the key in public repositories.
