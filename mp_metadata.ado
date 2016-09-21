@@ -1,4 +1,4 @@
-*! mp_metadata v0.5.1 03september2016
+*! mp_metadata v0.5.2 12september2016
 program mp_metadata
 	
 	* define version *
@@ -10,7 +10,6 @@ program mp_metadata
 	* call metadata function *
 	if !_rc {
 		mata metadata("`idlist'","`apikey'",`"`saving'"',"`cache'")
-		di "ID list"
 	}
 	
 	* define syntax for if-qualifier *
@@ -40,7 +39,6 @@ program mp_metadata
 		
 		* call metadata function *
 		mata metadata("`idlist'","`apikey'",`"`saving'"',"`cache'")
-		di "if-qualifier"
 
 		* restore current data set *
 		* restore
