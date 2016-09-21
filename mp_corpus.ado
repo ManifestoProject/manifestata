@@ -1,4 +1,4 @@
-*! mp_corpus v0.3.6 29august2016
+*! mp_corpus v0.3.7 12september2016
 program mp_corpus
 	
 	* define version *
@@ -10,7 +10,6 @@ program mp_corpus
 	* call maindataset function *
 	if !_rc {
 		mata corpus("`idlist'","`clear'","`apikey'","`cache'")
-		di "ID list"
 	}
 
 	* define syntax for if-qualifier *
@@ -40,7 +39,6 @@ program mp_corpus
 		
 		* call corpus function *
 		mata corpus("`idlist'","`clear'","`apikey'","`cache'")
-		di "if-qualifier"
 	}
 	
 	* ID list and if-qualifier not specified *	
