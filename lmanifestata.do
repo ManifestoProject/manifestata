@@ -145,8 +145,7 @@ void function coreversions(string scalar apikey, | string scalar noresponse) {
 void function corpusversions(string scalar apikey, string scalar dev_opt, | string scalar noresponse) {
 	
 	// declarations
-	real scalar tag
-	real scalar name
+	real scalar tag, name
 	string scalar names
 	string matrix corpusversions_matrix
 	
@@ -357,8 +356,11 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 	// Nocache option not specified and data in cache
 	if ((cache_opt == "") & (findexternal("mymaindataset"+mpversion)) != NULL) {
 		
+		// Check for data in memory
+		if ((st_updata()!=0)&(clear_opt=="")) exit(error(4))			
+		
 		// Indicate whether cache is being used
-		"Nocache option not specified and data in cache"
+		cache_access()
 
 		// take data set from cache (base64)
 		if (json_opt == "") {
@@ -375,9 +377,6 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 			
 			// clear stata memory
 			stata(clear_opt)
-			
-			// check for data in memory
-			if ((st_updata()!=0)&(clear_opt=="")) _error("no; data in memory would be lost")
 			
 			// reconstruct data set from cache
 				// Step 0: add dataset notes
@@ -438,15 +437,17 @@ void function maindataset(string scalar clear_opt, string scalar mpversion, stri
 	// Nocache option not specified and no data in cache OR nocache option specified
 	if (((cache_opt == "") & (findexternal("mymaindataset"+mpversion)) == NULL) | (cache_opt == "nocache")) {
 		
-		// Indicate whether cache is being used
-		if ((cache_opt == "") & (findexternal("mymaindataset"+mpversion)) == NULL) "Nocache option not specified and no data in cache"
-		if (cache_opt == "nocache") "Nocache option specified"
+		// Check for data in memory
+		if ((st_updata()!=0)&(clear_opt=="")) exit(error(4))	
 		
 		// API call for main data set (base64)
 		if (json_opt == "") {
 			
 			// define url for main data set
 			url_maindataset_base64 = "quietly use " + `"""' + *p_url + "api_get_core.json" + "?api_key=" + api + "&key=" + mpversion + "&kind=dta&raw=true" + `"""' + ", " + clear_opt
+			
+			// indicate whether cache is being used
+			if (externalcall == "") api_access()
 			
 			// load data set to stata memory
 			stata(url_maindataset_base64,0)
@@ -634,7 +635,7 @@ void function cite(string scalar corpusversion, string scalar coreversion, strin
 		corpuscitation = subinstr(corpuscitation,"}","")
 		
 		// display result 
-		corpuscitation_result = "You are currently using corpus version "+corpusversion+". Please cite as: \n"+corpuscitation+"\n"+"\n"
+		corpuscitation_result = "{txt}You are currently using corpus version "+corpusversion+". Please cite as: {res}\n"+corpuscitation+"\n"+"\n"
 		printf(ustrunescape(corpuscitation_result))
 	}
 	
@@ -656,7 +657,7 @@ void function cite(string scalar corpusversion, string scalar coreversion, strin
 		corecitation = subinstr(corecitation,"}","")
 		
 		// display result 
-		corecitation_result = "You are currently using core version "+coreversion+". Please cite as: \n"+corecitation+"\n"
+		corecitation_result = "{txt}You are currently using core version "+coreversion+". Please cite as: {res}\n"+corecitation+"\n"
 		printf(ustrunescape(corecitation_result))
 	}
 	
@@ -679,9 +680,8 @@ void function seturl() {
 void function corpus(string scalar ids, string scalar clear_opt, string scalar apikey, string scalar cache_opt) {
 	
 	// declarations
-	real scalar numberids
-	real scalar totalids
-	real scalar currentversion
+	real scalar totalids, currentversion
+	string matrix dbkeys, cachekeys, nokeys
 	
 	// total number of specified ids
 	totalids = cols(tokens(ids))
@@ -734,6 +734,9 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 		p_recentcorpusversion = findexternal("myrecentcorpusversion")
 		mpversion = *p_recentcorpusversion
 	
+	// check for data in memory
+	if ((st_updata()!=0)&(clear_opt=="")) exit(error(4))
+		
 	// parse ID list
 	ids_tokens = tokeninit(" ","","", 0, 0)
 	tokenset(ids_tokens, ids)
@@ -741,6 +744,9 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 	
 	// counter
 	idcount = 0
+	
+	//
+	dbkeys = cachekeys = nokeys = J(0,0,"")
 	
 	// API call for corpus
 	temp_file = st_tempfilename()
@@ -774,7 +780,14 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 		
 		// Nocache option not specified and data in cache
 		if ((cache_opt == "") & (findexternal(sca_cache_corpus)) != NULL) {
-				"Nocache option not specified and data in cache"
+				// "Nocache option not specified and data in cache"
+				if (cols(cachekeys)==0) {
+					cachekeys = key
+					cache_access()
+				}
+				else {
+					cachekeys = cachekeys, key
+				}
 				
 				p_cache_corpus = findexternal(sca_cache_corpus)
 				corpus = *p_cache_corpus
@@ -785,8 +798,15 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 		
 		// Nocache option not specified and no data in cache
 		if (((cache_opt == "") & (findexternal(sca_cache_corpus)) == NULL) | (cache_opt == "nocache")) {
-			if ((cache_opt == "") & (findexternal(sca_cache_corpus)) == NULL) "Nocache option not specified and no data in cache"
-			if (cache_opt == "nocache") "Nocache option specified"
+			// if ((cache_opt == "") & (findexternal(sca_cache_corpus)) == NULL) "Nocache option not specified and no data in cache"
+			// if (cache_opt == "nocache") "Nocache option specified"
+			if (cols(dbkeys)==0) {
+				dbkeys = key
+				api_access()
+			}
+			else {
+				dbkeys = dbkeys, key
+			}
 		
 			// define url for corpus
 			url_corpus = *p_url+"api_texts_and_annotations.json"+"?api_key="+api+"&keys[]="+urlkey+"&version="+mpversion
@@ -834,7 +854,7 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 			}
 		}
 
-		// 
+		// increase counter
 		idcount = idcount + 1
 				
 		// retrieve number of quasi sentences
@@ -864,8 +884,10 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 
 	}
 		if (annotations=="false") {
-			message = ("No corpus data found for key: " + key)
-			display(message)
+			// message = ("No corpus data found for key: " + key)
+			// display(message)
+			if (cols(nokeys)==0) nokeys = key
+			else				 nokeys = nokeys, key
 		}
 	}
 	
@@ -887,6 +909,9 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 		idx = st_addvar(("double","double"),("party","date"))
 		st_store(., idx, mat_ids)
 	}
+	
+	// call display function
+	displaycorpus(dbkeys,cachekeys,nokeys)
 	
 	// display respective citation message
 	printf("\n")
@@ -917,9 +942,8 @@ struct struct_metadata {
 void function metadata(string scalar ids, string scalar apikey, string scalar saving, string scalar cache, | string scalar noresponse) {
 	
 	// declarations
-	real scalar numberids
+	real scalar numberids, totalids
 	struct struct_metadata scalar meta
-	real scalar totalids
 	
 	// total number of specified ids
 	totalids = cols(tokens(ids))
@@ -1006,7 +1030,7 @@ void function metadata(string scalar ids, string scalar apikey, string scalar sa
 		if (cols(missingitems) == 2) {
 			nokeys = subinstr(tokens(missingitems[1,2]),","," ")
 			totalids = totalids - cols(tokens(nokeys))
-			message = "\n No metadata found for key(s) " + nokeys + "\n"
+			message = "\n {txt}No metadata found for key(s): " + nokeys + "\n"
 			printf(message)
 		}
 
@@ -1141,11 +1165,29 @@ void function selectsubset(touse) {
 	
 }
 
+function displaycorpus(string matrix dbk, string matrix cachek, string matrix nok) {
+	if (cols(dbk)>0) printf("{txt}Corpus data retrieved from server for key(s): %-19s \n", invtokens(dbk)) 
+	if (cols(cachek)>0) printf("{txt}Corpus data retrieved from cache for key(s): %-19s \n", invtokens(cachek))
+	if (cols(nok)>0) printf("{txt}No annotated corpus data found on server for key(s): %-19s \n", invtokens(nok))
+}
+
 void function tostring_v5 (string scalar varnames) {
 	for(i=1;i<=cols(tokens(varnames));i++){
 		stata(("quietly tostring " + tokens(varnames)[i] + ", replace"),0)		
 	}
 	
+}
+
+void function api_access() {
+	printf("\n")
+	printf("{res}Connecting to Manifesto Project DB API...")
+	printf("\n")
+}
+
+void function cache_access() {
+	printf("\n")
+	printf("{res}Accessing data cache...")
+	printf("\n")
 }
 
 mata mlib create lmanifestata, dir(PERSONAL) replace
