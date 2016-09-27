@@ -1,0 +1,31 @@
+v 0.1
+
+d manifestata. A stata package to access the Manifesto Project's API.
+d Authors:
+d  
+d Version: 0.1 
+d 
+d Requires Stata 14
+d 
+d Description:
+d The Manifesto Project (https://manifesto-project.wzb.eu) collects and analyses election programmes 
+d in over 50 countries and since 1945 to measure the political preferences of parties. 
+d 
+d When using please cite as:
+d XXX (2016): manifestata. A stata package to access the Manifesto Project's API.
+d
+d Release Notes:
+d version 0.1: XX.XX.2016
+d - first release
+d
+d Report Bugs:
+d https://github.com/ManifestoProject/manifestata
+
+f lmanifestata.mlib
+f manifestata.sthlp
+f mp_corpus.sthlp
+f mp_setapikey.sthlp
+
+h lmanifestata.mlib
+
+
