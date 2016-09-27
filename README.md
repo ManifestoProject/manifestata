@@ -1,6 +1,6 @@
 # installation instruction
 
-- clone with git (branch: patch-2)
+- clone with git (branch: master)
 - in stata: net from "folder/where/you/downloaded/"
 - help manifestata (to open help file)
 
