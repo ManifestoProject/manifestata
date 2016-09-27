@@ -1,7 +1,7 @@
 # installation instruction
 
-- download (branch: patch-2)
-- adopath + "add path to downloaded files here"
+- clone with git (branch: patch-2)
+- in stata: net from "folder/where/you/downloaded/
 - help manifestata (to open help file)
 
 
