@@ -43,6 +43,8 @@ mp_corpus 41320_200909, clear
 *mp_corpus if country == 41 // if clear is not specified he first checks for all data, then downloads the relevant data and then realizes that there is still data in memory and it is not cleared. would be better if check whether memory is clear came before contacting the api?
 mp_corpus if country == 41, clear
 
+tab cmp_code
+
 
 *** mp cite
 mp_cite,core(MPDS2016a) corpus(2016-2)
