@@ -2,6 +2,7 @@
 
 - clone with git (branch: master)
 - in stata: net from "folder/where/you/downloaded/"
+- net install manifestata
 - help manifestata (to open help file)
 
 
