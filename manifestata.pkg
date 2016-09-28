@@ -25,6 +25,15 @@ f lmanifestata.mlib
 f manifestata.sthlp
 f mp_corpus.sthlp
 f mp_setapikey.sthlp
+f mp_cite.ado
+f mp_coreversions.ado
+f mp_corpus.ado
+f mp_corpusversions.ado
+f mp_maindataset.ado
+f mp_metadata.ado
+f mp_setapikey.ado
+f mp_view_originals.ado
+
 
 h lmanifestata.mlib
 
