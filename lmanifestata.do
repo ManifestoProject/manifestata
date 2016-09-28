@@ -1190,7 +1190,7 @@ void function cache_access() {
 	printf("\n")
 }
 
-mata mlib create lmanifestata, dir(PERSONAL) replace
+mata mlib create lmanifestata, replace
 mata mlib add lmanifestata *()
 mata mlib index
 end
