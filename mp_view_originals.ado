@@ -1,8 +1,8 @@
-*! mp_view_originals v0.3.1 23june2016
+*! mp_view_originals v0.4.0 03october2016
 program mp_view_originals
 	
 	* define version *
-	version 13.0
+	version 14.0
 	
 	* define syntax for ID list*	
 	capture syntax anything(name=idlist id="ID list") [, APIkey(string) noCACHE]

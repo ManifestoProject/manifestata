@@ -1,8 +1,8 @@
-*! mp_coreversions v0.2.0 14april2016
+*! mp_coreversions v0.3.0 03october2016
 program mp_coreversions
 
 	* define version *
-	version 13.0
+	version 14.0
 
 	* define syntax *
 	syntax [, APIkey(string)]
