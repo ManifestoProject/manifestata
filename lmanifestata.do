@@ -1220,8 +1220,14 @@ function storemetadata(string scalar path, matrix x, real scalar obs) {
 	st_store(.,idx_num,strtoreal(x[.,1..2]))
 	
 	// generate and store string variables
-	idx_str = st_addvar(10, ("language","source","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations"))	
-	st_sstore(.,idx_str,x[.,3..12])
+	if (cols(x) == 12) {
+		idx_str = st_addvar(max(strlen(x)), ("language","source","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations"))	
+		st_sstore(.,idx_str,x[.,3..12])
+	}
+	if (cols(x) == 11) {
+		idx_str = st_addvar(max(strlen(x)), ("language","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations"))	
+		st_sstore(.,idx_str,x[.,3..11])	
+	}
 	
 	// store data set
 	store_comm = "save " + path
