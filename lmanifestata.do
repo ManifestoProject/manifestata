@@ -965,7 +965,7 @@ void function corpus(string scalar ids, string scalar cpversion, string scalar c
 void function view_originals(string scalar id) {
 	
 	// set url
-	url_originals = "https://manifesto-project.wzb.eu/down/originals/"
+	url_originals = "https://manifesto-project.wzb.eu//down/originals/"
 	
 	// generate complete url
 	url_call = url_originals + id + ".pdf"
@@ -1349,7 +1349,7 @@ void function clearcache(string scalar keep) {
 }
 
 
-mata mlib create lmanifestata, dir(PERSONAL) replace
+mata mlib create lmanifestata, replace
 mata mlib add lmanifestata *()
 mata mlib index
 end
