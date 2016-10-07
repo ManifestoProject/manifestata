@@ -83,7 +83,8 @@ register on the webpage.
 {col 5}{title:Options} 
 {pstd}{cmdab:clear} specifies that it is okay to replace the data in memory, even though the current data have not been saved to disk.
 
-{pstd}{cmdab:version(}{it:string}{cmd:)} specifies the version of the dataset you want to access. Use mp_coreversions for a list of available versions. If not specified, the most recent data set is obtained.
+{pstd}{cmdab:version(}{it:string}{cmd:)} specifies the version of the dataset you want to access. 
+Use mp_coreversions for a list of available versions. If not specified, the most recent data set is obtained.
 
 {pstd}{cmdab:apikey(}{it:string}{cmd:)} specifies the API key to use for this command.
 
@@ -129,7 +130,8 @@ register on the webpage.
 {pstd}{cmd:mp_setcorpusversion} {it:versionid}
 
 {col 5}{title:Description} 
-{pstd}The local cache will be updated to the specified version and all future calls to the API will request for the specified version. Note that this versioning applies to the corpus' texts and metadata, and not the versions of the core dataset.
+{pstd}The local cache will be updated to the specified version and all future calls to the API will request for the specified version. 
+Note that this versioning applies to the corpus' texts and metadata, and not the versions of the core dataset.
 
 {col 5}{title:Remarks} 
 
@@ -155,10 +157,12 @@ register on the webpage.
 {pstd} where {it:exp} is an expression, such as country == 41 (see examples below).
 
 {col 5}{title:Description} 
-{pstd}Meta data contain information on the available documents for a given party and election date. This information comprises links to the text as well as original documents if available, language, versions checksums and more.
+{pstd}Meta data contain information on the available documents for a given party and election date. 
+This information comprises links to the text as well as original documents if available, language, versions checksums and more.
 
 {col 5}{title:Options} 
-{pstd}{cmdab:version(}{it:string}{cmd:)} specifies the version of the corpus you want to access. Use mp_corpusversions for a list of available versions. If not specified, the most recent data set is obtained.
+{pstd}{cmdab:version(}{it:string}{cmd:)} specifies the version of the corpus you want to access. 
+Use mp_corpusversions for a list of available versions. If not specified, the most recent data set is obtained.
 
 {pstd}{cmdab:apikey(}{it:string}{cmd:)} specifies the API key to use for this command.
 
@@ -191,12 +195,14 @@ register on the webpage.
 {pstd} where {it:exp} is an expression, such as party == 41320 & date > 200000 (see examples below).
 
 {col 5}{title:Description} 
-{pstd}Documents are downloaded from the Manifesto Project Corpus Database. If CMP coding annotations are available, they are attached to the documents, otherwise raw texts are provided. The documents are cached in the working memory to ensure internal consistency, enable offline use and reduce online traffic.
+{pstd}Documents are downloaded from the Manifesto Project Corpus Database. 
+If CMP coding annotations are available, they are attached to the documents, otherwise raw texts are provided. The documents are cached in the working memory to ensure internal consistency, enable offline use and reduce online traffic.
 
 {col 5}{title:Options} 
 {pstd}{cmdab:clear} specifies that it is okay to replace the data in memory, even though the current data have not been saved to disk.
 
-{pstd}{cmdab:version(}{it:string}{cmd:)} specifies the version of the corpus you want to access. Use mp_corpusversions for a list of available versions. If not specified, the most recent data set is obtained.
+{pstd}{cmdab:version(}{it:string}{cmd:)} specifies the version of the corpus you want to access. 
+Use mp_corpusversions for a list of available versions. If not specified, the most recent data set is obtained.
 
 {pstd}{cmdab:apikey(}{it:string}{cmd:)} specifies the API key to use for this command.
 
@@ -230,7 +236,10 @@ register on the webpage.
 {pstd}{cmd:mp_savecache} using {it:{help filename}}{cmd:} [{cmd:,}  {cmdab:replace}]
 
 {col 5}{title:Description} 
-{pstd}Saves local cache to the file system. This function can and should be used to store downloaded snapshots of the Manifesto Project Corpus Database to your local hard drive. They can then be loaded via mp_opencache. Caching data in the file system ensures reproducibility of the scripts and analyses, enables offline use of the data and reduces unnecessary traffic and waiting times.
+{pstd}Saves local cache to the file system. 
+This function can and should be used to store downloaded snapshots of the Manifesto Project Corpus Database to your local hard drive. 
+They can then be loaded via mp_opencache. 
+Caching data in the file system ensures reproducibility of the scripts and analyses, enables offline use of the data and reduces unnecessary traffic and waiting times.
 
 {col 5}{title:Options} 
 {pstd}{cmdab:replace} specifies that it is okay to replace the data in memory, even though the current data have not been saved to disk. 
@@ -301,7 +310,8 @@ register on the webpage.
 {pstd} where {it:exp} is an expression, such as country == 41 & date == 201309 (see examples below).
 
 {col 5}{title:Description} 
-{pstd}Original documents are opened in the system's browser window. All original documents are stored on the Manifesto Project Website and the URLs opened are all from this site.
+{pstd}Original documents are opened in the system's browser window. 
+All original documents are stored on the Manifesto Project Website and the URLs opened are all from this site.
 
 {col 5}{title:Options} 
 {pstd}{cmdab:apikey(}{it:string}{cmd:)} specifies the API key to use for this command.
@@ -321,8 +331,12 @@ register on the webpage.
 {it:{dlgtab:1. Connecting to the Manifesto Project Database API}}
 
 {p 4 4 2} 
-To access the data in the Manifesto Corpus, an account for the Manifesto Project webpage with an API key is required. If you do not yet have an account, you can create one at {browse "https://manifesto-project.wzb.eu/signup"}. If you have an account, you can create and download the API key on your profile page.
-For every Stata session using manifestata and connecting to the Manifesto Corpus database, you need to set the API key in your work environment. This can be done by passing either a key or the name of a file containing the key using manifestata's {cmd:mp_setapikey} command. Thus, your Stata Do-File using manifestata usually will start like this: 
+To access the data in the Manifesto Corpus, an account for the Manifesto Project webpage with an API key is required. 
+If you do not yet have an account, you can create one at {browse "https://manifesto-project.wzb.eu/signup"}. 
+If you have an account, you can create and download the API key on your profile page.
+For every Stata session using manifestata and connecting to the Manifesto Corpus database, you need to set the API key in your work environment. 
+This can be done by passing either a key or the name of a file containing the key using manifestata's {cmd:mp_setapikey} command. 
+Thus, your Stata Do-File using manifestata usually will start like this: 
 
 {p 4 4 2} 
 {cmd:. mp_setapikey using "manifesto_apikey.txt"}
@@ -334,13 +348,15 @@ This Stata code presumes that you have stored and downloaded the API key in a fi
 {it:{dlgtab:2. Downloading the Manifesto Project Dataset}}
 
 {p 4 4 2}
-You can download the Manifesto Project Dataset (MPDS) using the {cmd:mp_maindataset} command. By default the most recent update is returned, but you can specify older versions to get for reproducibility (use the {cmd:mp_coreversions} command for a list of versions). 
+You can download the Manifesto Project Dataset (MPDS) using the {cmd:mp_maindataset} command. 
+By default the most recent update is returned, but you can specify older versions to get for reproducibility (use the {cmd:mp_coreversions} command for a list of versions). 
 
 
 {it:{dlgtab:3. Downloading documents}}
 
 {p 4 4 2}
-Before downloading documents you may want to get meta data for the respective election programmes first. To obtain the metadata for the manifestos of the German SPD and FDP in 2009, type:
+Before downloading documents you may want to get meta data for the respective election programmes first. 
+To obtain the metadata for the manifestos of the German SPD and FDP in 2009, type:
 
 {p 4 4 2} 
 {cmd:. mp_metadata 41320_200909 41420_200909} or alternatively {cmd: mp_metadata if inlist(party,41320,41420) & date == 200909}
@@ -358,7 +374,8 @@ The {cmd:mp_corpus} command returns a data set containing all the requested mani
 {it:{dlgtab:4 Viewing original documents}}
 
 {p 4 4 2}
-Apart from the machine-readable, annotated documents, the Manifesto Corpus also contains original layouted election programmes in PDF format. If available, they can be viewed via the function mp_view_originals, which takes exactly the format of arguments as mp_corpus (see above), e.g.:
+Apart from the machine-readable, annotated documents, the Manifesto Corpus also contains original layouted election programmes in PDF format. 
+If available, they can be viewed via the function mp_view_originals, which takes exactly the format of arguments as mp_corpus (see above), e.g.:
 
 {p 4 4 2} 
 {cmd:. mp_view_originals 41320_2013 41420_2013}
