@@ -2,10 +2,14 @@ compile_mlib:
   stage: build
   script:
    - printf "do lmanifestata.do" | /opt/stata14/stata-mp
+  artifacts:
+    paths:
+    - lmanifestata.mlib
 
 test_script:
   stage: test
   script:
+   - ls | grep mlib
    - echo $MANIFESTOAPIKEY > manifesto_apikey.txt
    - printf "ado uninstall manifestata\n" | /opt/stata14/stata-mp 
    - if [ $(echo "ado" | /opt/stata14/stata-mp  | grep manifestata | wc -l) -ne 0 ]; then exit 1; fi;
