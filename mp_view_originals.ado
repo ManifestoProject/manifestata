@@ -1,4 +1,4 @@
-*! mp_view_originals v0.4.0 03october2016
+*! mp_view_originals v0.4.1 08october2016
 program mp_view_originals
 	
 	* define version *
@@ -12,7 +12,7 @@ program mp_view_originals
 		foreach id in `idlist' {
 	
 			* call view_originals function *
-			mata view_originals("`id'")
+			mata view_originals("`id'", "`apikey'")
 		
 			* open browser *
 			view browse `url'
@@ -45,13 +45,11 @@ program mp_view_originals
 		foreach id in `idlist' {
 	
 			* call view_originals function *
-			local id = substr("`id'",1,strlen("`id'")-2)
-			mata view_originals("`id'")
+			mata view_originals("`id'", "`apikey'")
 		
 			* open browser *
 			view browse `url'
 		}		
-		di "if-qualifier"
 
 		* restore current data set *
 		restore

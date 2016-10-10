@@ -964,13 +964,41 @@ void function corpus(string scalar ids, string scalar cpversion, string scalar c
 	
 }
 
-void function view_originals(string scalar id) {
+void function view_originals(string scalar id, string scalar apikey) {
 	
-	// set url
-	url_originals = "https://manifesto-project.wzb.eu//down/originals/"
+	// API Key option not specified
+	if (apikey == "") {
+		
+		// define pointer
+		pointer() scalar p_api
+		
+		// API Key not set
+		if ((p_api = findexternal("myapi")) == NULL) {
+			message = ("API Key not set. Please use the API Key option or the setapikey command.")
+			display(message)
+		}
+		
+		// API Key set
+		else {
+			p_api = findexternal("myapi")
+			api = *p_api
+		}
+	}
+	
+	// API Key option specified
+	if (apikey != "") {
+		api = apikey
+	}
 	
 	// generate complete url
-	url_call = url_originals + id + ".pdf"
+		// call metadata function
+		metadata(id, "", api, "", "", "noresponse")
+			
+		// set pointer
+		p_document_url = findexternal("mydocumenturlkey")
+		url = *p_document_url						
+		
+		url_call = "https://manifesto-project.wzb.eu/" + url
 	
 	// pass url to mp_view_originals via local
 	st_local("url", url_call)
@@ -1162,6 +1190,7 @@ void function metadata(string scalar ids, string scalar cpversion, string scalar
 			// define pointer 
 			pointer() scalar p_annotations
 			pointer() scalar p_manifesto_id
+			pointer() scalar p_document_url
 		
 			// if pointer not set
 			if ((p_annotations = findexternal("myannotations")) == NULL) {
@@ -1171,10 +1200,15 @@ void function metadata(string scalar ids, string scalar cpversion, string scalar
 			if ((p_manifesto_id = findexternal("mymanifestourlkey")) == NULL) {
 				p_manifesto_id = crexternal("mymanifestourlkey")
 			}
+
+			if ((p_document_url = findexternal("mydocumenturlkey")) == NULL) {
+				p_document_url = crexternal("mydocumenturlkey")
+			}			
 			
 			// set pointer
 			*p_annotations = meta.annotations
 			*p_manifesto_id = meta.manifesto_id
+			*p_document_url = meta.url_original			
 			
 			// call display function
 			if (noresponse == "") displaymetadata(meta,numberids,totalids)
@@ -1200,8 +1234,15 @@ function displaymetadata(struct struct_metadata scalar x, real scalar count, rea
 	}
 	
 	// print results
-	printf("{res}{space 2}%-6s %-7s %-19s %-7s %-12s %-15s %-28s %-13s %-12s\n",
-		x.party_id,x.election_date,x.language,x.source,x.has_eu_code,x.is_primary_doc,x.may_contradict_core_dataset,x.manifesto_id,x.annotations)
+	if (x.annotations == "true") {
+		printf("{res}{space 2}%-6s %-7s %-19s %-7s %-12s %-15s %-28s %-13s %-12s\n",
+			x.party_id,x.election_date,x.language,x.source,x.has_eu_code,x.is_primary_doc,x.may_contradict_core_dataset,"{stata mp_corpus " + x.manifesto_id + ", clear:" + x.manifesto_id + " }",x.annotations)
+	}
+	
+	if (x.annotations == "false") {
+		printf("{res}{space 2}%-6s %-7s %-19s %-7s %-12s %-15s %-28s %-13s %-12s\n",
+			x.party_id,x.election_date,x.language,x.source,x.has_eu_code,x.is_primary_doc,x.may_contradict_core_dataset,x.manifesto_id,x.annotations)
+	}
 	
 	// if last id
 	if (count==total) printf("{txt}{hline 130}\n")
