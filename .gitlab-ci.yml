@@ -33,7 +33,7 @@ push_to_website:
   stage: deploy
   script:
    - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp > /dev/null
-   - sed -i "/Distribution-Date.*/c\d Distribution Date: $(date +%Y%m%d)" manifestata.pkg
+   - 'sed -i "/Distribution-Date.*/c\d Distribution-Date: $(date +%Y%m%d)" manifestata.pkg'
    - rm -f /srv/manifesto-project.wzb.eu/public/down/manifestata/*
    - cat manifestata.pkg | grep ^f | sed 's/^f\s//' | xargs cp -t /srv/manifesto-project.wzb.eu/public/down/manifestata/
    - cp stata.toc /srv/manifesto-project.wzb.eu/public/down/manifestata/
