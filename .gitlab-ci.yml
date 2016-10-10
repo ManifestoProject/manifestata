@@ -29,11 +29,14 @@ test_script:
 # push_to_github:
 ## TODO
 
-# deploy:
-  ## mv current version from /srv/manifesto-project.wzb.eu/public/down/manifestata/ to /srv/manifesto-project.wzb.eu/public/down/manifestata/old/VERSION
-  ## update Distribution-Date (see @merz's comment below)
-  ## copy files listed in manifestata.pkg (prefixed with "f") to /srv/manifesto-project.wzb.eu/public/down/manifestata/
-  ## copy stata.toc [unclear/future: allow for other packages to write to the toc file as well]
+push_to_website:
+  stage: deploy
+  script:
+   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp > /dev/null
+   - sed -i "/Distribution-Date.*/c\d Distribution Date: $(date +%Y%m%d)" manifestata.pkg
+   - rm -f /srv/manifesto-project.wzb.eu/public/down/manifestata/*
+   - cat manifestata.pkg | grep ^f | sed 's/^f\s//' | xargs cp -t /srv/manifesto-project.wzb.eu/public/down/manifestata/
+   - cp stata.toc /srv/manifesto-project.wzb.eu/public/down/manifestata/
 
 stages:
 # - build
