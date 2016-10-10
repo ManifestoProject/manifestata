@@ -19,12 +19,11 @@ test_script:
    - printf "net from \"$(pwd)\" \n net install manifestata \n" | /opt/stata14/stata-mp > /dev/null
 #  - STATA add relevant files to ado path or net install from somewhere
    - printf "do manifestata-testscript.do \n" | /opt/stata14/stata-mp  > /dev/null ## writes to log file
-   - diff --text <(normalize_test_output test_reference.txt) <(normalize_test_output test_output.txt) > test_diff.txt
-   - cat test_diff.txt
+   - diff --text <(normalize_test_output test_reference.txt) <(normalize_test_output test_output.txt)
   artifacts:
+    when: always
     paths:
     - test_output.txt
-    - test_diff.txt
     
 
 # push_to_github:
