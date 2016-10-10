@@ -1,15 +1,15 @@
-*! mp_corpus v0.3.7 12september2016
+*! mp_corpus v0.4.1 03october2016
 program mp_corpus
 	
 	* define version *
-	version 13.0
+	version 14.0
 	
 	* define syntax for ID list*	
-	capture syntax anything(name=idlist id="ID list") [, CLEAR APIkey(string) noCACHE]
+	capture syntax anything(name=idlist id="ID list") [, VERsion(string) CLEAR APIkey(string) noCACHE]
 	
 	* call maindataset function *
 	if !_rc {
-		mata corpus("`idlist'","`clear'","`apikey'","`cache'")
+		mata corpus("`idlist'","`version'","`clear'","`apikey'","`cache'")
 	}
 
 	* define syntax for if-qualifier *
@@ -28,7 +28,7 @@ program mp_corpus
 		}		
 		
 		* define syntax *
-		capture syntax if [, CLEAR APIkey(string) noCACHE]
+		capture syntax if [, VERsion(string) CLEAR APIkey(string) noCACHE]
 
 		* select subset specified by if-qualifier *
 		marksample touse
@@ -38,7 +38,7 @@ program mp_corpus
 		restore
 		
 		* call corpus function *
-		mata corpus("`idlist'","`clear'","`apikey'","`cache'")
+		mata corpus("`idlist'","`version'","`clear'","`apikey'","`cache'")
 	}
 	
 	* ID list and if-qualifier not specified *	

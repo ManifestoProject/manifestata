@@ -1,0 +1,36 @@
+# compile_mlib:
+#  stage: build
+#  script:
+#   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp
+#   - ls
+#  artifacts:
+#    paths:
+#    - lmanifestata.mlib
+
+test_script:
+  stage: test
+  script:
+   - echo $MANIFESTO_APIKEY > manifesto_apikey.txt
+   - printf "ado uninstall manifestata\n" | /opt/stata14/stata-mp 
+   - if [ $(echo "ado" | /opt/stata14/stata-mp  | grep manifestata | wc -l) -ne 0 ]; then exit 1; fi;
+   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp
+   - printf "net from \"$(pwd)\" \n net install manifestata \n" | /opt/stata14/stata-mp
+#  - STATA add relevant files to ado path or net install from somewhere
+   - printf "do manifestata-testscript.do \n" | /opt/stata14/stata-mp  ## writes to log file
+   - ls
+#  - TODO compare log file to checked in reference file [ignoring date & path]
+
+# push_to_github:
+## TODO
+
+# deploy:
+  ## mv current version from /srv/manifesto-project.wzb.eu/public/down/manifestata/ to /srv/manifesto-project.wzb.eu/public/down/manifestata/old/VERSION
+  ## update Distribution-Date (see @merz's comment below)
+  ## copy files listed in manifestata.pkg (prefixed with "f") to /srv/manifesto-project.wzb.eu/public/down/manifestata/
+  ## copy stata.toc [unclear/future: allow for other packages to write to the toc file as well]
+
+stages:
+# - build
+- test
+#- push_to_github
+- deploy

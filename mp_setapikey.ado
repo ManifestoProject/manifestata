@@ -1,8 +1,8 @@
-*! mp_setapikey v0.2.0 14april2016
+*! mp_setapikey v0.3.0 03october2016
 program mp_setapikey
 	
 	* define version *
-	version 13.0
+	version 14.0
 	
 	* define syntax *
 	syntax [using/] [, APIkey(string)]

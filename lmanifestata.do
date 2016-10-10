@@ -48,6 +48,25 @@ void function setapikey(string scalar apifilepath, string scalar apikey) {
 
 }
 
+void function setcorpusversion(string scalar cpversion) {
+
+		// define pointer
+		pointer() scalar p_setcorpusversion
+		
+		// if pointer not set
+		if ((p_setcorpusversion = findexternal("mysetcorpusversion")) == NULL) { 
+			p_setcorpusversion = crexternal("mysetcorpusversion")
+		}
+		
+		// set pointer
+		*p_setcorpusversion = cpversion
+		
+		// display output message
+		message = ("The corpus version was set to:" + " " + cpversion)
+		display(message)
+		
+}
+
 void function coreversions(string scalar apikey, | string scalar noresponse) {
 	
 	// API Key option not specified
@@ -679,7 +698,7 @@ void function seturl() {
 	
 }
 
-void function corpus(string scalar ids, string scalar clear_opt, string scalar apikey, string scalar cache_opt) {
+void function corpus(string scalar ids, string scalar cpversion, string scalar clear_opt, string scalar apikey, string scalar cache_opt) {
 	
 	// declarations
 	real scalar totalids, currentversion
@@ -723,18 +742,36 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 	pointer() scalar p_url
 	p_url = findexternal("myurl")
 	
-	// retrieve most current version 
-		// define pointer
-		pointer() scalar p_recentcorpusversion
+	// Version option not specified
+	if (cpversion == "") {
 		
-		// if pointer not set
-		if ((p_recentcorpusversion = findexternal("myrecentcorpusversion")) == NULL) { 
-			corpusversions(api, "", "noresponse")	
+		// define pointer
+		pointer() scalar p_setcorpusversion
+		
+		// Corpus version not set via mp_setcorpusversion
+		if ((p_setcorpusversion = findexternal("mysetcorpusversion")) == NULL) { 
+		
+			// define pointer
+			pointer() scalar p_recentcorpusversion
+		
+			// if pointer not set
+			if ((p_recentcorpusversion = findexternal("myrecentcorpusversion")) == NULL) { 
+				corpusversions(api, "", "noresponse")	
+			}
+		
+			// set pointer
+			p_recentcorpusversion = findexternal("myrecentcorpusversion")
+			cpversion = *p_recentcorpusversion
 		}
 		
-		// set pointer
-		p_recentcorpusversion = findexternal("myrecentcorpusversion")
-		mpversion = *p_recentcorpusversion
+		// Corpus version set via mp_setcorpusversion
+		if ((p_setcorpusversion = findexternal("mysetcorpusversion")) != NULL) { 
+		
+			// set pointer
+			p_setcorpusversion = findexternal("mysetcorpusversion")
+			cpversion = *p_setcorpusversion			
+		}
+	}
 	
 	// check for data in memory
 	if ((st_updata()!=0)&(clear_opt=="")) exit(error(4))
@@ -760,7 +797,7 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 			pointer() scalar p_manifesto_id
 
 			// call metadata function
-			metadata(key, api, "", "", "noresponse")
+			metadata(key, cpversion, api, "", "", "noresponse")
 			
 			// set pointer
 			p_annotations = findexternal("myannotations")
@@ -777,25 +814,25 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 		pointer() scalar p_cache_vars
 
 		// set cache keys
-		sca_cache_corpus = "cached"+key+"corpus"
-		sca_cache_vars = "cached"+key+"vars"
+		sca_cache_corpus = "cached"+key+"corpus"+subinstr(cpversion,"-","")
+		sca_cache_vars = "cached"+key+"vars"+subinstr(cpversion,"-","")
 		
 		// Nocache option not specified and data in cache
 		if ((cache_opt == "") & (findexternal(sca_cache_corpus)) != NULL) {
-				// "Nocache option not specified and data in cache"
-				if (cols(cachekeys)==0) {
-					cachekeys = key
-					cache_access()
-				}
-				else {
-					cachekeys = cachekeys, key
-				}
-				
-				p_cache_corpus = findexternal(sca_cache_corpus)
-				corpus = *p_cache_corpus
-				
-				p_cache_vars = findexternal(sca_cache_vars)
-				vars = *p_cache_vars
+			// "Nocache option not specified and data in cache"
+			if (cols(cachekeys)==0) {
+				cachekeys = key
+				cache_access()
+			}
+			else {
+				cachekeys = cachekeys, key
+			}
+			
+			p_cache_corpus = findexternal(sca_cache_corpus)
+			corpus = *p_cache_corpus
+			
+			p_cache_vars = findexternal(sca_cache_vars)
+			vars = *p_cache_vars
 		}
 		
 		// Nocache option not specified and no data in cache
@@ -811,7 +848,7 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 			}
 		
 			// define url for corpus
-			url_corpus = *p_url+"api_texts_and_annotations.json"+"?api_key="+api+"&keys[]="+urlkey+"&version="+mpversion
+			url_corpus = *p_url+"api_texts_and_annotations.json"+"?api_key="+api+"&keys[]="+urlkey+"&version="+cpversion
 			
 			// open filehandle
 			fh_corpus = fopen(url_corpus,"r")
@@ -821,20 +858,25 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 			while ((part_corpus=fget(fh_corpus))!=J(0,0,"")) {
 				corpus = corpus + part_corpus
 			}
-			
+
 			// parse json response
-			s = strpos(corpus,"content")-1
-			//l = strpos(corpus,"missing_item")-s-4
-			l = strpos(corpus,"missing_item")-s-6
-			corpus = substr(corpus,s,l)
-			variables_vector = "content","cmp_code","eu_code"
-			for (i=1;i<=cols(variables_vector);i++) {
-				corpus = subinstr(corpus,`"""'+variables_vector[.,i]+`"""'+":","")
-				if (i==1) vars = `"""'+variables_vector[.,i]+`"""'
-				if (i>1)  vars = vars+","+`"""'+variables_vector[.,i]+`"""'
-			}
-			if (currentversion>=1400) vars = vars+char(13)
-			if (currentversion<1400)  vars = vars+char(13)
+				// identify key-name: content/text
+				if (regexm(corpus, `":\[{"content":"')==1) sca_keyname = "content"
+				else {
+					if (regexm(corpus, `":\[{"text":"')==1) sca_keyname = "text"
+				}
+				// identify and parse relevant corpus json response
+				s = strpos(corpus,sca_keyname)-1
+				l = strpos(corpus,"missing_item")-s-6
+				corpus = substr(corpus,s,l)
+				variables_vector = sca_keyname,"cmp_code","eu_code"
+				for (i=1;i<=cols(variables_vector);i++) {
+					corpus = subinstr(corpus,`"""'+variables_vector[.,i]+`"""'+":","")
+					if (i==1) vars = `"""'+variables_vector[.,i]+`"""'
+					if (i>1)  vars = vars+","+`"""'+variables_vector[.,i]+`"""'
+				}
+				if (currentversion>=1400) vars = vars+char(13)
+				if (currentversion<1400)  vars = vars+char(13)
 
 			// special case USA
 			corpus = subinstr(corpus,`"\""',"'")
@@ -904,7 +946,7 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 			}
 		}
 	
-		load_comm = "quietly import delimited " + temp_file + `", delimiter(",") varnames(1)"' + clear_opt
+		load_comm = "quietly import delimited " + temp_file + `", delimiter(",") varnames(1) encoding("utf-8")"' + clear_opt
 		
 		stata(load_comm,0)
 		
@@ -917,7 +959,7 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 	
 	// display respective citation message
 	printf("\n")
-	cite(mpversion,"",api)
+	cite(cpversion,"",api)
 	printf("\n")
 	
 }
@@ -925,7 +967,7 @@ void function corpus(string scalar ids, string scalar clear_opt, string scalar a
 void function view_originals(string scalar id) {
 	
 	// set url
-	url_originals = "https://manifesto-project.wzb.eu/down/originals/"
+	url_originals = "https://manifesto-project.wzb.eu//down/originals/"
 	
 	// generate complete url
 	url_call = url_originals + id + ".pdf"
@@ -941,7 +983,7 @@ struct struct_metadata {
 	
 }
 
-void function metadata(string scalar ids, string scalar apikey, string scalar saving, string scalar cache, | string scalar noresponse) {
+void function metadata(string scalar ids, string scalar cpversion, string scalar apikey, string scalar saving, string scalar cache, | string scalar noresponse) {
 	
 	// declarations
 	real scalar numberids, totalids
@@ -988,22 +1030,40 @@ void function metadata(string scalar ids, string scalar apikey, string scalar sa
 	pointer() scalar p_url
 	p_url = findexternal("myurl")
 	
-	// retrieve most current version 
-		// define pointer
-		pointer() scalar p_recentcorpusversion
+	// Version option not specified
+	if (cpversion == "") {
 		
-		// if pointer not set
-		if ((p_recentcorpusversion = findexternal("myrecentcorpusversion")) == NULL) { 
-			corpusversions(api, "", "noresponse")	
+		// define pointer
+		pointer() scalar p_setcorpusversion
+		
+		// Corpus version not set via mp_setcorpusversion
+		if ((p_setcorpusversion = findexternal("mysetcorpusversion")) == NULL) { 
+
+			// define pointer
+			pointer() scalar p_recentcorpusversion
+		
+			// if pointer not set
+			if ((p_recentcorpusversion = findexternal("myrecentcorpusversion")) == NULL) { 
+				corpusversions(api, "", "noresponse")	
+			}
+		
+			// set pointer
+			p_recentcorpusversion = findexternal("myrecentcorpusversion")
+			cpversion = *p_recentcorpusversion
 		}
 		
-		// set pointer
-		p_recentcorpusversion = findexternal("myrecentcorpusversion")
-		mpversion = *p_recentcorpusversion
+		// Corpus version set via mp_setcorpusversion
+		if ((p_setcorpusversion = findexternal("mysetcorpusversion")) != NULL) { 
+		
+			// set pointer
+			p_setcorpusversion = findexternal("mysetcorpusversion")
+			cpversion = *p_setcorpusversion			
+		}
+	}
 		
 	// bundled API call for metadata
 		// define url for metadata
-		url_metadata = *p_url+"api_metadata.json"+"?api_key="+api+keys+"&version="+mpversion
+		url_metadata = *p_url+"api_metadata.json"+"?api_key="+api+keys+"&version="+cpversion
 		
 		// open filehandle
 		fh_metadata = fopen(url_metadata,"r")
@@ -1043,13 +1103,21 @@ void function metadata(string scalar ids, string scalar apikey, string scalar sa
 		metadata = substr(metadata,1,l)
 		metadata = subinstr(metadata,`"""',"")
 		metadata = subinstr(metadata,"null",".")
+		metadata = subinstr(metadata,"NA",".")
 		metadata = subinstr(metadata,":","},{")			
 		
 		// display non-missing ids 
 		metadata_tokens = tokeninit("},{","","", 0, 0)
-		tokenset(metadata_tokens, metadata)
-
-		metadata_matrix = colshape(tokengetall(metadata_tokens),24)
+		tokenset(metadata_tokens, metadata)		
+		metadata_matrix = tokengetall(metadata_tokens)
+		
+		// differentiate between "old" and "new" metadata excluding or including source information
+		if (cols(selectindex(metadata_matrix :== "source"))>0) {
+			metadata_matrix = colshape(metadata_matrix,24)
+		}
+		else {
+			metadata_matrix = colshape(metadata_matrix,22)
+		}
 		metadata_matrix = metadata_matrix[.,select((1..cols(metadata_matrix)), !mod((1..cols(metadata_matrix)),2))]
 		
 		content = J(1,cols(metadata_matrix),NULL)
@@ -1061,19 +1129,36 @@ void function metadata(string scalar ids, string scalar apikey, string scalar sa
 			}
 			
 			// populate structure
-			meta.party_id = 					*content[1]
-			meta.election_date = 				*content[2]
-			meta.language = 					*content[3]
-			meta.source = 						*content[4]
-			meta.has_eu_code = 					*content[5]
-			meta.is_primary_doc = 				*content[6]
-			meta.may_contradict_core_dataset = 	*content[7]
-			meta.manifesto_id = 				*content[8]
-			meta.md5sum_text = 					*content[9]
-			meta.url_original = 				*content[10]
-			meta.md5sum_original = 				*content[11]
-			meta.annotations = 					*content[12]
-						
+			if (cols(metadata_matrix)==12) {
+				meta.party_id = 					*content[1]
+				meta.election_date = 				*content[2]
+				meta.language = 					*content[3]
+				meta.source = 						*content[4]
+				meta.has_eu_code = 					*content[5]
+				meta.is_primary_doc = 				*content[6]
+				meta.may_contradict_core_dataset = 	*content[7]
+				meta.manifesto_id = 				*content[8]
+				meta.md5sum_text = 					*content[9]
+				meta.url_original = 				*content[10]
+				meta.md5sum_original = 				*content[11]
+				meta.annotations = 					*content[12]
+			}
+
+			if (cols(metadata_matrix)==11) {
+				meta.party_id = 					*content[1]
+				meta.election_date = 				*content[2]
+				meta.language = 					*content[3]
+				meta.source = 						"."
+				meta.has_eu_code = 					*content[4]
+				meta.is_primary_doc = 				*content[5]
+				meta.may_contradict_core_dataset = 	*content[6]
+				meta.manifesto_id = 				*content[7]
+				meta.md5sum_text = 					*content[8]
+				meta.url_original = 				*content[9]
+				meta.md5sum_original = 				*content[10]
+				meta.annotations = 					*content[11]
+			}			
+			
 			// define pointer 
 			pointer() scalar p_annotations
 			pointer() scalar p_manifesto_id
@@ -1137,8 +1222,14 @@ function storemetadata(string scalar path, matrix x, real scalar obs) {
 	st_store(.,idx_num,strtoreal(x[.,1..2]))
 	
 	// generate and store string variables
-	idx_str = st_addvar(10, ("language","source","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations"))	
-	st_sstore(.,idx_str,x[.,3..12])
+	if (cols(x) == 12) {
+		idx_str = st_addvar(max(strlen(x)), ("language","source","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations"))	
+		st_sstore(.,idx_str,x[.,3..12])
+	}
+	if (cols(x) == 11) {
+		idx_str = st_addvar(max(strlen(x)), ("language","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations"))	
+		st_sstore(.,idx_str,x[.,3..11])	
+	}
 	
 	// store data set
 	store_comm = "save " + path
@@ -1191,6 +1282,74 @@ void function cache_access() {
 	printf("{res}Accessing data cache...")
 	printf("\n")
 }
+
+void function savecache(string scalar cachefilepath, string scalar replace_opt) {
+	
+	mat_cached_maindata_ext = direxternal("mymaindataset*")
+	mat_cached_maindata = J(1,1,NULL)
+	for (i=1;i<=rows(direxternal("mymaindataset*"));++i) {
+		p = findexternal(direxternal("mymaindataset*")[i])
+		if (i==1) mat_cached_maindata[i,1] = p
+		if (i>1)  mat_cached_maindata = mat_cached_maindata \ p
+	}
+	
+	mat_cached_corpus_ext = direxternal("cached*vars*")
+	mat_cached_corpus = J(1,2,NULL)
+	for (i=1;i<=rows(direxternal("cached*vars*"));++i) {
+		p = findexternal(direxternal("cached*vars*")[i])
+		pp = findexternal(subinstr(direxternal("cached*vars*")[i],"vars","corpus"))
+		if (i==1) mat_cached_corpus[i,.] = p , pp
+		if (i>1)  mat_cached_corpus = mat_cached_corpus \ p, pp
+	}
+	
+	mat_cache = &mat_cached_maindata_ext, &mat_cached_maindata, &mat_cached_corpus_ext, &mat_cached_corpus
+	
+	if (fileexists(cachefilepath) == 1 & replace_opt == "") exit(error(602))
+	else {
+		if (fileexists(cachefilepath) == 1 & replace_opt != "") unlink(cachefilepath)
+		fh = fopen(cachefilepath, "w")
+		fputmatrix(fh, mat_cache)
+		fclose(fh)
+	}
+	
+}
+
+void function opencache(string scalar cachefilepath, string scalar clear_opt) {
+	
+	fh = fopen(cachefilepath, "r")
+	mat_cache = fgetmatrix(fh)
+	fclose(fh)
+	
+	for (i=1;i<=rows(*mat_cache[1,1]);++i) {
+		(*mat_cache[1,1])[i,1]
+		if ((findexternal((*mat_cache[1,1])[i,1])) == NULL) {
+			p = crexternal((*mat_cache[1,1])[i,1])
+			*p = (*(*mat_cache[1,2])[i,1])
+			
+		}
+	}
+	
+	for (i=1;i<=rows(*mat_cache[1,3]);++i) {
+		if ((findexternal((*mat_cache[1,3])[i,1])) == NULL) {
+			p = crexternal((*mat_cache[1,3])[i,1])
+			*p = (*(*mat_cache[1,4])[i,1])
+			pp = crexternal(subinstr((*mat_cache[1,3])[i,1],"vars","corpus"))
+			*pp = (*(*mat_cache[1,4])[i,2]) 
+		}
+	}
+	
+}
+
+void function clearcache(string scalar keep) {
+	vec_delete = "myapi", "myrecentcoreversion","myrecentcorpusversion","mymaindataset*","myurl","cached*","myannotations","mymanifestourlkey"
+	for (i=1;i<=cols(vec_delete);++i) {
+		vec_delete_temp = direxternal(vec_delete[i])
+		for (j=1;j<=rows(vec_delete_temp);++j) {
+			if ((findexternal(vec_delete_temp[j])) != NULL) rmexternal(vec_delete_temp[j])
+		}
+	}
+}
+
 
 mata mlib create lmanifestata, replace
 mata mlib add lmanifestata *()

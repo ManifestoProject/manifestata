@@ -1,8 +1,8 @@
-*! mp_maindataset v0.3.0 11june2016
+*! mp_maindataset v0.4.0 03october2016
 program mp_maindataset
 	
 	* define version *
-	version 13.0
+	version 14.0
 		
 	* define syntax *	
 	syntax [, CLEAR VERsion(string) APIkey(string) noCACHE JSON]

@@ -1,15 +1,15 @@
-*! mp_metadata v0.5.2 12september2016
+*! mp_metadata v0.6.1 03october2016
 program mp_metadata
-	
+
 	* define version *
-	version 13.0
+	version 14.0
 	
 	* define syntax for ID list*	
-	capture syntax anything(name=idlist id="ID list") [, APIkey(string) SAVing(string asis) noCACHE]
+	capture syntax anything(name=idlist id="ID list") [, VERsion(string) APIkey(string) SAVing(string asis) noCACHE]
 	
 	* call metadata function *
 	if !_rc {
-		mata metadata("`idlist'","`apikey'",`"`saving'"',"`cache'")
+		mata metadata("`idlist'","`version'","`apikey'",`"`saving'"',"`cache'")
 	}
 	
 	* define syntax for if-qualifier *
@@ -28,7 +28,7 @@ program mp_metadata
 		}		
 		
 		* define syntax *
-		capture syntax if [, APIkey(string) SAVing(string asis) noCACHE]
+		capture syntax if [, VERsion(string) APIkey(string) SAVing(string asis) noCACHE]
 
 		* select subset specified by if-qualifier *
 		marksample touse
@@ -38,7 +38,7 @@ program mp_metadata
 		restore
 		
 		* call metadata function *
-		mata metadata("`idlist'","`apikey'",`"`saving'"',"`cache'")
+		mata metadata("`idlist'","`version'","`apikey'",`"`saving'"',"`cache'")
 
 		* restore current data set *
 		* restore
