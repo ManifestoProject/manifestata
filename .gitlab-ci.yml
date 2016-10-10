@@ -9,18 +9,23 @@
 
 test_script:
   stage: test
+  before_script:
+   - function normalize_test_output { cat $1 | sed '/log/d' | sed '/API Key/d' | sed '/opened on/d'; }
   script:
    - echo $MANIFESTO_APIKEY > manifesto_apikey.txt
-   - printf "ado uninstall manifestata\n" | /opt/stata14/stata-mp 
+   - printf "ado uninstall manifestata\n" | /opt/stata14/stata-mp > /dev/null
    - if [ $(echo "ado" | /opt/stata14/stata-mp  | grep manifestata | wc -l) -ne 0 ]; then exit 1; fi;
-   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp
-   - printf "net from \"$(pwd)\" \n net install manifestata \n" | /opt/stata14/stata-mp
+   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp > /dev/null
+   - printf "net from \"$(pwd)\" \n net install manifestata \n" | /opt/stata14/stata-mp > /dev/null
 #  - STATA add relevant files to ado path or net install from somewhere
-   - printf "do manifestata-testscript.do \n" | /opt/stata14/stata-mp  ## writes to log file
-#  - TODO compare log file to checked in reference file [ignoring date & path]
+   - printf "do manifestata-testscript.do \n" | /opt/stata14/stata-mp  > /dev/null ## writes to log file
+   - diff --text <(normalize_test_output test_reference.txt) <(normalize_test_output test_output.txt) > test_diff.txt
+   - cat test_diff.txt
   artifacts:
     paths:
     - test_output.txt
+    - test_diff.txt
+    
 
 # push_to_github:
 ## TODO
