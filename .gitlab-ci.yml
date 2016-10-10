@@ -8,6 +8,8 @@ compile_mlib:
 
 test_script:
   stage: test
+  dependencies:
+  - compile_mlib
   script:
    - ls
    - echo $MANIFESTOAPIKEY > manifesto_apikey.txt
