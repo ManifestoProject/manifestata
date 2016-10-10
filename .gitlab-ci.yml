@@ -30,6 +30,7 @@ test_script:
 ## TODO
 
 push_to_website:
+  only: deploy
   stage: deploy
   script:
    - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp > /dev/null
