@@ -17,6 +17,7 @@ test_script:
    - printf "net from \"$(pwd)\" \n net install manifestata \n" | /opt/stata14/stata-mp
 #  - STATA add relevant files to ado path or net install from somewhere
    - printf "do manifestata-testscript.do \n" | /opt/stata14/stata-mp  ## writes to log file
+   - ls
 #  - TODO compare log file to checked in reference file [ignoring date & path]
 
 # push_to_github:
