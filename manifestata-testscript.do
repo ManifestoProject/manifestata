@@ -1,9 +1,9 @@
+capture log close
 log using test_output.txt, replace text
 set more off
-
+set linesize 80
 *** manifestata test script
 clear 
-capture log using "testlog", replace
 
 mp_clearcache
 
@@ -14,9 +14,10 @@ mp_setapikey using "manifesto_apikey.txt"
 mp_coreversions
 
 * set wrong key 
-mp_setapikey, key(123456)
+mp_setapikey, apikey(123456)
 * should output message that key is wrong
-mp_coreversions
+capture mp_coreversions
+dis _rc
 
 
 **** mp_maindataset
@@ -79,6 +80,12 @@ mp_corpus if country == 41, clear
 tab cmp_code
 
 
+*** mp cite
+mp_cite,core(MPDS2016a) corpus(2016-2)
+mp_cite,core(MPDS2015a) 
+*mp_cite, corpus(20160205171117) /// I think we have not thought about how dev versions should be cited...
+
+
 *** test caching functions
 mp_clearcache
 mp_setapikey using "manifesto_apikey.txt"
@@ -90,12 +97,7 @@ mp_opencache using cache-saved.dta, clear
 
 
 
-*** mp cite
-mp_cite,core(MPDS2016a) corpus(2016-2)
-mp_cite,core(MPDS2015a) 
-mp_cite, corpus(20160205171117) /// I think we have not thought about how dev versions should be cited...
-
-
+capture log close
 exit, clear
 
 ** end
