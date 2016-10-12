@@ -1,8 +1,8 @@
--------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
       name:  <unnamed>
        log:  C:\Users\merz\Documents\manifestata3\test_output.txt
   log type:  text
- opened on:  12 Oct 2016, 12:02:39
+ opened on:  12 Oct 2016, 12:10:00
 
 . set more off
 
@@ -73,183 +73,17 @@ You are currently using core version MPDS2016a. Please cite as:
 > alforschung (WZB)"
 
 
-. distinct
+. list party date rile in 1/5
 
-                |        Observations
-                |      total   distinct
-----------------+----------------------
-        country |       4054         56
-    countryname |       4054         56
-     oecdmember |       4054          2
-       eumember |       4054          3
-          edate |       4054        654
-           date |       4054        438
-          party |       4054       1027
-      partyname |       4054       1050
-    partyabbrev |       3808        877
-         parfam |       4054         12
-        coderid |       4054        141
-         manual |       4054          8
-      coderyear |       3772         33
-     testresult |       2281        151
-    testeditsim |        583         43
-        pervote |       3990       3522
-        voteest |       4054          2
-       presvote |         49         47
-        absseat |       4008        300
-       totseats |       4008        155
-       progtype |       4054          9
-  datasetorigin |       4054         15
-          total |       4027       1314
-       peruncod |       3893       1679
-         per101 |       4034        995
-         per102 |       4034        461
-         per103 |       4034        543
-         per104 |       4034       1337
-         per105 |       4034        942
-         per106 |       4034       1109
-         per107 |       4034       1680
-         per108 |       4034       1317
-         per109 |       4034        656
-         per110 |       4034        566
-         per201 |       4034       1756
-         per202 |       4034       1974
-         per203 |       4034       1055
-         per204 |       4034        548
-         per301 |       4034       1652
-         per302 |       4034        481
-         per303 |       4034       1800
-         per304 |       4034       1246
-         per305 |       4034       1812
-         per401 |       4034       1566
-         per402 |       4034       1735
-         per403 |       4034       1590
-         per404 |       4034        993
-         per405 |       4034        648
-         per406 |       4034        785
-         per407 |       4034        633
-         per408 |       4034       1709
-         per409 |       4034        551
-         per410 |       4034       1667
-         per411 |       4034       1997
-         per412 |       4034        927
-         per413 |       4034        733
-         per414 |       4034       1590
-         per415 |       4034        185
-         per416 |       4034        722
-         per501 |       4034       1846
-         per502 |       4034       1568
-         per503 |       4034       2013
-         per504 |       4034       2243
-         per505 |       4034        665
-         per506 |       4034       1946
-         per507 |       4034        195
-         per601 |       4034       1479
-         per602 |       4034        365
-         per603 |       4034       1382
-         per604 |       4034        567
-         per605 |       4034       1655
-         per606 |       4034       1533
-         per607 |       4034       1175
-         per608 |       4034        508
-         per701 |       4034       1790
-         per702 |       4034        291
-         per703 |       4034       1870
-         per704 |       4034        939
-         per705 |       4034       1155
-         per706 |       4034       1742
-        per1011 |       4034        136
-        per1012 |       4034         98
-        per1013 |       4034         54
-        per1014 |       4034         40
-        per1015 |       4034         19
-        per1016 |       4034         53
-        per1021 |       4034         53
-        per1022 |       4034         23
-        per1023 |       4034          4
-        per1024 |       4034          3
-        per1025 |       4034          1
-        per1026 |       4034         22
-        per1031 |       4034         33
-        per1032 |       4034         92
-        per1033 |       4034         80
-        per2021 |       4034        204
-        per2022 |       4034         29
-        per2023 |       4034         20
-        per2031 |       4034         15
-        per2032 |       4034         19
-        per2033 |       4034          6
-        per2041 |       4034          8
-        per3011 |       4034         17
-        per3051 |       4034        130
-        per3052 |       4034         40
-        per3053 |       4034        136
-        per3054 |       4034         43
-        per3055 |       4034        118
-        per4011 |       4034        341
-        per4012 |       4034         93
-        per4013 |       4034        177
-        per4014 |       4034         47
-        per4121 |       4034         99
-        per4122 |       4034        169
-        per4123 |       4034         50
-        per4124 |       4034         24
-        per4131 |       4034         36
-        per4132 |       4034         88
-        per5021 |       4034        100
-        per5031 |       4034         31
-        per5041 |       4034        220
-        per5061 |       4034        149
-        per6011 |       4034         16
-        per6012 |       4034          5
-        per6013 |       4034        129
-        per6014 |       4034         23
-        per6061 |       4034         41
-        per6071 |       4034         31
-        per6072 |       4034         22
-        per6081 |       4034          7
-        per7051 |       4034        213
-        per7052 |       4034        118
-        per7061 |       4034         58
-        per7062 |       4034         73
-       per103_1 |        176         37
-       per103_2 |        176         33
-       per201_1 |        176         62
-       per201_2 |        176         68
-       per202_1 |        176         93
-       per202_2 |        176          5
-       per202_3 |        176         26
-       per202_4 |        176         34
-       per305_1 |        176         97
-       per305_2 |        176         23
-       per305_3 |        176         27
-       per305_4 |        176          2
-       per305_5 |        176         16
-       per305_6 |        176          8
-       per416_1 |        176          5
-       per416_2 |        176         57
-       per601_1 |        176         95
-       per601_2 |        176         21
-       per602_1 |        176         24
-       per602_2 |        176         14
-       per605_1 |        176         87
-       per605_2 |        176         23
-       per606_1 |        176         66
-       per606_2 |        176         44
-       per607_1 |        176         65
-       per607_2 |        176         11
-       per607_3 |        176          6
-       per608_1 |        176         19
-       per608_2 |        176         10
-       per608_3 |        176          1
-       per703_1 |        176         90
-       per703_2 |        176          5
-           rile |       4034       3105
-        planeco |       4034       1941
-        markeco |       4034       1993
-        welfare |       4034       2428
-       intpeace |       4034       1499
- datasetversion |       4054          1
+     +-------------------------------------------------------+
+     | party                                   date     rile |
+     |-------------------------------------------------------|
+  1. | swe: Left Party                       194409     9.60 |
+  2. | swe: Social Democratic Labour Party   194409   -37.80 |
+  3. | swe: Liberal Peopleâ€™s Party           194409     9.50 |
+  4. | swe: Moderate Coalition Party         194409    28.00 |
+  5. | swe: Centre Party                     194409    23.81 |
+     +-------------------------------------------------------+
 
 . 
 . * get specific version version
@@ -264,12 +98,17 @@ You are currently using core version MPDS2014b. Please cite as:
 > ialforschung (WZB)"
 
 
-. distinct party
+. list party date rile in 1/5
 
-       |        Observations
-       |      total   distinct
--------+----------------------
- party |       3858        977
+     +-------------------------------------------------------+
+     | party                                   date     rile |
+     |-------------------------------------------------------|
+  1. | swe: Left Communists Party            194409     9.60 |
+  2. | swe: Social Democratic Labour Party   194409   -37.80 |
+  3. | swe: Liberal People’s Party           194409     9.50 |
+  4. | swe: Moderate Coalition Party         194409    28.00 |
+  5. | swe: Centre Party                     194409    23.81 |
+     +-------------------------------------------------------+
 
 . 
 . * should produce error as not cleared

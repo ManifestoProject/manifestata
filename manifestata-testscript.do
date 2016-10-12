@@ -27,11 +27,11 @@ mp_setapikey using "manifesto_apikey.txt"
 
 * most recent * 
 mp_maindataset
-distinct
+list party date rile in 1/5
 
 * get specific version version
 mp_maindataset, clear version(MPDS2014b) 
-distinct party
+list party date rile in 1/5
 
 * should produce error as not cleared
 mp_maindataset, version(MPDS2014a)
