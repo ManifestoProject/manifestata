@@ -1,11 +1,11 @@
-# compile_mlib:
-#  stage: build
-#  script:
-#   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp
-#   - ls
-#  artifacts:
-#    paths:
-#    - lmanifestata.mlib
+ compile_mlib:
+  stage: build
+  script:
+   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp
+   - ls
+  artifacts:
+    paths:
+    - lmanifestata.mlib
 
 test_script:
   stage: test
