@@ -1,0 +1,551 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\merz\Documents\manifestata3\test_output.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}12 Oct 2016, 12:24:36
+{txt}
+{com}. set more off
+{txt}
+{com}. set linesize 255
+{txt}
+{com}. *** manifestata test script
+. clear 
+{txt}
+{com}. 
+. mp_clearcache
+{res}{txt}
+{com}. 
+. *** mp_setapikey
+. 
+. * correct key from file
+. mp_setapikey using "manifesto_apikey.txt"
+{res}The API Key was not set.
+The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
+{txt}
+{com}. mp_coreversions
+{res}
+{txt}{hline 70}
+{space 2}id{space 11}name{space 41}link
+{txt}{hline 70}
+{res}{space 2}MPDS2012a    Manifesto Project Dataset (version 2012a) {stata mp_maindataset, clear version(MPDS2012a):   download}
+{res}{space 2}MPDS2012b    Manifesto Project Dataset (version 2012b) {stata mp_maindataset, clear version(MPDS2012b):   download}
+{res}{space 2}MPDS2013a    Manifesto Project Dataset (version 2013a) {stata mp_maindataset, clear version(MPDS2013a):   download}
+{res}{space 2}MPDS2013b    Manifesto Project Dataset (version 2013b) {stata mp_maindataset, clear version(MPDS2013b):   download}
+{res}{space 2}MPDS2014a    Manifesto Project Dataset (version 2014a) {stata mp_maindataset, clear version(MPDS2014a):   download}
+{res}{space 2}MPDS2014b    Manifesto Project Dataset (version 2014b) {stata mp_maindataset, clear version(MPDS2014b):   download}
+{res}{space 2}MPDS2015a    Manifesto Project Dataset (version 2015a) {stata mp_maindataset, clear version(MPDS2015a):   download}
+{res}{space 2}MPDS2016a    Manifesto Project Dataset (version 2016a) {stata mp_maindataset, clear version(MPDS2016a):   download}
+{txt}{hline 70}
+
+
+{com}. 
+. * set wrong key 
+. mp_setapikey, apikey(123456)
+{res}The API Key was set to: 4d0e6feea68b86ff367a41fb26d4836a
+The new API Key is: 123456
+{txt}
+{com}. * should output message that key is wrong
+. capture mp_coreversions
+{txt}
+{com}. dis _rc
+{res}673
+{txt}
+{com}. 
+. 
+. **** mp_maindataset
+. 
+. clear 
+{txt}
+{com}. mp_setapikey using "manifesto_apikey.txt"
+{res}The API Key was set to: 123456
+The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
+{txt}
+{com}. 
+. * most recent * 
+. mp_maindataset
+{res}
+{res}Connecting to Manifesto Project DB API...
+
+{txt}You are currently using core version MPDS2016a. Please cite as: {res}
+"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven with Werner, Annika (2016): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2016a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
+
+{txt}
+{com}. list party date rile in 1/5
+{txt}
+     {c TLC}{hline 37}{c -}{hline 8}{c -}{hline 8}{c TRC}
+     {c |} {res}party                                   date     rile {txt}{c |}
+     {c LT}{hline 37}{c -}{hline 8}{c -}{hline 8}{c RT}
+  1. {c |} {res}swe: Left Party                       194409     9.60 {txt}{c |}
+  2. {c |} {res}swe: Social Democratic Labour Party   194409   -37.80 {txt}{c |}
+  3. {c |} {res}swe: Liberal People’s Party           194409     9.50 {txt}{c |}
+  4. {c |} {res}swe: Moderate Coalition Party         194409    28.00 {txt}{c |}
+  5. {c |} {res}swe: Centre Party                     194409    23.81 {txt}{c |}
+     {c BLC}{hline 37}{c -}{hline 8}{c -}{hline 8}{c BRC}
+
+{com}. 
+. * get specific version version
+. mp_maindataset, clear version(MPDS2014b) 
+{res}
+{res}Connecting to Manifesto Project DB API...
+
+{txt}You are currently using core version MPDS2014b. Please cite as: {res}
+"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika with Schultze, Henrike (2014): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2014b. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
+
+{txt}
+{com}. list party date rile in 1/5
+{txt}
+     {c TLC}{hline 37}{c -}{hline 8}{c -}{hline 8}{c TRC}
+     {c |} {res}party                                   date     rile {txt}{c |}
+     {c LT}{hline 37}{c -}{hline 8}{c -}{hline 8}{c RT}
+  1. {c |} {res}swe: Left Communists Party            194409     9.60 {txt}{c |}
+  2. {c |} {res}swe: Social Democratic Labour Party   194409   -37.80 {txt}{c |}
+  3. {c |} {res}swe: Liberal People�s Party           194409     9.50 {txt}{c |}
+  4. {c |} {res}swe: Moderate Coalition Party         194409    28.00 {txt}{c |}
+  5. {c |} {res}swe: Centre Party                     194409    23.81 {txt}{c |}
+     {c BLC}{hline 37}{c -}{hline 8}{c -}{hline 8}{c BRC}
+
+{com}. 
+. * should produce error as not cleared
+. mp_maindataset, version(MPDS2014a)
+{res}
+{res}Connecting to Manifesto Project DB API...
+
+{txt}You are currently using core version MPDS2014a. Please cite as: {res}
+"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika with Lacewell, Onawa Promise / Schultze, Henrike (2014): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2014a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
+
+{txt}
+{com}. clear
+{txt}
+{com}. mp_maindataset, version(MPDS2013a) // should put this into cache
+{res}
+{res}Connecting to Manifesto Project DB API...
+
+{txt}You are currently using core version MPDS2013a. Please cite as: {res}
+"Volkens, Andrea/Lehmann, Pola/Merz, Nicolas/Regel, Sven/Werner, Annika with Lacewell, Onawa Promise/Schultze, Henrike (2013): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2013a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)
+"
+
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. ** should get the cached version
+. mp_maindataset, version(MPDS2013b) 
+{res}
+{res}Connecting to Manifesto Project DB API...
+
+{txt}You are currently using core version MPDS2013b. Please cite as: {res}
+"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika with Lacewell, Onawa Promise / Schultze, Henrike (2013): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2013b. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)
+
+"
+
+{txt}
+{com}. 
+. ** should again get the uncached version
+. mp_maindataset, version(MPDS2014b) nocache clear
+{res}
+{res}Connecting to Manifesto Project DB API...
+
+{txt}You are currently using core version MPDS2014b. Please cite as: {res}
+"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika with Schultze, Henrike (2014): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2014b. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
+
+{txt}
+{com}. 
+. 
+. **** mp_corpusversions 
+. mp_corpusversions
+{res}
+{txt}{hline 28}
+{space 2}name{space 14}tag
+{txt}{hline 28}
+{res}{space 2}20150522123537    2015-1 
+{res}{space 2}20150603194507    2015-2 
+{res}{space 2}20150708174629    2015-3 
+{res}{space 2}20150914190426    2015-4 
+{res}{space 2}20151023200520    2015-5 
+{res}{space 2}20160218181913    2016-1 
+{res}{space 2}20160315172932    2016-2 
+{res}{space 2}20160622134246    2016-3 
+{res}{space 2}20160928122254    2016-4 
+{res}{space 2}20161007134607    2016-5 
+{txt}{hline 28}
+
+
+{com}. * mp_corpusversions, dev
+. * commented, otherwise we would have to adopt this for every development version of the corpus. 
+. 
+. 
+. *** mp_metadata
+. mp_metadata 41113_200909, version(2016-1)
+{res}
+{txt}{hline 130}
+{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations
+{hline 130}
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_2009, clear:41113_2009 } true        
+{txt}{hline 130}
+
+{com}. mp_metadata 41320_200509 41320_200909, version(2016-5)
+{res}
+{txt}{hline 130}
+{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations
+{hline 130}
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true        
+{txt}{hline 130}
+
+{com}. mp_metadata 41320_200509 41320_200909 
+{res}
+{txt}{hline 130}
+{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations
+{hline 130}
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_2005, clear:41320_2005 } true        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_2009, clear:41320_2009 } true        
+{txt}{hline 130}
+
+{com}. 
+. mp_metadata if party==41111 | party == 41112 | party == 41113
+{res}
+{txt}{hline 130}
+{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations
+{hline 130}
+{res}{space 2}41111  198303  .                   CEMP    FALSE        TRUE            FALSE                        41111_1983    false       
+{res}{space 2}41111  198701  .                   CEMP    FALSE        TRUE            FALSE                        41111_1987    false       
+{res}{space 2}41112  199012  .                   CEMP    FALSE        TRUE            FALSE                        41112_1990    false       
+{res}{space 2}41113  199410  .                   CEMP    FALSE        TRUE            FALSE                        41113_1994    false       
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_1998, clear:41113_1998 } true        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_2002, clear:41113_2002 } true        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_2005, clear:41113_2005 } true        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_2009, clear:41113_2009 } true        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_2013, clear:41113_2013 } true        
+{txt}{hline 130}
+
+{com}. mp_metadata if datasetorigin==90
+{res}
+{txt}{hline 130}
+{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations
+{hline 130}
+{res}{space 2}22110  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22110_2012, clear:22110_2012 } true        
+{res}{space 2}22220  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22220_2012, clear:22220_2012 } true        
+{res}{space 2}22320  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22320_2012, clear:22320_2012 } true        
+{res}{space 2}22330  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22330_2012, clear:22330_2012 } true        
+{res}{space 2}22420  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22420_2012, clear:22420_2012 } true        
+{res}{space 2}22521  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22521_2012, clear:22521_2012 } true        
+{res}{space 2}22526  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22526_2012, clear:22526_2012 } true        
+{res}{space 2}22722  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22722_2012, clear:22722_2012 } true        
+{res}{space 2}22951  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22951_2012, clear:22951_2012 } true        
+{res}{space 2}22952  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22952_2012, clear:22952_2012 } true        
+{res}{space 2}22953  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 22953_2012, clear:22953_2012 } true        
+{res}{space 2}34020  200709  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34020_2007, clear:34020_2007 } true        
+{res}{space 2}34210  200709  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34210_2007, clear:34210_2007 } true        
+{res}{space 2}34313  200709  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34313_2007, clear:34313_2007 } true        
+{res}{space 2}34511  200709  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34511_2007, clear:34511_2007 } true        
+{res}{space 2}34710  200709  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34710_2007, clear:34710_2007 } true        
+{res}{space 2}34020  200910  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34020_2009, clear:34020_2009 } true        
+{res}{space 2}34210  200910  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34210_2009, clear:34210_2009 } true        
+{res}{space 2}34313  200910  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34313_2009, clear:34313_2009 } true        
+{res}{space 2}34511  200910  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34511_2009, clear:34511_2009 } true        
+{res}{space 2}34020  201205  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34020_201205, clear:34020_201205 } true        
+{res}{space 2}34210  201205  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34210_201205, clear:34210_201205 } true        
+{res}{space 2}34213  201205  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34213_201205, clear:34213_201205 } true        
+{res}{space 2}34313  201205  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34313_201205, clear:34313_201205 } true        
+{res}{space 2}34511  201205  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34511_201205, clear:34511_201205 } true        
+{res}{space 2}34710  201205  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34710_201205, clear:34710_201205 } true        
+{res}{space 2}34720  201205  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34720_201205, clear:34720_201205 } true        
+{res}{space 2}34730  201205  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34730_201205, clear:34730_201205 } true        
+{res}{space 2}34020  201206  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34020_201206, clear:34020_201206 } true        
+{res}{space 2}34210  201206  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34210_201206, clear:34210_201206 } true        
+{res}{space 2}34213  201206  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34213_201206, clear:34213_201206 } true        
+{res}{space 2}34313  201206  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34313_201206, clear:34313_201206 } true        
+{res}{space 2}34511  201206  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34511_201206, clear:34511_201206 } true        
+{res}{space 2}34720  201206  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34720_201206, clear:34720_201206 } true        
+{res}{space 2}34730  201206  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 34730_201206, clear:34730_201206 } true        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_2013, clear:41113_2013 } true        
+{res}{space 2}43530  200310  .                   CEMP    FALSE        TRUE            FALSE                        43530_2003    false       
+{res}{space 2}55110  200605  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55110_2006, clear:55110_2006 } true        
+{res}{space 2}55321  200605  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55321_2006, clear:55321_2006 } true        
+{res}{space 2}55322  200605  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55322_2006, clear:55322_2006 } true        
+{res}{space 2}55422  200605  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55422_2006, clear:55422_2006 } true        
+{res}{space 2}55430  200605  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55430_2006, clear:55430_2006 } true        
+{res}{space 2}55711  200605  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55711_2006, clear:55711_2006 } true        
+{res}{space 2}55110  201105  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55110_2011, clear:55110_2011 } true        
+{res}{space 2}55321  201105  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55321_2011, clear:55321_2011 } true        
+{res}{space 2}55322  201105  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55322_2011, clear:55322_2011 } true        
+{res}{space 2}55422  201105  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55422_2011, clear:55422_2011 } true        
+{res}{space 2}55430  201105  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55430_2011, clear:55430_2011 } true        
+{res}{space 2}55711  201105  greek               MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 55711_2011, clear:55711_2011 } true        
+{res}{space 2}76041  201205  bulgarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 76041_2012, clear:76041_2012 } true        
+{res}{space 2}76321  201205  finnish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 76321_2012, clear:76321_2012 } true        
+{res}{space 2}76420  201205  armenian            MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 76420_2012, clear:76420_2012 } true        
+{res}{space 2}76430  201205  armenian            MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 76430_2012, clear:76430_2012 } true        
+{res}{space 2}76610  201205  armenian            MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 76610_2012, clear:76610_2012 } true        
+{res}{space 2}76620  201205  armenian            MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 76620_2012, clear:76620_2012 } true        
+{res}{space 2}86061  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 86061_2014, clear:86061_2014 } true        
+{res}{space 2}86110  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 86110_2014, clear:86110_2014 } true        
+{res}{space 2}86220  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 86220_2014, clear:86220_2014 } true        
+{res}{space 2}86221  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 86221_2014, clear:86221_2014 } true        
+{res}{space 2}86340  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 86340_2014, clear:86340_2014 } true        
+{res}{space 2}86710  201404  .                   MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 86710_2014, clear:86710_2014 } true        
+{res}{space 2}89710  200209  macedonian          MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 89710_2002, clear:89710_2002 } true        
+{res}{space 2}89031  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 89031_2014, clear:89031_2014 } true        
+{res}{space 2}89221  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 89221_2014, clear:89221_2014 } true        
+{res}{space 2}89710  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 89710_2014, clear:89710_2014 } true        
+{res}{space 2}89910  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 89910_2014, clear:89910_2014 } true        
+{res}{space 2}89930  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 89930_2014, clear:89930_2014 } true        
+{txt}{hline 130}
+
+{com}. 
+. *** save metadata
+. mp_metadata 41320_200509, saving(greens1, replace)
+{res}
+{txt}{hline 130}
+{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations
+{hline 130}
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_2005, clear:41320_2005 } true        
+{txt}{hline 130}
+file greens1.dta saved
+
+{com}. mp_metadata if party==41111, saving("greens", replace) 
+{res}
+{txt}{hline 130}
+{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations
+{hline 130}
+{res}{space 2}41111  198303  .                   CEMP    FALSE        TRUE            FALSE                        41111_1983    false       
+{res}{space 2}41111  198701  .                   CEMP    FALSE        TRUE            FALSE                        41111_1987    false       
+{txt}{hline 130}
+file greens.dta saved
+
+{com}. mp_metadata if countryname == "France", saving(france, replace)
+{res}
+{txt}{hline 130}
+{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations
+{hline 130}
+{res}{space 2}31220  195811  .                   CEMP    FALSE        TRUE            FALSE                        31220_1958    false       
+{res}{space 2}31521  195811  .                   CEMP    FALSE        TRUE            FALSE                        31521_1958    false       
+{res}{space 2}31220  196211  .                   CEMP    FALSE        TRUE            FALSE                        31220_1962    false       
+{res}{space 2}31320  196211  .                   CEMP    FALSE        TRUE            FALSE                        31320_1962    false       
+{res}{space 2}31421  196211  .                   CEMP    FALSE        TRUE            FALSE                        31421_1962    false       
+{res}{space 2}31521  196211  .                   CEMP    FALSE        TRUE            FALSE                        31521_1962    false       
+{res}{space 2}31621  196211  .                   CEMP    FALSE        TRUE            FALSE                        31621_1962    false       
+{res}{space 2}31622  196211  .                   CEMP    FALSE        TRUE            FALSE                        31622_1962    false       
+{res}{space 2}31220  196703  .                   CEMP    FALSE        TRUE            FALSE                        31220_1967    false       
+{res}{space 2}31522  196703  .                   CEMP    FALSE        TRUE            FALSE                        31522_1967    false       
+{res}{space 2}31621  196703  .                   CEMP    FALSE        TRUE            FALSE                        31621_1967    false       
+{res}{space 2}31320  196806  .                   CEMP    FALSE        TRUE            FALSE                        31320_1968    false       
+{res}{space 2}31522  196806  .                   CEMP    FALSE        TRUE            FALSE                        31522_1968    false       
+{res}{space 2}31621  196806  .                   CEMP    FALSE        TRUE            FALSE                        31621_1968    false       
+{res}{space 2}31220  197303  .                   CEMP    FALSE        TRUE            FALSE                        31220_1973    false       
+{res}{space 2}31621  197303  .                   CEMP    FALSE        TRUE            FALSE                        31621_1973    false       
+{res}{space 2}31220  197803  .                   CEMP    FALSE        TRUE            FALSE                        31220_1978    false       
+{res}{space 2}31220  198106  .                   CEMP    FALSE        TRUE            FALSE                        31220_1981    false       
+{res}{space 2}31320  198106  .                   CEMP    FALSE        TRUE            FALSE                        31320_1981    false       
+{res}{space 2}31621  198106  .                   CEMP    FALSE        TRUE            FALSE                        31621_1981    false       
+{res}{space 2}31622  198106  .                   CEMP    FALSE        TRUE            FALSE                        31622_1981    false       
+{res}{space 2}31220  198603  .                   CEMP    FALSE        TRUE            FALSE                        31220_1986    false       
+{res}{space 2}31320  198603  .                   CEMP    FALSE        TRUE            FALSE                        31320_1986    false       
+{res}{space 2}31621  198603  .                   CEMP    FALSE        TRUE            FALSE                        31621_1986    false       
+{res}{space 2}31220  198806  .                   CEMP    FALSE        TRUE            FALSE                        31220_1988    false       
+{res}{space 2}31320  198806  .                   CEMP    FALSE        TRUE            FALSE                        31320_1988    false       
+{res}{space 2}31621  198806  .                   CEMP    FALSE        TRUE            FALSE                        31621_1988    false       
+{res}{space 2}31110  199303  .                   CEMP    FALSE        TRUE            FALSE                        31110_1993    false       
+{res}{space 2}31320  199303  .                   CEMP    FALSE        TRUE            FALSE                        31320_1993    false       
+{res}{space 2}31624  199303  .                   CEMP    FALSE        TRUE            FALSE                        31624_1993    false       
+{res}{space 2}31625  199303  .                   CEMP    FALSE        TRUE            FALSE                        31625_1993    false       
+{res}{space 2}31110  199705  .                   CEMP    FALSE        TRUE            FALSE                        31110_1997    false       
+{res}{space 2}31111  199705  .                   CEMP    FALSE        TRUE            FALSE                        31111_1997    false       
+{res}{space 2}31220  199705  .                   CEMP    FALSE        TRUE            FALSE                        31220_1997    false       
+{res}{space 2}31320  199705  .                   CEMP    FALSE        TRUE            FALSE                        31320_1997    false       
+{res}{space 2}31624  199705  .                   CEMP    FALSE        TRUE            FALSE                        31624_1997    false       
+{res}{space 2}31720  199705  .                   CEMP    FALSE        TRUE            FALSE                        31720_1997    false       
+{res}{space 2}31110  200206  .                   CEMP    FALSE        TRUE            FALSE                        31110_2002    false       
+{res}{space 2}31220  200206  .                   CEMP    FALSE        TRUE            FALSE                        31220_2002    false       
+{res}{space 2}31320  200206  .                   CEMP    FALSE        TRUE            FALSE                        31320_2002    false       
+{res}{space 2}31624  200206  .                   CEMP    FALSE        TRUE            FALSE                        31624_2002    false       
+{res}{space 2}31626  200206  .                   CEMP    FALSE        TRUE            FALSE                        31626_2002    false       
+{res}{space 2}31720  200206  .                   CEMP    FALSE        TRUE            FALSE                        31720_2002    false       
+{res}{space 2}31021  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31021_2012, clear:31021_2012 } true        
+{res}{space 2}31110  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31110_2012, clear:31110_2012 } true        
+{res}{space 2}31230  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31230_2012, clear:31230_2012 } true        
+{res}{space 2}31320  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31320_2012, clear:31320_2012 } true        
+{res}{space 2}31421  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31421_2012, clear:31421_2012 } true        
+{res}{space 2}31624  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31624_2012, clear:31624_2012 } true        
+{res}{space 2}31626  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31626_2012, clear:31626_2012 } true        
+{res}{space 2}31630  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31630_2012, clear:31630_2012 } true        
+{res}{space 2}31631  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31631_2012, clear:31631_2012 } true        
+{res}{space 2}31720  201206  french              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 31720_2012, clear:31720_2012 } true        
+{txt}{hline 130}
+file france.dta saved
+
+{com}. 
+. 
+. *** mp corpus
+. mp_corpus 41320_200909, clear version(2016-3)
+{res}
+{res}Connecting to Manifesto Project DB API...
+{txt}Corpus data retrieved from server for key(s): 41320_200909        
+
+{txt}You are currently using corpus version 2016-3. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-3. Berlin: WZB Berlin Social Science Center."
+
+
+{txt}
+{com}. clear
+{txt}
+{com}. mp_corpus 41320_200909, clear version(2016-3)
+{res}
+{res}Accessing data cache...
+{txt}Corpus data retrieved from cache for key(s): 41320_200909        
+
+{txt}You are currently using corpus version 2016-3. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-3. Berlin: WZB Berlin Social Science Center."
+
+
+{txt}
+{com}. 
+. mp_setcorpusversion 2015-4
+{res}The corpus version was set to: 2015-4
+{txt}
+{com}. 
+. mp_corpus 41320_200909, clear
+{res}
+{res}Connecting to Manifesto Project DB API...
+{txt}Corpus data retrieved from server for key(s): 41320_200909        
+
+{txt}You are currently using corpus version 2015-4. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science Center."
+
+
+{txt}
+{com}. 
+. mp_corpus if country == 41, clear
+{res}
+{res}Connecting to Manifesto Project DB API...
+
+{res}Accessing data cache...
+{txt}Corpus data retrieved from server for key(s): 41113_199809 41221_199809 41320_199809 41420_199809 41521_199809 41113_200209 41221_200209 41320_200209 41420_200209 41521_200209 41113_200509 41320_200509 41113_200909 41223_200909 41420_200909 41521_200909 41113_201309 41223_201309 41320_201309 41420_201309 41521_201309 41952_201309 41953_201309 
+{txt}Corpus data retrieved from cache for key(s): 41320_200909        
+{txt}No annotated corpus data found on server for key(s): 41320_196109 41420_196109 41521_196109 41320_196509 41420_196509 41521_196509 41320_196909 41420_196909 41521_196909 41320_197211 41521_197211 41320_197610 41420_197610 41521_197610 41320_198010 41420_198010 41521_198010 41111_198303 41320_198303 41420_198303 41521_198303 41111_198701 41320_198701 41420_198701 41521_198701 41112_199012 41221_199012 41320_199012 41420_199012 41521_199012 41113_199410 41221_199410 41320_199410 41420_199410 41521_199410 
+
+{txt}You are currently using corpus version 2015-4. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science Center."
+
+
+{txt}
+{com}. 
+. tab cmp_code
+
+   {txt}cmp_code {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          . {c |}{res}      3,532        7.17        7.17
+{txt}          0 {c |}{res}        383        0.78        7.94
+{txt}        101 {c |}{res}         89        0.18        8.12
+{txt}        102 {c |}{res}          7        0.01        8.14
+{txt}        103 {c |}{res}         28        0.06        8.19
+{txt}        104 {c |}{res}        371        0.75        8.95
+{txt}        105 {c |}{res}        582        1.18       10.13
+{txt}        106 {c |}{res}        395        0.80       10.93
+{txt}        107 {c |}{res}      1,496        3.03       13.96
+{txt}        108 {c |}{res}        826        1.68       15.64
+{txt}        109 {c |}{res}         12        0.02       15.66
+{txt}        110 {c |}{res}        213        0.43       16.10
+{txt}        201 {c |}{res}      2,270        4.61       20.70
+{txt}        202 {c |}{res}      1,855        3.76       24.46
+{txt}        203 {c |}{res}        101        0.20       24.67
+{txt}        204 {c |}{res}         37        0.08       24.74
+{txt}        301 {c |}{res}        658        1.33       26.08
+{txt}        302 {c |}{res}        111        0.23       26.30
+{txt}        303 {c |}{res}      2,304        4.67       30.98
+{txt}        304 {c |}{res}        206        0.42       31.40
+{txt}        305 {c |}{res}      1,445        2.93       34.33
+{txt}        401 {c |}{res}        804        1.63       35.96
+{txt}        402 {c |}{res}        826        1.68       37.63
+{txt}        403 {c |}{res}      2,419        4.91       42.54
+{txt}        404 {c |}{res}        169        0.34       42.88
+{txt}        405 {c |}{res}        139        0.28       43.17
+{txt}        406 {c |}{res}         36        0.07       43.24
+{txt}        407 {c |}{res}        121        0.25       43.48
+{txt}        408 {c |}{res}      1,172        2.38       45.86
+{txt}        409 {c |}{res}        132        0.27       46.13
+{txt}        410 {c |}{res}        317        0.64       46.77
+{txt}        411 {c |}{res}      2,933        5.95       52.72
+{txt}        412 {c |}{res}        199        0.40       53.13
+{txt}        413 {c |}{res}        228        0.46       53.59
+{txt}        414 {c |}{res}        648        1.31       54.90
+{txt}        415 {c |}{res}         57        0.12       55.02
+{txt}        416 {c |}{res}        772        1.57       56.58
+{txt}        501 {c |}{res}      2,678        5.43       62.02
+{txt}        502 {c |}{res}      1,077        2.18       64.20
+{txt}        503 {c |}{res}      3,918        7.95       72.15
+{txt}        504 {c |}{res}      2,342        4.75       76.90
+{txt}        505 {c |}{res}        342        0.69       77.60
+{txt}        506 {c |}{res}      1,980        4.02       81.61
+{txt}        507 {c |}{res}         39        0.08       81.69
+{txt}        601 {c |}{res}        386        0.78       82.47
+{txt}        602 {c |}{res}        153        0.31       82.78
+{txt}        603 {c |}{res}        511        1.04       83.82
+{txt}        604 {c |}{res}        442        0.90       84.72
+{txt}        605 {c |}{res}      1,070        2.17       86.89
+{txt}        606 {c |}{res}      1,086        2.20       89.09
+{txt}        607 {c |}{res}        448        0.91       90.00
+{txt}        608 {c |}{res}        149        0.30       90.30
+{txt}        701 {c |}{res}      2,112        4.28       94.59
+{txt}        702 {c |}{res}         86        0.17       94.76
+{txt}        703 {c |}{res}        464        0.94       95.70
+{txt}        704 {c |}{res}        107        0.22       95.92
+{txt}        705 {c |}{res}        852        1.73       97.65
+{txt}        706 {c |}{res}      1,159        2.35      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}     49,294      100.00
+{txt}
+{com}. 
+. 
+. *** mp cite
+. mp_cite,core(MPDS2016a) corpus(2016-2)
+{res}{txt}You are currently using corpus version 2016-2. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-2. Berlin: WZB Berlin Social Science Center."
+
+{txt}You are currently using core version MPDS2016a. Please cite as: {res}
+"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven with Werner, Annika (2016): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2016a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
+{txt}
+{com}. mp_cite,core(MPDS2015a) 
+{res}{txt}You are currently using core version MPDS2015a. Please cite as: {res}
+"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2015): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2015a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
+{txt}
+{com}. *mp_cite, corpus(20160205171117) /// I think we have not thought about how dev versions should be cited...
+> 
+. 
+. *** test caching functions
+. mp_clearcache
+{res}{txt}
+{com}. mp_setapikey using "manifesto_apikey.txt"
+{res}The API Key was not set.
+The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
+{txt}
+{com}. mp_corpus if country == 41, clear
+{res}
+{res}Connecting to Manifesto Project DB API...
+{txt}Corpus data retrieved from server for key(s): 41113_199809 41221_199809 41320_199809 41420_199809 41521_199809 41113_200209 41221_200209 41320_200209 41420_200209 41521_200209 41113_200509 41320_200509 41113_200909 41223_200909 41320_200909 41420_200909 41521_200909 41113_201309 41223_201309 41320_201309 41420_201309 41521_201309 41952_201309 41953_201309 
+{txt}No annotated corpus data found on server for key(s): 41320_196109 41420_196109 41521_196109 41320_196509 41420_196509 41521_196509 41320_196909 41420_196909 41521_196909 41320_197211 41521_197211 41320_197610 41420_197610 41521_197610 41320_198010 41420_198010 41521_198010 41111_198303 41320_198303 41420_198303 41521_198303 41111_198701 41320_198701 41420_198701 41521_198701 41112_199012 41221_199012 41320_199012 41420_199012 41521_199012 41113_199410 41221_199410 41320_199410 41420_199410 41521_199410 
+
+{txt}You are currently using corpus version 2015-4. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science Center."
+
+
+{txt}
+{com}. mp_savecache using cache-saved.dta, replace
+{res}{txt}
+{com}. clear
+{txt}
+{com}. mp_clearcache
+{res}{txt}
+{com}. mp_opencache using cache-saved.dta, clear
+{res}  mymaindatasetMPDS2016adata
+  mymaindatasetMPDS2016a
+  mymaindatasetMPDS2016abstruct
+  mymaindatasetMPDS2016avaratt
+{txt}
+{com}. 
+. 
+. 
+. capture log close
+{smcl}
+{com}{sf}{ul off}

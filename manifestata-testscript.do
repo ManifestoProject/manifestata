@@ -1,5 +1,5 @@
 capture log close
-log using test_output.txt, replace text
+log using test_output.smcl, replace smcl
 set more off
 set linesize 255
 *** manifestata test script
