@@ -1,3 +1,6 @@
+log using test_output.txt, replace text
+set more off
+
 *** manifestata test script
 clear 
 capture log using "testlog", replace
@@ -93,4 +96,7 @@ mp_cite,core(MPDS2015a)
 mp_cite, corpus(20160205171117) /// I think we have not thought about how dev versions should be cited...
 
 
+exit, clear
+
+** end
 
