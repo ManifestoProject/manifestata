@@ -41,7 +41,7 @@ push_to_website:
    - cp stata.toc /srv/manifesto-project.wzb.eu/public/down/manifestata/
 
 stages:
-# - build
+- build
 - test
 #- push_to_github
 - deploy
