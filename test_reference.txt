@@ -1,12 +1,12 @@
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
       name:  <unnamed>
        log:  C:\Users\merz\Documents\manifestata3\test_output.txt
   log type:  text
- opened on:  12 Oct 2016, 12:10:00
+ opened on:  12 Oct 2016, 12:18:36
 
 . set more off
 
-. set linesize 80
+. set linesize 255
 
 . *** manifestata test script
 . clear 
@@ -67,10 +67,7 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 Connecting to Manifesto Project DB API...
 
 You are currently using core version MPDS2016a. Please cite as: 
-"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sve
-> n with Werner, Annika (2016): The Manifesto Data Collection. Manifesto Project
->  (MRG/CMP/MARPOR). Version 2016a. Berlin: Wissenschaftszentrum Berlin für Sozi
-> alforschung (WZB)"
+"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven with Werner, Annika (2016): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2016a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
 
 
 . list party date rile in 1/5
@@ -92,10 +89,7 @@ You are currently using core version MPDS2016a. Please cite as:
 Connecting to Manifesto Project DB API...
 
 You are currently using core version MPDS2014b. Please cite as: 
-"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika 
-> with Schultze, Henrike (2014): The Manifesto Data Collection. Manifesto Projec
-> t (MRG/CMP/MARPOR). Version 2014b. Berlin: Wissenschaftszentrum Berlin für Soz
-> ialforschung (WZB)"
+"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika with Schultze, Henrike (2014): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2014b. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
 
 
 . list party date rile in 1/5
@@ -117,10 +111,8 @@ You are currently using core version MPDS2014b. Please cite as:
 Connecting to Manifesto Project DB API...
 
 You are currently using core version MPDS2014a. Please cite as: 
-"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika 
-> with Lacewell, Onawa Promise / Schultze, Henrike (2014): The Manifesto Data Co
-> llection. Manifesto Project (MRG/CMP/MARPOR). Version 2014a. Berlin: Wissensch
-> aftszentrum Berlin für Sozialforschung (WZB)"
+"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika with Lacewell, Onawa Promise / Schultze, Henrike (2014): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2014a. Berlin: Wissenschaftszentrum Berlin 
+> für Sozialforschung (WZB)"
 
 
 . clear
@@ -130,10 +122,8 @@ You are currently using core version MPDS2014a. Please cite as:
 Connecting to Manifesto Project DB API...
 
 You are currently using core version MPDS2013a. Please cite as: 
-"Volkens, Andrea/Lehmann, Pola/Merz, Nicolas/Regel, Sven/Werner, Annika with Lac
-> ewell, Onawa Promise/Schultze, Henrike (2013): The Manifesto Data Collection. 
-> Manifesto Project (MRG/CMP/MARPOR). Version 2013a. Berlin: Wissenschaftszentru
-> m Berlin für Sozialforschung (WZB)
+"Volkens, Andrea/Lehmann, Pola/Merz, Nicolas/Regel, Sven/Werner, Annika with Lacewell, Onawa Promise/Schultze, Henrike (2013): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2013a. Berlin: Wissenschaftszentrum Berlin für Sozial
+> forschung (WZB)
 "
 
 
@@ -146,10 +136,8 @@ You are currently using core version MPDS2013a. Please cite as:
 Connecting to Manifesto Project DB API...
 
 You are currently using core version MPDS2013b. Please cite as: 
-"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika 
-> with Lacewell, Onawa Promise / Schultze, Henrike (2013): The Manifesto Data Co
-> llection. Manifesto Project (MRG/CMP/MARPOR). Version 2013b. Berlin: Wissensch
-> aftszentrum Berlin für Sozialforschung (WZB)
+"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika with Lacewell, Onawa Promise / Schultze, Henrike (2013): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2013b. Berlin: Wissenschaftszentrum Berlin 
+> für Sozialforschung (WZB)
 
 "
 
@@ -161,10 +149,7 @@ You are currently using core version MPDS2013b. Please cite as:
 Connecting to Manifesto Project DB API...
 
 You are currently using core version MPDS2014b. Please cite as: 
-"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika 
-> with Schultze, Henrike (2014): The Manifesto Data Collection. Manifesto Projec
-> t (MRG/CMP/MARPOR). Version 2014b. Berlin: Wissenschaftszentrum Berlin für Soz
-> ialforschung (WZB)"
+"Volkens, Andrea / Lehmann, Pola / Merz, Nicolas / Regel, Sven / Werner, Annika with Schultze, Henrike (2014): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2014b. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
 
 
 . 
@@ -189,377 +174,207 @@ You are currently using core version MPDS2014b. Please cite as:
 
 
 . * mp_corpusversions, dev
-. * commented, otherwise we would have to adopt this for every development versi
-> on of the corpus. 
+. * commented, otherwise we would have to adopt this for every development version of the corpus. 
 . 
 . 
 . *** mp_metadata
 . mp_metadata 41113_200909, version(2016-1)
 
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  party  date    language            source  has_eu_code  is_primary_doc  may_co
-> ntradict_core_dataset  manifesto_id  annotations
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  41113  200909  german              MARPOR  TRUE         TRUE            FALSE 
->                        41113_2009  true        
---------------------------------------------------------------------------------
-> --------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+  party  date    language            source  has_eu_code  is_primary_doc  may_contradict_core_dataset  manifesto_id  annotations
+----------------------------------------------------------------------------------------------------------------------------------
+  41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        41113_2009  true        
+----------------------------------------------------------------------------------------------------------------------------------
 
 . mp_metadata 41320_200509 41320_200909, version(2016-5)
 
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  party  date    language            source  has_eu_code  is_primary_doc  may_co
-> ntradict_core_dataset  manifesto_id  annotations
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  41320  200509  german              MARPOR  FALSE        TRUE            TRUE  
->                        41320_200509  true        
-  41320  200909  german              MARPOR  TRUE         TRUE            FALSE 
->                        41320_200909  true        
---------------------------------------------------------------------------------
-> --------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+  party  date    language            source  has_eu_code  is_primary_doc  may_contradict_core_dataset  manifesto_id  annotations
+----------------------------------------------------------------------------------------------------------------------------------
+  41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         41320_200509  true        
+  41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        41320_200909  true        
+----------------------------------------------------------------------------------------------------------------------------------
 
 . mp_metadata 41320_200509 41320_200909 
 
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  party  date    language            source  has_eu_code  is_primary_doc  may_co
-> ntradict_core_dataset  manifesto_id  annotations
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  41320  200509  german              MARPOR  FALSE        TRUE            TRUE  
->                        41320_2005  true        
-  41320  200909  german              MARPOR  TRUE         TRUE            FALSE 
->                        41320_2009  true        
---------------------------------------------------------------------------------
-> --------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+  party  date    language            source  has_eu_code  is_primary_doc  may_contradict_core_dataset  manifesto_id  annotations
+----------------------------------------------------------------------------------------------------------------------------------
+  41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         41320_2005  true        
+  41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        41320_2009  true        
+----------------------------------------------------------------------------------------------------------------------------------
 
 . 
 . mp_metadata if party==41111 | party == 41112 | party == 41113
 
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  party  date    language            source  has_eu_code  is_primary_doc  may_co
-> ntradict_core_dataset  manifesto_id  annotations
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  41111  198303  .                   CEMP    FALSE        TRUE            FALSE 
->                        41111_1983    false       
-  41111  198701  .                   CEMP    FALSE        TRUE            FALSE 
->                        41111_1987    false       
-  41112  199012  .                   CEMP    FALSE        TRUE            FALSE 
->                        41112_1990    false       
-  41113  199410  .                   CEMP    FALSE        TRUE            FALSE 
->                        41113_1994    false       
-  41113  199809  german              MARPOR  FALSE        TRUE            TRUE  
->                        41113_1998  true        
-  41113  200209  german              MARPOR  FALSE        TRUE            TRUE  
->                        41113_2002  true        
-  41113  200509  german              MARPOR  FALSE        TRUE            TRUE  
->                        41113_2005  true        
-  41113  200909  german              MARPOR  TRUE         TRUE            FALSE 
->                        41113_2009  true        
-  41113  201309  german              MARPOR  FALSE        TRUE            FALSE 
->                        41113_2013  true        
---------------------------------------------------------------------------------
-> --------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+  party  date    language            source  has_eu_code  is_primary_doc  may_contradict_core_dataset  manifesto_id  annotations
+----------------------------------------------------------------------------------------------------------------------------------
+  41111  198303  .                   CEMP    FALSE        TRUE            FALSE                        41111_1983    false       
+  41111  198701  .                   CEMP    FALSE        TRUE            FALSE                        41111_1987    false       
+  41112  199012  .                   CEMP    FALSE        TRUE            FALSE                        41112_1990    false       
+  41113  199410  .                   CEMP    FALSE        TRUE            FALSE                        41113_1994    false       
+  41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         41113_1998  true        
+  41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         41113_2002  true        
+  41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         41113_2005  true        
+  41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        41113_2009  true        
+  41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        41113_2013  true        
+----------------------------------------------------------------------------------------------------------------------------------
 
 . mp_metadata if datasetorigin==90
 
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  party  date    language            source  has_eu_code  is_primary_doc  may_co
-> ntradict_core_dataset  manifesto_id  annotations
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  22110  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22110_2012  true        
-  22220  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22220_2012  true        
-  22320  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22320_2012  true        
-  22330  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22330_2012  true        
-  22420  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22420_2012  true        
-  22521  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22521_2012  true        
-  22526  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22526_2012  true        
-  22722  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22722_2012  true        
-  22951  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22951_2012  true        
-  22952  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22952_2012  true        
-  22953  201209  dutch               MARPOR  FALSE        TRUE            FALSE 
->                        22953_2012  true        
-  34020  200709  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34020_2007  true        
-  34210  200709  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34210_2007  true        
-  34313  200709  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34313_2007  true        
-  34511  200709  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34511_2007  true        
-  34710  200709  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34710_2007  true        
-  34020  200910  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34020_2009  true        
-  34210  200910  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34210_2009  true        
-  34313  200910  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34313_2009  true        
-  34511  200910  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34511_2009  true        
-  34020  201205  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34020_201205  true        
-  34210  201205  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34210_201205  true        
-  34213  201205  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34213_201205  true        
-  34313  201205  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34313_201205  true        
-  34511  201205  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34511_201205  true        
-  34710  201205  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34710_201205  true        
-  34720  201205  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34720_201205  true        
-  34730  201205  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34730_201205  true        
-  34020  201206  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34020_201206  true        
-  34210  201206  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34210_201206  true        
-  34213  201206  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34213_201206  true        
-  34313  201206  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34313_201206  true        
-  34511  201206  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34511_201206  true        
-  34720  201206  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34720_201206  true        
-  34730  201206  greek               MARPOR  FALSE        TRUE            FALSE 
->                        34730_201206  true        
-  41113  201309  german              MARPOR  FALSE        TRUE            FALSE 
->                        41113_2013  true        
-  43530  200310  .                   CEMP    FALSE        TRUE            FALSE 
->                        43530_2003    false       
-  55110  200605  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55110_2006  true        
-  55321  200605  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55321_2006  true        
-  55322  200605  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55322_2006  true        
-  55422  200605  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55422_2006  true        
-  55430  200605  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55430_2006  true        
-  55711  200605  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55711_2006  true        
-  55110  201105  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55110_2011  true        
-  55321  201105  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55321_2011  true        
-  55322  201105  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55322_2011  true        
-  55422  201105  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55422_2011  true        
-  55430  201105  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55430_2011  true        
-  55711  201105  greek               MARPOR  FALSE        TRUE            FALSE 
->                        55711_2011  true        
-  76041  201205  bulgarian           MARPOR  FALSE        TRUE            FALSE 
->                        76041_2012  true        
-  76321  201205  finnish             MARPOR  FALSE        TRUE            FALSE 
->                        76321_2012  true        
-  76420  201205  armenian            MARPOR  FALSE        TRUE            FALSE 
->                        76420_2012  true        
-  76430  201205  armenian            MARPOR  FALSE        TRUE            FALSE 
->                        76430_2012  true        
-  76610  201205  armenian            MARPOR  FALSE        TRUE            FALSE 
->                        76610_2012  true        
-  76620  201205  armenian            MARPOR  FALSE        TRUE            FALSE 
->                        76620_2012  true        
-  86061  201404  hungarian           MARPOR  FALSE        TRUE            FALSE 
->                        86061_2014  true        
-  86110  201404  hungarian           MARPOR  FALSE        TRUE            FALSE 
->                        86110_2014  true        
-  86220  201404  hungarian           MARPOR  FALSE        TRUE            FALSE 
->                        86220_2014  true        
-  86221  201404  hungarian           MARPOR  FALSE        TRUE            FALSE 
->                        86221_2014  true        
-  86340  201404  hungarian           MARPOR  FALSE        TRUE            FALSE 
->                        86340_2014  true        
-  86710  201404  .                   MARPOR  FALSE        TRUE            FALSE 
->                        86710_2014  true        
-  89710  200209  macedonian          MARPOR  FALSE        TRUE            TRUE  
->                        89710_2002  true        
-  89031  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE 
->                        89031_2014  true        
-  89221  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE 
->                        89221_2014  true        
-  89710  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE 
->                        89710_2014  true        
-  89910  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE 
->                        89910_2014  true        
-  89930  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE 
->                        89930_2014  true        
---------------------------------------------------------------------------------
-> --------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+  party  date    language            source  has_eu_code  is_primary_doc  may_contradict_core_dataset  manifesto_id  annotations
+----------------------------------------------------------------------------------------------------------------------------------
+  22110  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22110_2012  true        
+  22220  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22220_2012  true        
+  22320  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22320_2012  true        
+  22330  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22330_2012  true        
+  22420  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22420_2012  true        
+  22521  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22521_2012  true        
+  22526  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22526_2012  true        
+  22722  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22722_2012  true        
+  22951  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22951_2012  true        
+  22952  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22952_2012  true        
+  22953  201209  dutch               MARPOR  FALSE        TRUE            FALSE                        22953_2012  true        
+  34020  200709  greek               MARPOR  FALSE        TRUE            FALSE                        34020_2007  true        
+  34210  200709  greek               MARPOR  FALSE        TRUE            FALSE                        34210_2007  true        
+  34313  200709  greek               MARPOR  FALSE        TRUE            FALSE                        34313_2007  true        
+  34511  200709  greek               MARPOR  FALSE        TRUE            FALSE                        34511_2007  true        
+  34710  200709  greek               MARPOR  FALSE        TRUE            FALSE                        34710_2007  true        
+  34020  200910  greek               MARPOR  FALSE        TRUE            FALSE                        34020_2009  true        
+  34210  200910  greek               MARPOR  FALSE        TRUE            FALSE                        34210_2009  true        
+  34313  200910  greek               MARPOR  FALSE        TRUE            FALSE                        34313_2009  true        
+  34511  200910  greek               MARPOR  FALSE        TRUE            FALSE                        34511_2009  true        
+  34020  201205  greek               MARPOR  FALSE        TRUE            FALSE                        34020_201205  true        
+  34210  201205  greek               MARPOR  FALSE        TRUE            FALSE                        34210_201205  true        
+  34213  201205  greek               MARPOR  FALSE        TRUE            FALSE                        34213_201205  true        
+  34313  201205  greek               MARPOR  FALSE        TRUE            FALSE                        34313_201205  true        
+  34511  201205  greek               MARPOR  FALSE        TRUE            FALSE                        34511_201205  true        
+  34710  201205  greek               MARPOR  FALSE        TRUE            FALSE                        34710_201205  true        
+  34720  201205  greek               MARPOR  FALSE        TRUE            FALSE                        34720_201205  true        
+  34730  201205  greek               MARPOR  FALSE        TRUE            FALSE                        34730_201205  true        
+  34020  201206  greek               MARPOR  FALSE        TRUE            FALSE                        34020_201206  true        
+  34210  201206  greek               MARPOR  FALSE        TRUE            FALSE                        34210_201206  true        
+  34213  201206  greek               MARPOR  FALSE        TRUE            FALSE                        34213_201206  true        
+  34313  201206  greek               MARPOR  FALSE        TRUE            FALSE                        34313_201206  true        
+  34511  201206  greek               MARPOR  FALSE        TRUE            FALSE                        34511_201206  true        
+  34720  201206  greek               MARPOR  FALSE        TRUE            FALSE                        34720_201206  true        
+  34730  201206  greek               MARPOR  FALSE        TRUE            FALSE                        34730_201206  true        
+  41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        41113_2013  true        
+  43530  200310  .                   CEMP    FALSE        TRUE            FALSE                        43530_2003    false       
+  55110  200605  greek               MARPOR  FALSE        TRUE            FALSE                        55110_2006  true        
+  55321  200605  greek               MARPOR  FALSE        TRUE            FALSE                        55321_2006  true        
+  55322  200605  greek               MARPOR  FALSE        TRUE            FALSE                        55322_2006  true        
+  55422  200605  greek               MARPOR  FALSE        TRUE            FALSE                        55422_2006  true        
+  55430  200605  greek               MARPOR  FALSE        TRUE            FALSE                        55430_2006  true        
+  55711  200605  greek               MARPOR  FALSE        TRUE            FALSE                        55711_2006  true        
+  55110  201105  greek               MARPOR  FALSE        TRUE            FALSE                        55110_2011  true        
+  55321  201105  greek               MARPOR  FALSE        TRUE            FALSE                        55321_2011  true        
+  55322  201105  greek               MARPOR  FALSE        TRUE            FALSE                        55322_2011  true        
+  55422  201105  greek               MARPOR  FALSE        TRUE            FALSE                        55422_2011  true        
+  55430  201105  greek               MARPOR  FALSE        TRUE            FALSE                        55430_2011  true        
+  55711  201105  greek               MARPOR  FALSE        TRUE            FALSE                        55711_2011  true        
+  76041  201205  bulgarian           MARPOR  FALSE        TRUE            FALSE                        76041_2012  true        
+  76321  201205  finnish             MARPOR  FALSE        TRUE            FALSE                        76321_2012  true        
+  76420  201205  armenian            MARPOR  FALSE        TRUE            FALSE                        76420_2012  true        
+  76430  201205  armenian            MARPOR  FALSE        TRUE            FALSE                        76430_2012  true        
+  76610  201205  armenian            MARPOR  FALSE        TRUE            FALSE                        76610_2012  true        
+  76620  201205  armenian            MARPOR  FALSE        TRUE            FALSE                        76620_2012  true        
+  86061  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        86061_2014  true        
+  86110  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        86110_2014  true        
+  86220  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        86220_2014  true        
+  86221  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        86221_2014  true        
+  86340  201404  hungarian           MARPOR  FALSE        TRUE            FALSE                        86340_2014  true        
+  86710  201404  .                   MARPOR  FALSE        TRUE            FALSE                        86710_2014  true        
+  89710  200209  macedonian          MARPOR  FALSE        TRUE            TRUE                         89710_2002  true        
+  89031  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        89031_2014  true        
+  89221  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        89221_2014  true        
+  89710  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        89710_2014  true        
+  89910  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        89910_2014  true        
+  89930  201404  bulgarian           MARPOR  FALSE        TRUE            FALSE                        89930_2014  true        
+----------------------------------------------------------------------------------------------------------------------------------
 
 . 
 . *** save metadata
 . mp_metadata 41320_200509, saving(greens1, replace)
 
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  party  date    language            source  has_eu_code  is_primary_doc  may_co
-> ntradict_core_dataset  manifesto_id  annotations
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  41320  200509  german              MARPOR  FALSE        TRUE            TRUE  
->                        41320_2005  true        
---------------------------------------------------------------------------------
-> --------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+  party  date    language            source  has_eu_code  is_primary_doc  may_contradict_core_dataset  manifesto_id  annotations
+----------------------------------------------------------------------------------------------------------------------------------
+  41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         41320_2005  true        
+----------------------------------------------------------------------------------------------------------------------------------
 file greens1.dta saved
 
 . mp_metadata if party==41111, saving("greens", replace) 
 
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  party  date    language            source  has_eu_code  is_primary_doc  may_co
-> ntradict_core_dataset  manifesto_id  annotations
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  41111  198303  .                   CEMP    FALSE        TRUE            FALSE 
->                        41111_1983    false       
-  41111  198701  .                   CEMP    FALSE        TRUE            FALSE 
->                        41111_1987    false       
---------------------------------------------------------------------------------
-> --------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+  party  date    language            source  has_eu_code  is_primary_doc  may_contradict_core_dataset  manifesto_id  annotations
+----------------------------------------------------------------------------------------------------------------------------------
+  41111  198303  .                   CEMP    FALSE        TRUE            FALSE                        41111_1983    false       
+  41111  198701  .                   CEMP    FALSE        TRUE            FALSE                        41111_1987    false       
+----------------------------------------------------------------------------------------------------------------------------------
 file greens.dta saved
 
 . mp_metadata if countryname == "France", saving(france, replace)
 
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  party  date    language            source  has_eu_code  is_primary_doc  may_co
-> ntradict_core_dataset  manifesto_id  annotations
---------------------------------------------------------------------------------
-> --------------------------------------------------
-  31220  195811  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1958    false       
-  31521  195811  .                   CEMP    FALSE        TRUE            FALSE 
->                        31521_1958    false       
-  31220  196211  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1962    false       
-  31320  196211  .                   CEMP    FALSE        TRUE            FALSE 
->                        31320_1962    false       
-  31421  196211  .                   CEMP    FALSE        TRUE            FALSE 
->                        31421_1962    false       
-  31521  196211  .                   CEMP    FALSE        TRUE            FALSE 
->                        31521_1962    false       
-  31621  196211  .                   CEMP    FALSE        TRUE            FALSE 
->                        31621_1962    false       
-  31622  196211  .                   CEMP    FALSE        TRUE            FALSE 
->                        31622_1962    false       
-  31220  196703  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1967    false       
-  31522  196703  .                   CEMP    FALSE        TRUE            FALSE 
->                        31522_1967    false       
-  31621  196703  .                   CEMP    FALSE        TRUE            FALSE 
->                        31621_1967    false       
-  31320  196806  .                   CEMP    FALSE        TRUE            FALSE 
->                        31320_1968    false       
-  31522  196806  .                   CEMP    FALSE        TRUE            FALSE 
->                        31522_1968    false       
-  31621  196806  .                   CEMP    FALSE        TRUE            FALSE 
->                        31621_1968    false       
-  31220  197303  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1973    false       
-  31621  197303  .                   CEMP    FALSE        TRUE            FALSE 
->                        31621_1973    false       
-  31220  197803  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1978    false       
-  31220  198106  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1981    false       
-  31320  198106  .                   CEMP    FALSE        TRUE            FALSE 
->                        31320_1981    false       
-  31621  198106  .                   CEMP    FALSE        TRUE            FALSE 
->                        31621_1981    false       
-  31622  198106  .                   CEMP    FALSE        TRUE            FALSE 
->                        31622_1981    false       
-  31220  198603  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1986    false       
-  31320  198603  .                   CEMP    FALSE        TRUE            FALSE 
->                        31320_1986    false       
-  31621  198603  .                   CEMP    FALSE        TRUE            FALSE 
->                        31621_1986    false       
-  31220  198806  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1988    false       
-  31320  198806  .                   CEMP    FALSE        TRUE            FALSE 
->                        31320_1988    false       
-  31621  198806  .                   CEMP    FALSE        TRUE            FALSE 
->                        31621_1988    false       
-  31110  199303  .                   CEMP    FALSE        TRUE            FALSE 
->                        31110_1993    false       
-  31320  199303  .                   CEMP    FALSE        TRUE            FALSE 
->                        31320_1993    false       
-  31624  199303  .                   CEMP    FALSE        TRUE            FALSE 
->                        31624_1993    false       
-  31625  199303  .                   CEMP    FALSE        TRUE            FALSE 
->                        31625_1993    false       
-  31110  199705  .                   CEMP    FALSE        TRUE            FALSE 
->                        31110_1997    false       
-  31111  199705  .                   CEMP    FALSE        TRUE            FALSE 
->                        31111_1997    false       
-  31220  199705  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_1997    false       
-  31320  199705  .                   CEMP    FALSE        TRUE            FALSE 
->                        31320_1997    false       
-  31624  199705  .                   CEMP    FALSE        TRUE            FALSE 
->                        31624_1997    false       
-  31720  199705  .                   CEMP    FALSE        TRUE            FALSE 
->                        31720_1997    false       
-  31110  200206  .                   CEMP    FALSE        TRUE            FALSE 
->                        31110_2002    false       
-  31220  200206  .                   CEMP    FALSE        TRUE            FALSE 
->                        31220_2002    false       
-  31320  200206  .                   CEMP    FALSE        TRUE            FALSE 
->                        31320_2002    false       
-  31624  200206  .                   CEMP    FALSE        TRUE            FALSE 
->                        31624_2002    false       
-  31626  200206  .                   CEMP    FALSE        TRUE            FALSE 
->                        31626_2002    false       
-  31720  200206  .                   CEMP    FALSE        TRUE            FALSE 
->                        31720_2002    false       
-  31021  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31021_2012  true        
-  31110  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31110_2012  true        
-  31230  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31230_2012  true        
-  31320  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31320_2012  true        
-  31421  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31421_2012  true        
-  31624  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31624_2012  true        
-  31626  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31626_2012  true        
-  31630  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31630_2012  true        
-  31631  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31631_2012  true        
-  31720  201206  french              MARPOR  FALSE        TRUE            FALSE 
->                        31720_2012  true        
---------------------------------------------------------------------------------
-> --------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+  party  date    language            source  has_eu_code  is_primary_doc  may_contradict_core_dataset  manifesto_id  annotations
+----------------------------------------------------------------------------------------------------------------------------------
+  31220  195811  .                   CEMP    FALSE        TRUE            FALSE                        31220_1958    false       
+  31521  195811  .                   CEMP    FALSE        TRUE            FALSE                        31521_1958    false       
+  31220  196211  .                   CEMP    FALSE        TRUE            FALSE                        31220_1962    false       
+  31320  196211  .                   CEMP    FALSE        TRUE            FALSE                        31320_1962    false       
+  31421  196211  .                   CEMP    FALSE        TRUE            FALSE                        31421_1962    false       
+  31521  196211  .                   CEMP    FALSE        TRUE            FALSE                        31521_1962    false       
+  31621  196211  .                   CEMP    FALSE        TRUE            FALSE                        31621_1962    false       
+  31622  196211  .                   CEMP    FALSE        TRUE            FALSE                        31622_1962    false       
+  31220  196703  .                   CEMP    FALSE        TRUE            FALSE                        31220_1967    false       
+  31522  196703  .                   CEMP    FALSE        TRUE            FALSE                        31522_1967    false       
+  31621  196703  .                   CEMP    FALSE        TRUE            FALSE                        31621_1967    false       
+  31320  196806  .                   CEMP    FALSE        TRUE            FALSE                        31320_1968    false       
+  31522  196806  .                   CEMP    FALSE        TRUE            FALSE                        31522_1968    false       
+  31621  196806  .                   CEMP    FALSE        TRUE            FALSE                        31621_1968    false       
+  31220  197303  .                   CEMP    FALSE        TRUE            FALSE                        31220_1973    false       
+  31621  197303  .                   CEMP    FALSE        TRUE            FALSE                        31621_1973    false       
+  31220  197803  .                   CEMP    FALSE        TRUE            FALSE                        31220_1978    false       
+  31220  198106  .                   CEMP    FALSE        TRUE            FALSE                        31220_1981    false       
+  31320  198106  .                   CEMP    FALSE        TRUE            FALSE                        31320_1981    false       
+  31621  198106  .                   CEMP    FALSE        TRUE            FALSE                        31621_1981    false       
+  31622  198106  .                   CEMP    FALSE        TRUE            FALSE                        31622_1981    false       
+  31220  198603  .                   CEMP    FALSE        TRUE            FALSE                        31220_1986    false       
+  31320  198603  .                   CEMP    FALSE        TRUE            FALSE                        31320_1986    false       
+  31621  198603  .                   CEMP    FALSE        TRUE            FALSE                        31621_1986    false       
+  31220  198806  .                   CEMP    FALSE        TRUE            FALSE                        31220_1988    false       
+  31320  198806  .                   CEMP    FALSE        TRUE            FALSE                        31320_1988    false       
+  31621  198806  .                   CEMP    FALSE        TRUE            FALSE                        31621_1988    false       
+  31110  199303  .                   CEMP    FALSE        TRUE            FALSE                        31110_1993    false       
+  31320  199303  .                   CEMP    FALSE        TRUE            FALSE                        31320_1993    false       
+  31624  199303  .                   CEMP    FALSE        TRUE            FALSE                        31624_1993    false       
+  31625  199303  .                   CEMP    FALSE        TRUE            FALSE                        31625_1993    false       
+  31110  199705  .                   CEMP    FALSE        TRUE            FALSE                        31110_1997    false       
+  31111  199705  .                   CEMP    FALSE        TRUE            FALSE                        31111_1997    false       
+  31220  199705  .                   CEMP    FALSE        TRUE            FALSE                        31220_1997    false       
+  31320  199705  .                   CEMP    FALSE        TRUE            FALSE                        31320_1997    false       
+  31624  199705  .                   CEMP    FALSE        TRUE            FALSE                        31624_1997    false       
+  31720  199705  .                   CEMP    FALSE        TRUE            FALSE                        31720_1997    false       
+  31110  200206  .                   CEMP    FALSE        TRUE            FALSE                        31110_2002    false       
+  31220  200206  .                   CEMP    FALSE        TRUE            FALSE                        31220_2002    false       
+  31320  200206  .                   CEMP    FALSE        TRUE            FALSE                        31320_2002    false       
+  31624  200206  .                   CEMP    FALSE        TRUE            FALSE                        31624_2002    false       
+  31626  200206  .                   CEMP    FALSE        TRUE            FALSE                        31626_2002    false       
+  31720  200206  .                   CEMP    FALSE        TRUE            FALSE                        31720_2002    false       
+  31021  201206  french              MARPOR  FALSE        TRUE            FALSE                        31021_2012  true        
+  31110  201206  french              MARPOR  FALSE        TRUE            FALSE                        31110_2012  true        
+  31230  201206  french              MARPOR  FALSE        TRUE            FALSE                        31230_2012  true        
+  31320  201206  french              MARPOR  FALSE        TRUE            FALSE                        31320_2012  true        
+  31421  201206  french              MARPOR  FALSE        TRUE            FALSE                        31421_2012  true        
+  31624  201206  french              MARPOR  FALSE        TRUE            FALSE                        31624_2012  true        
+  31626  201206  french              MARPOR  FALSE        TRUE            FALSE                        31626_2012  true        
+  31630  201206  french              MARPOR  FALSE        TRUE            FALSE                        31630_2012  true        
+  31631  201206  french              MARPOR  FALSE        TRUE            FALSE                        31631_2012  true        
+  31720  201206  french              MARPOR  FALSE        TRUE            FALSE                        31720_2012  true        
+----------------------------------------------------------------------------------------------------------------------------------
 file france.dta saved
 
 . 
@@ -571,9 +386,7 @@ Connecting to Manifesto Project DB API...
 Corpus data retrieved from server for key(s): 41320_200909        
 
 You are currently using corpus version 2016-3. Please cite as: 
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika
->  (2016): Manifesto Corpus. Version: 2016-3. Berlin: WZB Berlin Social Science 
-> Center."
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-3. Berlin: WZB Berlin Social Science Center."
 
 
 
@@ -585,9 +398,7 @@ Accessing data cache...
 Corpus data retrieved from cache for key(s): 41320_200909        
 
 You are currently using corpus version 2016-3. Please cite as: 
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika
->  (2016): Manifesto Corpus. Version: 2016-3. Berlin: WZB Berlin Social Science 
-> Center."
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-3. Berlin: WZB Berlin Social Science Center."
 
 
 
@@ -602,9 +413,7 @@ Connecting to Manifesto Project DB API...
 Corpus data retrieved from server for key(s): 41320_200909        
 
 You are currently using corpus version 2015-4. Please cite as: 
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika
->  (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science 
-> Center."
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science Center."
 
 
 
@@ -614,24 +423,14 @@ You are currently using corpus version 2015-4. Please cite as:
 Connecting to Manifesto Project DB API...
 
 Accessing data cache...
-Corpus data retrieved from server for key(s): 41113_199809 41221_199809 41320_19
-> 9809 41420_199809 41521_199809 41113_200209 41221_200209 41320_200209 41420_20
-> 0209 41521_200209 41113_200509 41320_200509 41113_200909 41223_200909 41420_20
-> 0909 41521_200909 41113_201309 41223_201309 41320_201309 41420_201309 41521_20
-> 1309 41952_201309 41953_201309 
+Corpus data retrieved from server for key(s): 41113_199809 41221_199809 41320_199809 41420_199809 41521_199809 41113_200209 41221_200209 41320_200209 41420_200209 41521_200209 41113_200509 41320_200509 41113_200909 41223_200909 41420_200909 41521_200909 4
+> 1113_201309 41223_201309 41320_201309 41420_201309 41521_201309 41952_201309 41953_201309 
 Corpus data retrieved from cache for key(s): 41320_200909        
-No annotated corpus data found on server for key(s): 41320_196109 41420_196109 4
-> 1521_196109 41320_196509 41420_196509 41521_196509 41320_196909 41420_196909 4
-> 1521_196909 41320_197211 41521_197211 41320_197610 41420_197610 41521_197610 4
-> 1320_198010 41420_198010 41521_198010 41111_198303 41320_198303 41420_198303 4
-> 1521_198303 41111_198701 41320_198701 41420_198701 41521_198701 41112_199012 4
-> 1221_199012 41320_199012 41420_199012 41521_199012 41113_199410 41221_199410 4
-> 1320_199410 41420_199410 41521_199410 
+No annotated corpus data found on server for key(s): 41320_196109 41420_196109 41521_196109 41320_196509 41420_196509 41521_196509 41320_196909 41420_196909 41521_196909 41320_197211 41521_197211 41320_197610 41420_197610 41521_197610 41320_198010 41420_1
+> 98010 41521_198010 41111_198303 41320_198303 41420_198303 41521_198303 41111_198701 41320_198701 41420_198701 41521_198701 41112_199012 41221_199012 41320_199012 41420_199012 41521_199012 41113_199410 41221_199410 41320_199410 41420_199410 41521_199410 
 
 You are currently using corpus version 2015-4. Please cite as: 
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika
->  (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science 
-> Center."
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science Center."
 
 
 
@@ -706,25 +505,16 @@ You are currently using corpus version 2015-4. Please cite as:
 . *** mp cite
 . mp_cite,core(MPDS2016a) corpus(2016-2)
 You are currently using corpus version 2016-2. Please cite as: 
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika
->  (2016): Manifesto Corpus. Version: 2016-2. Berlin: WZB Berlin Social Science 
-> Center."
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-2. Berlin: WZB Berlin Social Science Center."
 
 You are currently using core version MPDS2016a. Please cite as: 
-"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sve
-> n with Werner, Annika (2016): The Manifesto Data Collection. Manifesto Project
->  (MRG/CMP/MARPOR). Version 2016a. Berlin: Wissenschaftszentrum Berlin für Sozi
-> alforschung (WZB)"
+"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven with Werner, Annika (2016): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2016a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
 
 . mp_cite,core(MPDS2015a) 
 You are currently using core version MPDS2015a. Please cite as: 
-"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sve
-> n / Werner, Annika (2015): The Manifesto Data Collection. Manifesto Project (M
-> RG/CMP/MARPOR). Version 2015a. Berlin: Wissenschaftszentrum Berlin für Sozialf
-> orschung (WZB)"
+"Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2015): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2015a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
 
-. *mp_cite, corpus(20160205171117) /// I think we have not thought about how dev
->  versions should be cited...
+. *mp_cite, corpus(20160205171117) /// I think we have not thought about how dev versions should be cited...
 > 
 . 
 . *** test caching functions
@@ -737,23 +527,13 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 . mp_corpus if country == 41, clear
 
 Connecting to Manifesto Project DB API...
-Corpus data retrieved from server for key(s): 41113_199809 41221_199809 41320_19
-> 9809 41420_199809 41521_199809 41113_200209 41221_200209 41320_200209 41420_20
-> 0209 41521_200209 41113_200509 41320_200509 41113_200909 41223_200909 41320_20
-> 0909 41420_200909 41521_200909 41113_201309 41223_201309 41320_201309 41420_20
-> 1309 41521_201309 41952_201309 41953_201309 
-No annotated corpus data found on server for key(s): 41320_196109 41420_196109 4
-> 1521_196109 41320_196509 41420_196509 41521_196509 41320_196909 41420_196909 4
-> 1521_196909 41320_197211 41521_197211 41320_197610 41420_197610 41521_197610 4
-> 1320_198010 41420_198010 41521_198010 41111_198303 41320_198303 41420_198303 4
-> 1521_198303 41111_198701 41320_198701 41420_198701 41521_198701 41112_199012 4
-> 1221_199012 41320_199012 41420_199012 41521_199012 41113_199410 41221_199410 4
-> 1320_199410 41420_199410 41521_199410 
+Corpus data retrieved from server for key(s): 41113_199809 41221_199809 41320_199809 41420_199809 41521_199809 41113_200209 41221_200209 41320_200209 41420_200209 41521_200209 41113_200509 41320_200509 41113_200909 41223_200909 41320_200909 41420_200909 4
+> 1521_200909 41113_201309 41223_201309 41320_201309 41420_201309 41521_201309 41952_201309 41953_201309 
+No annotated corpus data found on server for key(s): 41320_196109 41420_196109 41521_196109 41320_196509 41420_196509 41521_196509 41320_196909 41420_196909 41521_196909 41320_197211 41521_197211 41320_197610 41420_197610 41521_197610 41320_198010 41420_1
+> 98010 41521_198010 41111_198303 41320_198303 41420_198303 41521_198303 41111_198701 41320_198701 41420_198701 41521_198701 41112_199012 41221_199012 41320_199012 41420_199012 41521_199012 41113_199410 41221_199410 41320_199410 41420_199410 41521_199410 
 
 You are currently using corpus version 2015-4. Please cite as: 
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika
->  (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science 
-> Center."
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2015): Manifesto Corpus. Version: 2015-4. Berlin: WZB Berlin Social Science Center."
 
 
 

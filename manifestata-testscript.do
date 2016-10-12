@@ -1,7 +1,7 @@
 capture log close
 log using test_output.txt, replace text
 set more off
-set linesize 80
+set linesize 255
 *** manifestata test script
 clear 
 
