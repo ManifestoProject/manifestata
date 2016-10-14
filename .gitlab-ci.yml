@@ -1,4 +1,4 @@
- compile_mlib:
+compile_mlib:
   stage: build
   script:
    - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp
