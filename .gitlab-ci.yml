@@ -38,6 +38,7 @@ push_to_website:
    - rm -f /srv/manifesto-project.wzb.eu/public/down/manifestata/*
    - cat manifestata.pkg | grep ^f | sed 's/^f\s//' | xargs cp -t /srv/manifesto-project.wzb.eu/public/down/manifestata/
    - cp stata.toc /srv/manifesto-project.wzb.eu/public/down/manifestata/
+   - cp manifestata.pkg /srv/manifesto-project.wzb.eu/public/down/manifestata/
 
 stages:
 - build
