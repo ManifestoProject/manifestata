@@ -2,7 +2,6 @@ compile_mlib:
   stage: build
   script:
    - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp
-   - ls
   artifacts:
     paths:
     - lmanifestata.mlib
@@ -11,11 +10,12 @@ test_script:
   stage: test
   before_script:
    - function normalize_test_output { cat $1 | sed '/log/d' | sed '/API Key/d' | sed '/opened on/d'; }
+  dependencies:
+    - compile_mlib
   script:
    - echo $MANIFESTO_APIKEY > manifesto_apikey.txt
    - printf "ado uninstall manifestata\n" | /opt/stata14/stata-mp > /dev/null
    - if [ $(echo "ado" | /opt/stata14/stata-mp  | grep manifestata | wc -l) -ne 0 ]; then exit 1; fi;
-   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp > /dev/null
    - printf "net from \"$(pwd)\" \n net install manifestata \n" | /opt/stata14/stata-mp > /dev/null
 #  - STATA add relevant files to ado path or net install from somewhere
    - printf "do manifestata-testscript.do \n" | /opt/stata14/stata-mp  > /dev/null ## writes to log file
@@ -34,7 +34,6 @@ push_to_website:
    - deploy
   stage: deploy
   script:
-   - printf "do lmanifestata.do \n" | /opt/stata14/stata-mp > /dev/null
    - 'sed -i "/Distribution-Date.*/c\d Distribution-Date: $(date +%Y%m%d)" manifestata.pkg'
    - rm -f /srv/manifesto-project.wzb.eu/public/down/manifestata/*
    - cat manifestata.pkg | grep ^f | sed 's/^f\s//' | xargs cp -t /srv/manifesto-project.wzb.eu/public/down/manifestata/
