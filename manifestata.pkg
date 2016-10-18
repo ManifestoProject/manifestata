@@ -39,12 +39,17 @@ f mp_setapikey.sthlp
 f mp_setcorpusversion.sthlp
 f mp_view_originals.sthlp
 f mp_cite.ado
+f mp_clearcache.ado
 f mp_coreversions.ado
 f mp_corpus.ado
 f mp_corpusversions.ado
+f mp_dircache.ado
 f mp_maindataset.ado
 f mp_metadata.ado
+f mp_opencache.ado
+f mp_savecache.ado
 f mp_setapikey.ado
+f mp_setcorpusversion.ado
 f mp_view_originals.ado
 
 
