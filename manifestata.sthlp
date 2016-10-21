@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 0.4.0 October 05th 2016}{...}
+{* *! version 0.4.0 October 21th 2016}{...}
 {cmd: help manifestata}
 {hline}
 
@@ -12,15 +12,22 @@
 {title:Description}
 
 {pstd}
-This is a description. This is a description. This is a description.
-This is a description. This is a description. This is a description.
+manifestata provides access to data and documents of the Manifesto Project. 
+The Manifesto Project analyses parties’ election programs in order to study parties’ policy preferences.
+manifestata connects to the Manifesto API which distributes the Manifesto Project's Main Dataset and the Manifesto Corpus.
+Check out the Manifesto Project's {browse "https://manifesto-project.wzb.eu/":website} for more information 
+on data collection and coding and to generate an API-key. 
+
+{pstd}
+An API key is required to be able to use manifestata. In order to get one, create a 
+profile on the Manifesto Project's website, go to your profile page, and generate an API-key.
 
 
 {title:General Overview}
 
 {col 5}{help manifestata##1 :Commands for controlling the API key}
-{col 5}{help manifestata##2 :Commands for accessing the MARPOR core data set}
-{col 5}{help manifestata##3 :Commands for accessing the MARPOR corpus data set}
+{col 5}{help manifestata##2 :Commands for accessing the Manifesto Project Main Dataset}
+{col 5}{help manifestata##3 :Commands for accessing the Manifesto Corpus}
 {col 5}{help manifestata##4 :Commands for controlling the local cache}
 {col 5}{help manifestata##5 :Miscellaneous commands}
 {col 5}{help manifestata##6 :Exemplary workflow}
@@ -36,9 +43,9 @@ This is a description. This is a description. This is a description.
 {pstd}{cmd:mp_setapikey} using {it:{help filename}.txt}{cmd:} [{cmd:,}  {cmdab:api:key(}{it:string}{cmd:)}]
 
 {col 5}{title:Description} 
-{pstd}If you do not have an API key for the Manifesto Documents Database, you can create one via your
+{pstd}If you do not have an API key for the Manifesto API, you can create one via your
 profile page on {browse "https://manifesto-project.wzb.eu"}. If you do not have an account, you can
-register on the webpage.
+register for free on the webpage.
 
 {col 5}{title:Options} 
 {pstd}{cmdab:apikey(}{it:string}{cmd:)} specifies the API key to use for this command.
@@ -50,9 +57,9 @@ register on the webpage.
 {col 5}{cmd:. mp_setapikey, apikey({it:myapikey1234})} 
 
  {marker 2}  
-   {c TLC}{hline 49}{c TRC}
-{hline 3}{c RT}{it: Commands for accessing the MARPOR core data set }{c LT}{hline}
-   {c BLC}{hline 49}{c BRC}
+   {c TLC}{hline 58}{c TRC}
+{hline 3}{c RT}{it: Commands for accessing the Manifesto Project Main Dataset}{c LT}{hline}
+   {c BLC}{hline 58}{c BRC}
  
 {cmd:{dlgtab:mp_coreversions}}
 
@@ -100,9 +107,9 @@ Use mp_coreversions for a list of available versions. If not specified, the most
 {col 5}{cmd:. mp_maindataset, version(MPDS2014b) nocache}
 
 {marker 3}
-   {c TLC}{hline 51}{c TRC}
-{hline 3}{c RT}{it: Commands for accessing the MARPOR corpus data set }{c LT}{hline}
-   {c BLC}{hline 51}{c BRC}
+   {c TLC}{hline 45}{c TRC}
+{hline 3}{c RT}{it: Commands for accessing the Manifesto Corpus }{c LT}{hline}
+   {c BLC}{hline 45}{c BRC}
    
 {cmd:{dlgtab:mp_corpusversions}}
 
@@ -382,3 +389,20 @@ If available, they can be viewed via the function mp_view_originals, which takes
 
 {p 4 4 2}
 The original documents are shown in you system's web browser. All URLs opened by this function refer only to the Manifesto Project's Website.
+
+{title:Author and Citation}
+
+{col 5} Alejandro Ecker, University of Mannheim, alejandro.ecker@mzes.uni-mannheim.de (author, creator)
+{col 5} Nicolas Merz, WZB Berlin Social Science Center, {browse "mailto:nicolas.merz@wzb.eu":nicolas.merz@wzb.eu} (maintainer, contributor)
+{col 5} Jirka Lewandowski, WZB Berlin Social Science Center, jirka.lewandowski@wzb.eu (contributor)
+{col 5} Sven Regel, WZB Berlin Social Science Center, sven.regel@wzb.eu (contributor)
+
+{pstd}
+When using the package please cite as:
+
+{pstd}
+Ecker, Alejandro / Merz, Nicolas / Lewandowski, Jirka / Regel, Sven (2016): manifestata. 
+A stata package to access the Manifesto Project's API. {browse "https://manifesto-project.wzb.eu/manifestata":https://manifesto-project.wzb.eu/manifestata }
+
+{pstd}
+When using the Manifesto Project Main dataset and the Manifesto Corpus, please use the function mp_cite to get the correct citation.

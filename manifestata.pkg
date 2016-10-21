@@ -1,18 +1,28 @@
 v 0.1
 
 d manifestata. A stata package to access the Manifesto Project's API.
-d Authors:
-d  
-d Version: 0.1 
+d
+d Description:
+d manifestata provides access to data and documents of the Manifesto Project. 
+d The Manifesto Project analyses parties’ election programs in order to study 
+d parties’ policy preferences. manifestata connects to the Manifesto API which 
+d distributes the Manifesto Project's Main Dataset and the Manifesto Corpus.
+d Check out the Manifesto Project's website (https://manifesto-project.wzb.eu/) 
+d for more information on data collection and coding and to generate an API-key. 
 d 
 d Requires Stata 14
-d 
-d Description:
-d The Manifesto Project (https://manifesto-project.wzb.eu) collects and analyses election programmes 
-d in over 50 countries and since 1945 to measure the political preferences of parties. 
+d
+d Authors:
+d Alejandro Ecker, University of Mannheim, alejandro.ecker@mzes.uni-mannheim.de (author, creator)
+d Nicolas Merz, WZB Berlin Social Science Center, nicolas.merz@wzb.eu (maintainer, contributor)
+d Jirka Lewandowski, WZB Berlin Social Science Center, jirka.lewandowski@wzb.eu (contributor)
+d Sven Regel, WZB Berlin Social Science Center, sven.regel@wzb.eu (contributor)
 d 
 d When using please cite as:
-d XXX (2016): manifestata. A stata package to access the Manifesto Project's API.
+d Ecker, Alejandro / Merz, Nicolas / Lewandowski, Jirka / Regel, Sven (2016): manifestata. 
+d A stata package to access the Manifesto Project's API. https://manifesto-project.wzb.eu/manifestata
+d
+d Version: 0.1 
 d
 d Distribution-Date: 20160929
 d
