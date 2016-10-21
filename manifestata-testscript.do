@@ -4,7 +4,7 @@ set more off
 set linesize 255
 
 *** check functions ***
-	
+	mp_clearcache
 	* check setapikey *
 	capture noisily mp_setapikey, api
 	* -> OK: error -> option api incorrectly specified
@@ -197,7 +197,8 @@ set linesize 255
 	mp_setapikey using manifesto_apikey.txt	
 	foreach version in 2016-4 2016-3 2016-2 2016-1 2015-5 2015-4 2015-3 2015-2 2015-1  {
 		mp_corpus if party == 41320, version(`version') clear
-		list content cmp_code in 1/5
+		capture noisily list content cmp_code in 1/5
+		capture noisily list text cmp_code in 1/5
 	}
 	
 	mp_corpus if party == 41320, clear
