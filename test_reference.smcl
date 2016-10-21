@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\merz\Documents\manifestata3\test_output.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}21 Oct 2016, 12:57:53
+ {txt}opened on:  {res}21 Oct 2016, 13:30:15
 {txt}
 {com}. set more off
 {txt}
@@ -11,8 +11,9 @@
 {txt}
 {com}. 
 . *** check functions ***
-.         
-.         * check setapikey *
+.         mp_clearcache
+{res}{txt}
+{com}.         * check setapikey *
 .         capture noisily mp_setapikey, api
 {err}option {bf:api} incorrectly specified
 {txt}
@@ -24,7 +25,7 @@
 {com}.         * -> OK: error -> Option apikey() not allowed. Please specify either an API Key file or use the API Key option.
 .         
 .         mp_setapikey using manifesto_apikey.txt
-{res}The API Key was set to: 4d0e6feea68b86ff367a41fb26d4836a
+{res}The API Key was not set.
 The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {txt}
 {com}.         * -> OK: works
@@ -190,7 +191,7 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 . 
 .         mp_maindataset, clear
 {res}
-{res}Accessing data cache...
+{res}Connecting to Manifesto Project DB API...
 
 {txt}You are currently using core version MPDS2016a. Please cite as: {res}
 "Volkens, Andrea / Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven with Werner, Annika (2016): The Manifesto Data Collection. Manifesto Project (MRG/CMP/MARPOR). Version 2016a. Berlin: Wissenschaftszentrum Berlin für Sozialforschung (WZB)"
@@ -676,19 +677,19 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
   mymaindatasetMPDS2012bvaratt
   mymaindatasetMPDS2012bbstruct
   mymaindatasetMPDS2012adata
-  mymaindatasetMPDS2012a
-  mymaindatasetMPDS2012b
-  mymaindatasetMPDS2014a
-  mymaindatasetMPDS2013a
-  mymaindatasetMPDS2014b
-  mymaindatasetMPDS2013b
-  mymaindatasetMPDS2015a
+  mymaindatasetMPDS2012avaratt
   mymaindatasetMPDS2012abstruct
   mymaindatasetMPDS2016adata
-  mymaindatasetMPDS2016a
-  mymaindatasetMPDS2016abstruct
   mymaindatasetMPDS2016avaratt
-  mymaindatasetMPDS2012avaratt
+  mymaindatasetMPDS2013b
+  mymaindatasetMPDS2015a
+  mymaindatasetMPDS2016a
+  mymaindatasetMPDS2012a
+  mymaindatasetMPDS2012b
+  mymaindatasetMPDS2013a
+  mymaindatasetMPDS2014b
+  mymaindatasetMPDS2016abstruct
+  mymaindatasetMPDS2014a
 {txt}
 {com}.         mp_maindataset, clear version(MPDS2014a)
 {res}
@@ -1890,8 +1891,8 @@ file metadata_ger.dta saved
 .         
 .         mp_corpus 41320_200909 41320_200509, clear
 {res}
-{res}Accessing data cache...
-{txt}Corpus data retrieved from cache for key(s): 41320_200909 41320_200509 
+{res}Connecting to Manifesto Project DB API...
+{txt}Corpus data retrieved from server for key(s): 41320_200909 41320_200509 
 
 {txt}You are currently using corpus version 2016-5. Please cite as: {res}
 "Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
@@ -1903,8 +1904,11 @@ file metadata_ger.dta saved
 .         * in Cache?
 .         mp_corpus if party == 41320, clear
 {res}
+{res}Connecting to Manifesto Project DB API...
+
 {res}Accessing data cache...
-{txt}Corpus data retrieved from cache for key(s): 41320_199809 41320_200209 41320_200509 41320_200909 41320_201309 
+{txt}Corpus data retrieved from server for key(s): 41320_199809 41320_200209 41320_201309 
+{txt}Corpus data retrieved from cache for key(s): 41320_200509 41320_200909 
 {txt}No annotated corpus data found on server for key(s): 41320_194908 41320_195309 41320_195709 41320_196109 41320_196509 41320_196909 41320_197211 41320_197610 41320_198010 41320_198303 41320_198701 41320_199012 41320_199410 
 
 {txt}You are currently using corpus version 2016-5. Please cite as: {res}
@@ -1964,13 +1968,13 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {com}.         * -> OK: From API
 . 
 .         mp_opencache using mycorpus
-{res}  mymaindatasetMPDS2012avaratt
-  mymaindatasetMPDS2012abstruct
+{res}  mymaindatasetMPDS2014b
+  mymaindatasetMPDS2013a
+  mymaindatasetMPDS2012a
   mymaindatasetMPDS2015a
   mymaindatasetMPDS2013b
-  mymaindatasetMPDS2013a
-  mymaindatasetMPDS2012b
-  mymaindatasetMPDS2012a
+  mymaindatasetMPDS2012abstruct
+  mymaindatasetMPDS2012avaratt
   mymaindatasetMPDS2012adata
   mymaindatasetMPDS2012bbstruct
   mymaindatasetMPDS2012bvaratt
@@ -1979,7 +1983,7 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
   mymaindatasetMPDS2013avaratt
   mymaindatasetMPDS2013adata
   mymaindatasetMPDS2013bbstruct
-  mymaindatasetMPDS2014b
+  mymaindatasetMPDS2012b
   mymaindatasetMPDS2013bdata
   mymaindatasetMPDS2014bbstruct
   mymaindatasetMPDS2014bvaratt
