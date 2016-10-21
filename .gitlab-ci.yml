@@ -9,7 +9,7 @@ compile_mlib:
 test_script:
   stage: test
   before_script:
-   - function normalize_test_output { cat $1 | sed '/log/d' | sed '/API Key/d' | sed '/ul off/d' | sed '/opened on/d'; }
+   - function normalize_test_output { cat $1 | sed '/log/d' | sed '/API Key/d' | sed '/api_key=/d' | sed '/ul off/d' | sed '/opened on/d'; }
   dependencies:
     - compile_mlib
   script:
