@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\merz\Documents\manifestata3\test_output.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}21 Oct 2016, 13:30:15
+ {txt}opened on:  {res}21 Oct 2016, 14:13:36
 {txt}
 {com}. set more off
 {txt}
@@ -657,39 +657,7 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {txt}
 {com}.         * -> OK: From API
 .         
-.         mp_opencache using allmaindatasets
-{res}  mymaindatasetMPDS2015adata
-  mymaindatasetMPDS2015avaratt
-  mymaindatasetMPDS2015abstruct
-  mymaindatasetMPDS2014bdata
-  mymaindatasetMPDS2014bvaratt
-  mymaindatasetMPDS2014bbstruct
-  mymaindatasetMPDS2014adata
-  mymaindatasetMPDS2014avaratt
-  mymaindatasetMPDS2014abstruct
-  mymaindatasetMPDS2013bdata
-  mymaindatasetMPDS2013bvaratt
-  mymaindatasetMPDS2013bbstruct
-  mymaindatasetMPDS2013adata
-  mymaindatasetMPDS2013avaratt
-  mymaindatasetMPDS2013abstruct
-  mymaindatasetMPDS2012bdata
-  mymaindatasetMPDS2012bvaratt
-  mymaindatasetMPDS2012bbstruct
-  mymaindatasetMPDS2012adata
-  mymaindatasetMPDS2012avaratt
-  mymaindatasetMPDS2012abstruct
-  mymaindatasetMPDS2016adata
-  mymaindatasetMPDS2016avaratt
-  mymaindatasetMPDS2013b
-  mymaindatasetMPDS2015a
-  mymaindatasetMPDS2016a
-  mymaindatasetMPDS2012a
-  mymaindatasetMPDS2012b
-  mymaindatasetMPDS2013a
-  mymaindatasetMPDS2014b
-  mymaindatasetMPDS2016abstruct
-  mymaindatasetMPDS2014a
+.         quietly mp_opencache using allmaindatasets
 {txt}
 {com}.         mp_maindataset, clear version(MPDS2014a)
 {res}
@@ -1967,39 +1935,7 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {txt}
 {com}.         * -> OK: From API
 . 
-.         mp_opencache using mycorpus
-{res}  mymaindatasetMPDS2014b
-  mymaindatasetMPDS2013a
-  mymaindatasetMPDS2012a
-  mymaindatasetMPDS2015a
-  mymaindatasetMPDS2013b
-  mymaindatasetMPDS2012abstruct
-  mymaindatasetMPDS2012avaratt
-  mymaindatasetMPDS2012adata
-  mymaindatasetMPDS2012bbstruct
-  mymaindatasetMPDS2012bvaratt
-  mymaindatasetMPDS2012bdata
-  mymaindatasetMPDS2013abstruct
-  mymaindatasetMPDS2013avaratt
-  mymaindatasetMPDS2013adata
-  mymaindatasetMPDS2013bbstruct
-  mymaindatasetMPDS2012b
-  mymaindatasetMPDS2013bdata
-  mymaindatasetMPDS2014bbstruct
-  mymaindatasetMPDS2014bvaratt
-  mymaindatasetMPDS2014bdata
-  mymaindatasetMPDS2015abstruct
-  mymaindatasetMPDS2015adata
-  mymaindatasetMPDS2015avaratt
-  mymaindatasetMPDS2016adata
-  mymaindatasetMPDS2016avaratt
-  mymaindatasetMPDS2016abstruct
-  mymaindatasetMPDS2014adata
-  mymaindatasetMPDS2016a
-  mymaindatasetMPDS2014a
-  mymaindatasetMPDS2014abstruct
-  mymaindatasetMPDS2014avaratt
-  mymaindatasetMPDS2013bvaratt
+.         quietly mp_opencache using mycorpus
 {txt}
 {com}.         mp_corpus if party == 41320, clear
 {res}

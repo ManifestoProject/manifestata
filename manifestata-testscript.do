@@ -102,7 +102,7 @@ set linesize 255
 	mp_maindataset, clear 
 	* -> OK: From API
 	
-	mp_opencache using allmaindatasets
+	quietly mp_opencache using allmaindatasets
 	mp_maindataset, clear version(MPDS2014a)
 	list party date rile in 1/5
 	* -> OK: From cache
@@ -180,7 +180,7 @@ set linesize 255
 	mp_corpus if party == 41320, clear
 	* -> OK: From API
 
-	mp_opencache using mycorpus
+	quietly mp_opencache using mycorpus
 	mp_corpus if party == 41320, clear
 	* -> OK: From cache
 	
