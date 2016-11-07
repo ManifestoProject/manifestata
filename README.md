@@ -1,53 +1,28 @@
-# installation instruction
-
-- clone with git (branch: master)
-- in stata: net from "folder/where/you/downloaded/"
-- net install manifestata
-- help manifestata (to open help file)
-
-
 # manifestata
 
-manifestata ~is~ will be a Stata package that provides access to and facilitates the work with the Manifesto Project Dataset and the Manifesto Corpus. 
-It is the Stata equivalent to the R package manifestoR (https://cran.r-project.org/web/packages/manifestoR/index.html and https://github.com/ManifestoProject/manifestoR ).
+manifestata is a free add-on for the commerical statistical software Stata. It provides access to coded election programmes from the Manifesto Corpus and to the Manifesto Project's Main Dataset. 
 
-Desired functionality:
+## Functions
+- provides access to the [Manifesto Corpus](/assets/view/statics/_corpus)
+- downloads and loads the Manifesto Project Main Dataset in Stata
+- and support for all other functions of the [Manifesto API](/assets/view/statics/_api).
 
-API related functions:
-- Stata support for all functions of the Manifesto Project API: https://manifesto-project.wzb.eu/information/documents/api
-- for examples, request available data, request main dataset, request (subsets of) corpus
-- a user-friendly way to store the api key
-- caching function for downloaded data to avoid too much traffic on the server (similar to the one implemented in manifestoR)
-- show citation information and corpus version (from api when connecting to api)
-- ensure correct encoding of downloaded data
+## Prerequisites
+- [Stata](http://www.stata.com/) - Version 14.0 or higher required.
+- Manifesto Project Database Account (sign up on this webpage)
+- Manifesto Project Database API Key (login to your account, go to your profile page and generate an API key)
 
-Functions applied to downloaded data:
-- recoding function from handbook v5 to v4.
-- code counting function
-- scaling functions: rile, logratio-scaling, vanilla-scaling, bipolar scaling(kim-fording), franzmann-kaiser (functions for corpus and dataset) 
-- more scaling functions: measure of issue attention diversity by Green, niche party measures by (1) bischof, (2) meyer-miller and (3) wagner (do-files available, but rewriting required)
-- uncertainty estimates by mcDonald and budge (do-files already exists - no equivalent in manifestoR)
-- bootstrapped confidence intervals / uncertainty estimates by benoit, laver & mikhaylov (no do file yet)
+## Installation
+- Type the following commands in your command line in Stata:
+- `net from https://manifesto-project.wzb.eu/manifestata`
+- `net install manifestata`
 
-Export Functions:
-- export functions of all data to xls and csv
+## Documentation
+- After installation, type `help manifestata` in Stata command window to view the documentation
 
-manifestata and manifestoR:
-- the possibility to call manifestoR from stata (see eg. https://statlore.wordpress.com/2013/01/21/how-to-call-r-from-stata/ )
+## Contribute
+You would like to contribute to the development of manifestata, eg. by integrating your preferred scaling procedure for the Main Dataset, [fork manifestata on Github](https://github.com/ManifestoProject/manifestata) and/or get in touch with us.
 
-General:
-- clear and meaningful error messages for potential errors 
-- detailed comments in all parts of the code 
-- support of stata 13 and higher (below might be difficult because stata 12- cannot handle unicode)
-- all files necessary to install the package from the web (see help usersite)
-- development of the software with git to ensure and facilitate transparency of the development and further development at a later point
-- a collection of scripts that tests every major function of the package and (if possible) compares the results (eg. for scaling functions) with predefined results 
+## Authors and Citation
 
-Documentation:
-- detailed documentation with examples in stata format of all functions: execute "help examplehelpfile" in stata for an example
-- a brief manual that describes the use of the package in Latex. This could also be or become a Stata Journal article. 
-
-
-
-Helpful:
-Stata package to read JSON data: https://ideas.repec.org/c/boc/bocode/s457407.html
+ Ecker, Alejandro / Merz, Nicolas / Lewandowski, Jirka / Regel, Sven (2016): manifestata. A stata package to access the Manifesto Project's API. https://manifesto-project.wzb.eu/manifestata
