@@ -326,8 +326,8 @@ All original documents are stored on the Manifesto Project Website and the URLs 
 {col 5}{title:Remarks} 
 
 {col 5}{title:Examples} 
-{col 5}{cmd:. mp_view_originals 41320_2009}
-{col 5}{cmd:. mp_view_originals 41320_2009,apikey({it:myapikey1234})} 
+{col 5}{cmd:. mp_view_originals 41320_200909}
+{col 5}{cmd:. mp_view_originals 41320_200909,apikey({it:myapikey1234})} 
 {col 5}{cmd:. mp_view_originals if country == 41 & date == 201309} 
 
 {marker 6}
