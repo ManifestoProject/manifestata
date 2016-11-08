@@ -1,8 +1,8 @@
 v 0.1
 
-d Here you can find all stata materials provided by the manifesto-project. manifestata provides access to coded election programmes from the Manifesto Corpus and to the Manifesto Project's Main Dataset. 
+d Here you can find all stata materials provided by the manifesto-project. 
 d The Manifesto Project (https://manifesto-project.wzb.eu) collects and analyses election programmes in over 50 countries and since 1945 to measure the political preferences of parties. 
 
-p manifestata awesome program!
+p manifestata provides access to Manifesto Project's API.
 
 
