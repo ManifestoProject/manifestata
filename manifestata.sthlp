@@ -327,7 +327,7 @@ All original documents are stored on the Manifesto Project Website and the URLs 
 
 {col 5}{title:Examples} 
 {col 5}{cmd:. mp_view_originals 41320_200909}
-{col 5}{cmd:. mp_view_originals 41320_200909,apikey({it:myapikey1234})} 
+{col 5}{cmd:. mp_view_originals 41320_200909, apikey({it:myapikey1234})} 
 {col 5}{cmd:. mp_view_originals if country == 41 & date == 201309} 
 
 {marker 6}
@@ -385,7 +385,7 @@ Apart from the machine-readable, annotated documents, the Manifesto Corpus also 
 If available, they can be viewed via the function mp_view_originals, which takes exactly the format of arguments as mp_corpus (see above), e.g.:
 
 {p 4 4 2} 
-{cmd:. mp_view_originals 41320_2013 41420_2013}
+{cmd:. mp_view_originals 41320_201309 41420_201309}
 
 {p 4 4 2}
 The original documents are shown in you system's web browser. All URLs opened by this function refer only to the Manifesto Project's Website.
