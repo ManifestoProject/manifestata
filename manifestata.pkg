@@ -47,6 +47,7 @@ f mp_opencache.sthlp
 f mp_savecache.sthlp
 f mp_setapikey.sthlp
 f mp_setcorpusversion.sthlp
+f mp_uncertainty.sthlp
 f mp_view_originals.sthlp
 f mp_cite.ado
 f mp_clearcache.ado
@@ -60,6 +61,7 @@ f mp_opencache.ado
 f mp_savecache.ado
 f mp_setapikey.ado
 f mp_setcorpusversion.ado
+f mp_uncertainty.ado
 f mp_view_originals.ado
 
 
