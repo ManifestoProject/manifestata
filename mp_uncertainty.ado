@@ -136,7 +136,7 @@ program define mp_uncertainty
 	}
 	postclose `sim'
 
-	clear all
+	clear 
 
 	use "`Lag1Results'"
 	rename (F r2a N dfm dfr) (F_1 r2a_1 N_1 dfm_1 dfr_1)
@@ -193,7 +193,7 @@ program define mp_uncertainty
 
 	save "`FirstLagID'", replace
 
-	clear all
+	clear 
 	use "`subset_data'"
 
 	merge m:1 party using "`FirstLagID'"
@@ -268,7 +268,7 @@ program define mp_uncertainty
 	}
 	postclose `sim'
 
-	clear all
+	clear
 
 	use "`Lag1Results_esample3'"
 	rename (F dfm dfr r2a N) (F_l1_3 dfm_l1_3 dfr_l1_3 r2a_l1_3 N_l1_3)
@@ -282,7 +282,7 @@ program define mp_uncertainty
 	rename (F dfm dfr r2a N) (F_l1_2 dfm_l1_2 dfr_l1_2 r2a_l1_2 N_l1_2)
 	save "`Lag1Results_esample2'", replace
 
-	clear all
+	clear 
 	use "`subset_data'"
 
 	merge m:1 party using "`FirstLagID'"
@@ -342,7 +342,7 @@ program define mp_uncertainty
 
 
 
-	clear all
+	clear 
 	use "`subset_data'"
 	merge m:1 party using "`lagresults'"
 	drop _merge
