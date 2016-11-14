@@ -14,7 +14,7 @@
 * If you have questions on the error estimates in general, please contact the authors of the article
 
 
-program define mp_error_estimates 
+program define mp_uncertainty 
 	
 
 	syntax varlist(max=1)
@@ -58,35 +58,35 @@ program define mp_error_estimates
 	
 	quietly {		
 	
-	* tempfile Lag1Results // Lag1Results.dta
-	* tempfile Lag2Results // Lag2Results.dta
-	* tempfile Lag3Results // Lag3Results.dta
-	* tempfile FirstLagID // FirstLagID.dta
-	* tempfile Lag2Results_esample3 // Lag2Results_esample3.dta
-	* tempfile Lag1Results_esample3.dta // Lag1Results_esample3.dta
-	* tempfile Lag1Results_esample2 // Lag1Results_esample2.dta
-	* tempfule lagresults // lagresults.dta
-	* tempfile cmpvar // CMP`varname'.dta
-	* tempfile correlations // corr.dta
-	* tempfile partyvar_sds // partyvar_sds.dta
-	* tempfile outliersout_reliability // outliersout_reliability.dta 
+	 tempfile Lag1Results // Lag1Results.dta d
+	 tempfile Lag2Results // Lag2Results.dta
+	 tempfile Lag3Results // Lag3Results.dta
+	 tempfile FirstLagID // FirstLagID.dta
+	 tempfile Lag2Results_esample3 // Lag2Results_esample3.dta
+	 tempfile Lag1Results_esample3 // Lag1Results_esample3.dta
+	 tempfile Lag1Results_esample2 // Lag1Results_esample2.dta
+	 tempfile lagresults // lagresults.dta
+	 tempfile cmpvar // CMP`varname'.dta
+	 tempfile correlations // corr.dta
+	 tempfile partyvar_sds // partyvar_sds.dta
+	 tempfile outliersout_reliability // outliersout_reliability.dta 
 	
-	* tempfile orig_data // orig_data
-	* tempfile subset_data // tempdata
+	 tempfile orig_data // orig_data
+	 tempfile subset_data // tempdata
 	
-	save orig_data, replace
+	save "`orig_data'", replace
 	
 	sort party date
 
 	keep country party date `varlist'
-	save tempdata, replace
+	save "`subset_data'", replace
 	
 	local varname "`varlist'"
 	dis "test"
 	dis `varname'
 
 	set more off
-	set seed 667
+	
 	sum `varname'
 	foreach var of varlist `varname' {
 
@@ -101,7 +101,7 @@ program define mp_error_estimates
 	generate sample3 =0
 
 	tempname sim
-	postfile `sim' F dfm dfr r2a N party using "Lag1Results.dta", every(1) replace
+	postfile `sim' F dfm dfr r2a N party using "`Lag1Results'", every(1) replace
 	levelsof party, local(levels)
 	foreach l of local levels {
 	 capture { 
@@ -113,7 +113,7 @@ program define mp_error_estimates
 	postclose `sim'
 
 	tempname sim
-	postfile `sim' F dfm dfr r2a N party using "Lag2Results.dta", every(1) replace
+	postfile `sim' F dfm dfr r2a N party using "`Lag2Results'", every(1) replace
 	levelsof party, local(levels)
 		foreach l of local levels {
 			 capture { 
@@ -125,7 +125,7 @@ program define mp_error_estimates
 	postclose `sim'
 
 	tempname sim
-	postfile `sim' F dfm dfr r2a N party using "Lag3Results.dta", every(1) replace
+	postfile `sim' F dfm dfr r2a N party using "`Lag3Results'", every(1) replace
 	levelsof party, local(levels)
 		foreach l of local levels {
 		 capture { 
@@ -138,22 +138,22 @@ program define mp_error_estimates
 
 	clear all
 
-	use "Lag1Results.dta"
+	use "`Lag1Results'"
 	rename (F r2a N dfm dfr) (F_1 r2a_1 N_1 dfm_1 dfr_1)
-	save "Lag1Results.dta", replace
+	save "`Lag1Results'", replace
 
-	use "Lag2Results.dta"
+	use "`Lag2Results'"
 	rename (F r2a N dfm dfr) (F_2 r2a_2 N_2 dfm_2 dfr_2)
-	save "Lag2Results.dta", replace
+	save "`Lag2Results'", replace
 
-	use "Lag3Results.dta"
+	use "`Lag3Results'"
 	rename (F r2a N dfm dfr) (F_3 r2a_3 N_3 dfm_3 dfr_3)
-	save "Lag3Results.dta", replace
+	save "`Lag3Results'", replace
 
-	use "Lag1Results.dta", clear
-	merge 1:1 party using "Lag2Results.dta"
+	use "`Lag1Results'", clear
+	merge 1:1 party using "`Lag2Results'"
 	drop _merge
-	merge 1:1 party using "Lag3Results.dta"
+	merge 1:1 party using "`Lag3Results'"
 
 	drop _merge
 	order party
@@ -191,12 +191,12 @@ program define mp_error_estimates
 
 	keep party lag1sig lag2sig lag3sig toplag
 
-	save "FirstLagID.dta", replace
+	save "`FirstLagID'", replace
 
 	clear all
-	use "tempdata"
+	use "`subset_data'"
 
-	merge m:1 party using "FirstLagID.dta"
+	merge m:1 party using "`FirstLagID'"
 
 	drop _merge
 
@@ -234,7 +234,7 @@ program define mp_error_estimates
 	}
 
 	tempname sim
-	postfile `sim' F dfm dfr r2a N party using "Lag2Results_esample3.dta", every(1) replace
+	postfile `sim' F dfm dfr r2a N party using "`Lag2Results_esample3'", every(1) replace
 	levelsof party, local(levels)
 	foreach l of local levels {
 	 capture { 
@@ -246,7 +246,7 @@ program define mp_error_estimates
 	postclose `sim'
 
 	tempname sim
-	postfile `sim' F dfm dfr r2a N party using "Lag1Results_esample3.dta", every(1) replace
+	postfile `sim' F dfm dfr r2a N party using "`Lag1Results_esample3'", every(1) replace
 	levelsof party, local(levels)
 	foreach l of local levels {
 	 capture { 
@@ -257,7 +257,7 @@ program define mp_error_estimates
 	postclose `sim'
 
 	tempname sim
-	postfile `sim' F dfm dfr r2a N party using "Lag1Results_esample2.dta", every(1) replace
+	postfile `sim' F dfm dfr r2a N party using "`Lag1Results_esample2'", every(1) replace
 	levelsof party, local(levels)
 	foreach l of local levels {
 	 capture { 
@@ -270,36 +270,36 @@ program define mp_error_estimates
 
 	clear all
 
-	use "Lag1Results_esample3.dta"
+	use "`Lag1Results_esample3'"
 	rename (F dfm dfr r2a N) (F_l1_3 dfm_l1_3 dfr_l1_3 r2a_l1_3 N_l1_3)
-	save "Lag1Results_esample3.dta", replace
+	save "`Lag1Results_esample3'", replace
 
-	use "Lag2Results_esample3.dta", clear
+	use "`Lag2Results_esample3'", clear
 	rename (F dfm dfr r2a N) (F_l2_3 dfm_l2_3 dfr_l2_3 r2a_l2_3 N_l2_3)
-	save "Lag2Results_esample3.dta", replace
+	save "`Lag2Results_esample3'", replace
 
-	use "Lag1Results_esample2.dta", clear
+	use "`Lag1Results_esample2'", clear
 	rename (F dfm dfr r2a N) (F_l1_2 dfm_l1_2 dfr_l1_2 r2a_l1_2 N_l1_2)
-	save "Lag1Results_esample2.dta", replace
+	save "`Lag1Results_esample2'", replace
 
 	clear all
-	use "tempdata.dta"
+	use "`subset_data'"
 
-	merge m:1 party using "FirstLagID.dta"
+	merge m:1 party using "`FirstLagID'"
 	drop _merge
-	merge m:1 party using "Lag1Results_esample3.dta"
+	merge m:1 party using "`Lag1Results_esample3'"
 	drop _merge
-	merge m:1 party using "Lag2Results_esample3.dta"
+	merge m:1 party using "`Lag2Results_esample3'"
 	drop _merge
-	merge m:1 party using "Lag1Results_esample2.dta"
+	merge m:1 party using "`Lag1Results_esample2'"
 	drop _merge
 
 
-	merge m:1 party using "Lag1Results.dta"
+	merge m:1 party using "`Lag1Results'"
 	drop _merge
-	merge m:1 party using "Lag2Results.dta"
+	merge m:1 party using "`Lag2Results'"
 	drop _merge
-	merge m:1 party using "Lag3Results.dta"
+	merge m:1 party using "`Lag3Results'"
 
 	duplicates drop party, force
 
@@ -334,17 +334,17 @@ program define mp_error_estimates
 
 	rename toplag `var'toplag
 
-	save "`var'.dta", replace
+	*save "`var'.dta", replace
 
 	}
 
-	save "lagresults.dta", replace
+	save "`lagresults'", replace
 
 
 
 	clear all
-	use "tempdata.dta"
-	merge m:1 party using "lagresults.dta"
+	use "`subset_data'"
+	merge m:1 party using "`lagresults'"
 	drop _merge
 
 	by party, sort: generate election = _n
@@ -392,10 +392,10 @@ program define mp_error_estimates
 
 
 
-	save "CMP`varname'.dta", replace
+	save "`cmpvar'", replace
 
 	tempname sim
-	postfile `sim' country v N rho cov12 c1 c2  using "corr.dta", every(1) replace
+	postfile `sim' country v N rho cov12 c1 c2  using "`correlations'", every(1) replace
 	levelsof country, local(countries)
 	foreach country in `countries' {
 		foreach v in "`varname'" {
@@ -405,7 +405,7 @@ program define mp_error_estimates
 	}
 	postclose `sim'
 
-	use "CMP`varname'.dta", clear
+	use "`cmpvar'", clear
 
 
 	foreach var of varlist `varname'  {
@@ -415,7 +415,7 @@ program define mp_error_estimates
 	}
 
 	tempname sim
-	postfile `sim' party v sd using "partyvar_sds.dta", every(1) replace
+	postfile `sim' party v sd using "`partyvar_sds'", every(1) replace
 	levelsof party, local(levels)
 	foreach party of local levels {
 		foreach v in "`varname'" {
@@ -426,23 +426,23 @@ program define mp_error_estimates
 	postclose `sim'
 
 
-	use "partyvar_sds.dta", clear
+	use "`partyvar_sds'", clear
 	tostring v, replace force
 	local varnamename "`varname'"
 	replace v = "`varname'"
 	reshape wide sd, i(party) j(v) string
-	save "partyvar_sds.dta", replace
+	save "`partyvar_sds'", replace
 
-	use "corr.dta", clear
+	use "`correlations'", clear
 	rename rho rho`varname'
-	save "corr.dta", replace
+	save "`correlations'", replace
 	
-	use "CMP`varname'.dta", clear
+	use "`cmpvar'", clear
 	*merge m:1 country using "pwcorr_results.dta"
-	merge m:1 country using "corr.dta"
+	merge m:1 country using "`correlations'"
 	drop _merge
 
-	merge m:1 party using "partyvar_sds.dta"
+	merge m:1 party using "`partyvar_sds'"
 	rename sd* sd*
 	drop _merge
 
@@ -478,7 +478,7 @@ program define mp_error_estimates
 	}
 
 	tempname sim
-	postfile `sim' country v N rho1 rho2 using "outliersout_reliability.dta", every(1) replace
+	postfile `sim' country v N rho1 rho2 using "`outliersout_reliability'", every(1) replace
 	levelsof country, local(countries)
 	foreach country in `countries' {
 	
@@ -493,7 +493,7 @@ program define mp_error_estimates
 
 
 	preserve
-	use "outliersout_reliability.dta", clear
+	use "`outliersout_reliability'", clear
 	gen N2 = N[_n+1] if rho2 ==.
 	replace rho2=rho2[_n+1] if rho2==. & rho2[_n+1] !=.
 	order country v N N2 rho1 rho2
@@ -503,11 +503,11 @@ program define mp_error_estimates
 	drop if rho1==. & rho2 !=.
 	duplicates drop country varstr, force
 	reshape wide rho1 rho2 N N2, i(country) j(varstr) string
-	save "outliersout_reliability.dta", replace
+	save "`outliersout_reliability'", replace
 
 	restore
 
-	merge m:1 country using "outliersout_reliability.dta"
+	merge m:1 country using "`outliersout_reliability'"
 	drop _merge
 
 
@@ -528,7 +528,7 @@ program define mp_error_estimates
 
 	keep party date  `varname'_firststageSEM `varname'_secondstageSEM `varname'_rho1 `varname'_rho2 `varname'_outlier
 	
-	merge 1:1 party date using orig_data, nogenerate
+	merge 1:1 party date using "`orig_data'", nogenerate
 	
 	order `varname'_firststageSEM `varname'_secondstageSEM `varname'_rho1 `varname'_rho2 `varname'_outlier, last
 	
