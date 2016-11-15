@@ -25,12 +25,13 @@ profile on the Manifesto Project's website, go to your profile page, and generat
 
 {title:General Overview}
 
-{col 5}{help manifestata##1 :Commands for controlling the API key}
-{col 5}{help manifestata##2 :Commands for accessing the Manifesto Project Main Dataset}
-{col 5}{help manifestata##3 :Commands for accessing the Manifesto Corpus}
-{col 5}{help manifestata##4 :Commands for controlling the local cache}
+{col 5}{help manifestata##1 :Controlling the API key}
+{col 5}{help manifestata##2 :Accessing the Manifesto Project Main Dataset}
+{col 5}{help manifestata##3 :Accessing the Manifesto Corpus}
+{col 5}{help manifestata##4 :Controlling the local cache}
 {col 5}{help manifestata##5 :Miscellaneous commands}
-{col 5}{help manifestata##6 :Exemplary workflow}
+{col 5}{help manifestata##6 :Uncertainty estimates for Manifesto Project Main Dataset}
+{col 5}{help manifestata##7 :Exemplary workflow}
 
 {marker 1}
    {c TLC}{hline 38}{c TRC}
@@ -330,7 +331,35 @@ All original documents are stored on the Manifesto Project Website and the URLs 
 {col 5}{cmd:. mp_view_originals 41320_200909, apikey({it:myapikey1234})} 
 {col 5}{cmd:. mp_view_originals if country == 41 & date == 201309} 
 
+
 {marker 6}
+   {c TLC}{hline 58}{c TRC}
+{hline 3}{c RT}{it: Uncertainty estimates for Manifesto Project Main Dataset }{c LT}{hline}
+   {c BLC}{hline 58}{c BRC}
+
+
+{cmd:{dlgtab:mp_uncertainty}}
+
+{col 5}{title:Syntax} 
+{pstd}{cmd:mp_uncertainty} {it:varname}
+
+{col 5}{title:Description} 
+{pstd}Calculates uncertainty estimates for {it:varname} according to McDonald & Budge (2014).
+
+{col 5}{title:Options} 
+
+{col 5}{title:Remarks} 
+{p 4 4 2} 
+varname can only be a content analytical variables in the dataset (per101,per102,..., rile)
+Requires the variables party date and country. 
+Adds five variables to the dataset:
+{it:varname}_firststageSEM, {it:varname}_secondstageSEM, {it:varname}_rho1, {it:varname}_rho2, {it:varname}_outlier.
+
+{col 5}{title:Examples}
+{col 5}{cmd:. mp_uncertainty rile}
+   
+
+{marker 7}
    {c TLC}{hline 20}{c TRC}
 {hline 3}{c RT}{it: Exemplary workflow }{c LT}{hline}
    {c BLC}{hline 20}{c BRC}
@@ -406,3 +435,8 @@ A stata package to access the Manifesto Project's API. {browse "https://manifest
 
 {pstd}
 When using the Manifesto Project Main dataset and the Manifesto Corpus, please use the function mp_cite to get the correct citation.
+
+{title: References}
+
+{pstd}
+McDonald, Michael D. & Budge, Ian. (2014). Getting it (approximately) right (and center and left!): Reliability and uncertainty estimates for the comparative manifesto data. Electoral Studies, 35, 67–77. doi: 10.1016/j.electstud.2014.04.017
