@@ -1,4 +1,4 @@
-v 0.1
+v 0.2
 
 d manifestata. A stata package to access the Manifesto Project's API.
 d
@@ -22,11 +22,13 @@ d When using please cite as:
 d Ecker, Alejandro / Merz, Nicolas / Lewandowski, Jirka / Regel, Sven (2016): manifestata. 
 d A stata package to access the Manifesto Project's API. https://manifesto-project.wzb.eu/manifestata
 d
-d Version: 0.1 
+d Version: 0.2 
 d
 d Distribution-Date: 20160929
 d
 d Release Notes:
+d version 0.2: 11/15/2016
+d - added function to calculate uncertainty estimates by McDonald & Budge
 d version 0.1: 11/07/2016
 d - first release
 d
@@ -47,6 +49,7 @@ f mp_opencache.sthlp
 f mp_savecache.sthlp
 f mp_setapikey.sthlp
 f mp_setcorpusversion.sthlp
+f mp_uncertainty.sthlp
 f mp_view_originals.sthlp
 f mp_cite.ado
 f mp_clearcache.ado
@@ -60,6 +63,7 @@ f mp_opencache.ado
 f mp_savecache.ado
 f mp_setapikey.ado
 f mp_setcorpusversion.ado
+f mp_uncertainty.ado
 f mp_view_originals.ado
 
 

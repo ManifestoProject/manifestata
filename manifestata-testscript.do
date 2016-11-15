@@ -205,6 +205,59 @@ set linesize 255
 	* -> OK: From cache
 	
 	capture log close
+	
+	** uncertainty estimates
+	mp_maindataset, version(MPDS2016a) clear
+	
+	mp_uncertainty rile
+	
+	list party date rile* if country == 41 & date == 200909
+	
+	keep if country == 41
+	
+	mp_uncertainty per501
+	
+	list party date per501* if country == 41 & date == 200909
+	
+	** other dataset version
+	mp_maindataset, version(MPDS2012a) clear
+	
+	keep if country == 22
+	
+	mp_uncertainty rile
+	
+	list party date rile* if date > 201000
+	
+	*** use script on original replication material from mcdonald & budge 
+	use  "replication_mcdonaldbudge/mcdonaldbudge_data_9_22_2012.dta", clear
+	
+	gen testrile = rile 
+	
+	rename election old_election
+	rename enn old_enn
+
+	mp_uncertainty testrile
+
+		
+	sum testrile rile 
+	corr testrile rile
+	
+	sum testrile_firststageSEM firststageSEMrile if rile != . 
+	corr testrile_firststageSEM firststageSEMrile if rile != .
+
+	sum testrile_secondstageSEM secondstageSEMrile if rile != .
+	corr testrile_secondstageSEM secondstageSEMrile if rile != .
+
+	sum testrile_rho1 rho1rile if rile != .
+	corr testrile_rho1 rho1rile if rile != .
+
+	sum testrile_rho2 rho2rile if rile != .
+	corr testrile_rho2 rho2rile if rile != .
+
+	sum testrile_outlier outlierrile if rile != .
+	corr testrile_outlier outlierrile if rile != .
+	
+	assert round(testrile,0.01) == round(rile,0.01)
 
 exit, clear
 
