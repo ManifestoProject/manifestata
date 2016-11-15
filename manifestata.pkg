@@ -22,11 +22,13 @@ d When using please cite as:
 d Ecker, Alejandro / Merz, Nicolas / Lewandowski, Jirka / Regel, Sven (2016): manifestata. 
 d A stata package to access the Manifesto Project's API. https://manifesto-project.wzb.eu/manifestata
 d
-d Version: 0.1 
+d Version: 0.2 
 d
 d Distribution-Date: 20160929
 d
 d Release Notes:
+d version 0.2: 11/15/2016
+d - added function to calculate uncertainty estimates by McDonald & Budge
 d version 0.1: 11/07/2016
 d - first release
 d
