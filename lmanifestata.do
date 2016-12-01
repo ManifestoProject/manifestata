@@ -1007,7 +1007,7 @@ void function view_originals(string scalar id, string scalar apikey) {
 
 struct struct_metadata {
 	
-	string scalar party_id, election_date, language, source, has_eu_code, is_primary_doc, may_contradict_core_dataset, manifesto_id, md5sum_text, url_original, md5sum_original, annotations
+	string scalar party_id, election_date, language, source, has_eu_code, is_primary_doc, may_contradict_core_dataset, manifesto_id, md5sum_text, url_original, md5sum_original, annotations, handbook
 	
 }
 
@@ -1138,16 +1138,19 @@ void function metadata(string scalar ids, string scalar cpversion, string scalar
 		metadata_tokens = tokeninit("},{","","", 0, 0)
 		tokenset(metadata_tokens, metadata)		
 		metadata_matrix = tokengetall(metadata_tokens)
-		
+
 		// differentiate between "old" and "new" metadata excluding or including source information
-		if (cols(selectindex(metadata_matrix :== "source"))>0) {
+		if ((cols(selectindex(metadata_matrix :== "source")) > 0) & (cols(selectindex(metadata_matrix :== "handbook")) > 0)) {
+			metadata_matrix = colshape(metadata_matrix,26)
+		}
+		if ((cols(selectindex(metadata_matrix :== "source")) > 0) & (cols(selectindex(metadata_matrix :== "handbook")) == 0)) {
 			metadata_matrix = colshape(metadata_matrix,24)
 		}
-		else {
+		if ((cols(selectindex(metadata_matrix :== "source")) == 0) & (cols(selectindex(metadata_matrix :== "handbook")) == 0)) {
 			metadata_matrix = colshape(metadata_matrix,22)
 		}
 		metadata_matrix = metadata_matrix[.,select((1..cols(metadata_matrix)), !mod((1..cols(metadata_matrix)),2))]
-		
+
 		content = J(1,cols(metadata_matrix),NULL)
 		
 		numberids = 1
@@ -1157,6 +1160,22 @@ void function metadata(string scalar ids, string scalar cpversion, string scalar
 			}
 			
 			// populate structure
+			if (cols(metadata_matrix)==13) {
+				meta.party_id = 					*content[1]
+				meta.election_date = 				*content[2]
+				meta.language = 					*content[3]
+				meta.source = 						*content[4]
+				meta.has_eu_code = 					*content[5]
+				meta.is_primary_doc = 				*content[6]
+				meta.may_contradict_core_dataset = 	*content[7]
+				meta.manifesto_id = 				*content[8]
+				meta.md5sum_text = 					*content[9]
+				meta.url_original = 				*content[10]
+				meta.md5sum_original = 				*content[11]
+				meta.annotations = 					*content[12]
+				meta.handbook =  						*content[13]
+			}
+			
 			if (cols(metadata_matrix)==12) {
 				meta.party_id = 					*content[1]
 				meta.election_date = 				*content[2]
@@ -1170,6 +1189,7 @@ void function metadata(string scalar ids, string scalar cpversion, string scalar
 				meta.url_original = 				*content[10]
 				meta.md5sum_original = 				*content[11]
 				meta.annotations = 					*content[12]
+				meta.handbook =  						"."				
 			}
 
 			if (cols(metadata_matrix)==11) {
@@ -1185,6 +1205,7 @@ void function metadata(string scalar ids, string scalar cpversion, string scalar
 				meta.url_original = 				*content[9]
 				meta.md5sum_original = 				*content[10]
 				meta.annotations = 					*content[11]
+				meta.handbook =  						"."						
 			}			
 			
 			// define pointer 
@@ -1228,24 +1249,24 @@ function displaymetadata(struct struct_metadata scalar x, real scalar count, rea
 	// if first id
 	if (count==1) {
 		printf("\n")
-		printf("{txt}{hline 130}\n")
-		printf("{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations\n")
-		printf("{hline 130}\n")
+		printf("{txt}{hline 140}\n")
+		printf("{space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations{space 2}handbook\n")
+		printf("{hline 140}\n")
 	}
 	
 	// print results
 	if (x.annotations == "true") {
-		printf("{res}{space 2}%-6s %-7s %-19s %-7s %-12s %-15s %-28s %-13s %-12s\n",
-			x.party_id,x.election_date,x.language,x.source,x.has_eu_code,x.is_primary_doc,x.may_contradict_core_dataset,"{stata mp_corpus " + x.manifesto_id + ", clear:" + x.manifesto_id + " }",x.annotations)
+		printf("{res}{space 2}%-6s %-7s %-19s %-7s %-12s %-15s %-28s %-13s %-12s %-9s\n",
+			x.party_id,x.election_date,x.language,x.source,x.has_eu_code,x.is_primary_doc,x.may_contradict_core_dataset,"{stata mp_corpus " + x.manifesto_id + ", clear:" + x.manifesto_id + " }",x.annotations,x.handbook)
 	}
 	
 	if (x.annotations == "false") {
-		printf("{res}{space 2}%-6s %-7s %-19s %-7s %-12s %-15s %-28s %-13s %-12s\n",
-			x.party_id,x.election_date,x.language,x.source,x.has_eu_code,x.is_primary_doc,x.may_contradict_core_dataset,x.manifesto_id,x.annotations)
+		printf("{res}{space 2}%-6s %-7s %-19s %-7s %-12s %-15s %-28s %-13s %-12s %-9s\n",
+			x.party_id,x.election_date,x.language,x.source,x.has_eu_code,x.is_primary_doc,x.may_contradict_core_dataset,x.manifesto_id,x.annotations,x.handbook)
 	}
 	
 	// if last id
-	if (count==total) printf("{txt}{hline 130}\n")
+	if (count==total) printf("{txt}{hline 140}\n")
 	
 }
 
@@ -1263,6 +1284,10 @@ function storemetadata(string scalar path, matrix x, real scalar obs) {
 	st_store(.,idx_num,strtoreal(x[.,1..2]))
 	
 	// generate and store string variables
+	if (cols(x) == 13) {
+		idx_str = st_addvar(max(strlen(x)), ("language","source","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations","handbook"))	
+		st_sstore(.,idx_str,x[.,3..13])
+	}
 	if (cols(x) == 12) {
 		idx_str = st_addvar(max(strlen(x)), ("language","source","has_eu_code","is_primary_doc","may_contradict_core_dataset","manifesto_id","md5sum_text","url_original","md5sum_original","annotations"))	
 		st_sstore(.,idx_str,x[.,3..12])
