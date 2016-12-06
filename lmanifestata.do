@@ -1138,15 +1138,17 @@ void function metadata(string scalar ids, string scalar cpversion, string scalar
 		metadata_tokens = tokeninit("},{","","", 0, 0)
 		tokenset(metadata_tokens, metadata)		
 		metadata_matrix = tokengetall(metadata_tokens)
-
+		
 		// differentiate between "old" and "new" metadata excluding or including source information
-		if ((cols(selectindex(metadata_matrix :== "source")) > 0) & (cols(selectindex(metadata_matrix :== "handbook")) > 0)) {
+		source_used   = cols(selectindex(metadata_matrix :== "source"))   > 0
+		handbook_used = cols(selectindex(metadata_matrix :== "handbook")) > 0
+		if (source_used == 1 & handbook_used == 1) {
 			metadata_matrix = colshape(metadata_matrix,26)
 		}
-		if ((cols(selectindex(metadata_matrix :== "source")) > 0) & (cols(selectindex(metadata_matrix :== "handbook")) == 0)) {
+		if (source_used == 1 & handbook_used == 0) {
 			metadata_matrix = colshape(metadata_matrix,24)
 		}
-		if ((cols(selectindex(metadata_matrix :== "source")) == 0) & (cols(selectindex(metadata_matrix :== "handbook")) == 0)) {
+		if (source_used == 0 & handbook_used == 0) {
 			metadata_matrix = colshape(metadata_matrix,22)
 		}
 		metadata_matrix = metadata_matrix[.,select((1..cols(metadata_matrix)), !mod((1..cols(metadata_matrix)),2))]
