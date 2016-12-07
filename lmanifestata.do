@@ -814,8 +814,16 @@ void function corpus(string scalar ids, string scalar cpversion, string scalar c
 		pointer() scalar p_cache_vars
 
 		// set cache keys
-		sca_cache_corpus = "cached"+key+"corpus"+subinstr(cpversion,"-","")
-		sca_cache_vars = "cached"+key+"vars"+subinstr(cpversion,"-","")
+		if (strlen(cpversion) <= 10) {
+			sca_cache_corpus = "cached"+key+"corpus"+subinstr(cpversion,"-","")
+			sca_cache_vars = "cached"+key+"vars"+subinstr(cpversion,"-","")
+		}
+		if (strlen(cpversion) > 10) {
+			cpversion_help = subinstr(cpversion,"-","")
+			cpversion_help = substr(cpversion_help, 1, 8)
+			sca_cache_corpus = "cached"+key+"corpus"+cpversion_help
+			sca_cache_vars = "cached"+key+"vars"+cpversion_help
+		}
 		
 		// Nocache option not specified and data in cache
 		if ((cache_opt == "") & (findexternal(sca_cache_corpus)) != NULL) {
