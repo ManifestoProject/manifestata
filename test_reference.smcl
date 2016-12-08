@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\merz\Documents\manifestata3\test_output.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 8 Dec 2016, 15:37:19
+ {txt}opened on:  {res} 8 Dec 2016, 16:27:09
 {txt}
 {com}. set more off
 {txt}
@@ -763,33 +763,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 {res}
 {txt}{hline 140}
@@ -851,33 +851,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 {res}
 {txt}{hline 140}
@@ -939,33 +939,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 {res}
 {txt}{hline 140}
@@ -1027,33 +1027,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 {res}
 {txt}{hline 140}
@@ -1115,33 +1115,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 {res}
 {txt}{hline 140}
@@ -1203,33 +1203,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 {res}
 {txt}{hline 140}
@@ -1291,33 +1291,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 {res}
 {txt}{hline 140}
@@ -1379,33 +1379,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 {res}
 {txt}{hline 140}
@@ -1467,33 +1467,33 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 
 {com}.         * -> OK: works
@@ -1539,48 +1539,48 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {res}{space 2}33611  199306  catalan             CEMP    FALSE        TRUE            FALSE                        33611_199306  false        .        
 {res}{space 2}33220  199603  spanish             CEMP    FALSE        TRUE            FALSE                        33220_199603  false        .        
 {res}{space 2}33320  199603  spanish             CEMP    FALSE        TRUE            FALSE                        33320_199603  false        .        
-{res}{space 2}33610  199603  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33610_199603, clear:33610_199603 } true         .        
+{res}{space 2}33610  199603  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33610_199603, clear:33610_199603 } true         .        
 {res}{space 2}33902  199603  spanish             CEMP    FALSE        TRUE            FALSE                        33902_199603  false        .        
-{res}{space 2}33907  199603  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33907_199603, clear:33907_199603 } true         .        
-{res}{space 2}33220  200003  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33220_200003, clear:33220_200003 } true         1        
-{res}{space 2}33320  200003  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33320_200003, clear:33320_200003 } true         1        
-{res}{space 2}33610  200003  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33610_200003, clear:33610_200003 } true         1        
-{res}{space 2}33611  200003  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33611_200003, clear:33611_200003 } true         1        
-{res}{space 2}33902  200003  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33902_200003, clear:33902_200003 } true         1        
-{res}{space 2}33907  200003  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33907_200003, clear:33907_200003 } true         1        
-{res}{space 2}33908  200003  galician            MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33908_200003, clear:33908_200003 } true         1        
+{res}{space 2}33907  199603  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33907_199603, clear:33907_199603 } true         .        
+{res}{space 2}33220  200003  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33220_200003, clear:33220_200003 } true         .        
+{res}{space 2}33320  200003  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33320_200003, clear:33320_200003 } true         .        
+{res}{space 2}33610  200003  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33610_200003, clear:33610_200003 } true         .        
+{res}{space 2}33611  200003  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33611_200003, clear:33611_200003 } true         .        
+{res}{space 2}33902  200003  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33902_200003, clear:33902_200003 } true         .        
+{res}{space 2}33907  200003  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33907_200003, clear:33907_200003 } true         .        
+{res}{space 2}33908  200003  galician            MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33908_200003, clear:33908_200003 } true         .        
 {res}{space 2}33220  200403  spanish             CEMP    FALSE        TRUE            FALSE                        33220_200403  false        .        
 {res}{space 2}33320  200403  spanish             CEMP    FALSE        TRUE            FALSE                        33320_200403  false        .        
 {res}{space 2}33610  200403  spanish             CEMP    FALSE        TRUE            FALSE                        33610_200403  false        .        
 {res}{space 2}33611  200403  catalan             CEMP    FALSE        TRUE            FALSE                        33611_200403  false        .        
-{res}{space 2}33906  200403  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33906_200403, clear:33906_200403 } true         2        
-{res}{space 2}33907  200403  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33907_200403, clear:33907_200403 } true         2        
-{res}{space 2}33908  200403  galician            MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33908_200403, clear:33908_200403 } true         2        
-{res}{space 2}33909  200403  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33909_200403, clear:33909_200403 } true         2        
-{res}{space 2}33910  200403  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33910_200403, clear:33910_200403 } true         2        
-{res}{space 2}33220  200803  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33220_200803, clear:33220_200803 } true         2        
-{res}{space 2}33320  200803  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33320_200803, clear:33320_200803 } true         2        
-{res}{space 2}33610  200803  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33610_200803, clear:33610_200803 } true         2        
-{res}{space 2}33611  200803  catalan             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33611_200803, clear:33611_200803 } true         2        
-{res}{space 2}33902  200803  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33902_200803, clear:33902_200803 } true         2        
-{res}{space 2}33903  200803  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33903_200803, clear:33903_200803 } true         2        
-{res}{space 2}33905  200803  catalan             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33905_200803, clear:33905_200803 } true         2        
-{res}{space 2}33907  200803  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33907_200803, clear:33907_200803 } true         2        
-{res}{space 2}33908  200803  galician            MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33908_200803, clear:33908_200803 } true         2        
-{res}{space 2}33909  200803  spanish             MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 33909_200803, clear:33909_200803 } true         2        
-{res}{space 2}33091  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33091_201111, clear:33091_201111 } true         4        
-{res}{space 2}33092  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33092_201111, clear:33092_201111 } true         4        
-{res}{space 2}33093  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33093_201111, clear:33093_201111 } true         4        
-{res}{space 2}33220  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33220_201111, clear:33220_201111 } true         4        
-{res}{space 2}33320  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33320_201111, clear:33320_201111 } true         4        
-{res}{space 2}33440  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33440_201111, clear:33440_201111 } true         4        
-{res}{space 2}33610  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33610_201111, clear:33610_201111 } true         4        
-{res}{space 2}33611  201111  catalan             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33611_201111, clear:33611_201111 } true         4        
-{res}{space 2}33612  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33612_201111, clear:33612_201111 } true         4        
-{res}{space 2}33902  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33902_201111, clear:33902_201111 } true         4        
-{res}{space 2}33905  201111  catalan             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33905_201111, clear:33905_201111 } true         4        
-{res}{space 2}33907  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33907_201111, clear:33907_201111 } true         4        
-{res}{space 2}33908  201111  galician            MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33908_201111, clear:33908_201111 } true         4        
+{res}{space 2}33906  200403  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33906_200403, clear:33906_200403 } true         .        
+{res}{space 2}33907  200403  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33907_200403, clear:33907_200403 } true         .        
+{res}{space 2}33908  200403  galician            MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33908_200403, clear:33908_200403 } true         .        
+{res}{space 2}33909  200403  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33909_200403, clear:33909_200403 } true         .        
+{res}{space 2}33910  200403  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33910_200403, clear:33910_200403 } true         .        
+{res}{space 2}33220  200803  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33220_200803, clear:33220_200803 } true         .        
+{res}{space 2}33320  200803  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33320_200803, clear:33320_200803 } true         .        
+{res}{space 2}33610  200803  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33610_200803, clear:33610_200803 } true         .        
+{res}{space 2}33611  200803  catalan             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33611_200803, clear:33611_200803 } true         .        
+{res}{space 2}33902  200803  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33902_200803, clear:33902_200803 } true         .        
+{res}{space 2}33903  200803  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33903_200803, clear:33903_200803 } true         .        
+{res}{space 2}33905  200803  catalan             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33905_200803, clear:33905_200803 } true         .        
+{res}{space 2}33907  200803  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33907_200803, clear:33907_200803 } true         .        
+{res}{space 2}33908  200803  galician            MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33908_200803, clear:33908_200803 } true         .        
+{res}{space 2}33909  200803  spanish             MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 33909_200803, clear:33909_200803 } true         .        
+{res}{space 2}33091  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33091_201111, clear:33091_201111 } true         .        
+{res}{space 2}33092  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33092_201111, clear:33092_201111 } true         .        
+{res}{space 2}33093  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33093_201111, clear:33093_201111 } true         .        
+{res}{space 2}33220  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33220_201111, clear:33220_201111 } true         .        
+{res}{space 2}33320  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33320_201111, clear:33320_201111 } true         .        
+{res}{space 2}33440  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33440_201111, clear:33440_201111 } true         .        
+{res}{space 2}33610  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33610_201111, clear:33610_201111 } true         .        
+{res}{space 2}33611  201111  catalan             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33611_201111, clear:33611_201111 } true         .        
+{res}{space 2}33612  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33612_201111, clear:33612_201111 } true         .        
+{res}{space 2}33902  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33902_201111, clear:33902_201111 } true         .        
+{res}{space 2}33905  201111  catalan             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33905_201111, clear:33905_201111 } true         .        
+{res}{space 2}33907  201111  spanish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33907_201111, clear:33907_201111 } true         .        
+{res}{space 2}33908  201111  galician            MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 33908_201111, clear:33908_201111 } true         .        
 {txt}{hline 140}
 (note: file metadata.dta not found)
 file metadata.dta saved
@@ -1595,10 +1595,10 @@ file metadata.dta saved
 {txt}{hline 140}
 {space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations{space 2}handbook
 {hline 140}
-{res}{space 2}11220  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11220_201009, clear:11220_201009 } true         3        
-{res}{space 2}11320  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11320_201009, clear:11320_201009 } true         3        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
+{res}{space 2}11220  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11220_201009, clear:11220_201009 } true         .        
+{res}{space 2}11320  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11320_201009, clear:11320_201009 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
 {txt}{hline 140}
 
 {com}.         * -> OK: works
@@ -1688,21 +1688,21 @@ file metadata.dta saved
 {res}{space 2}11520  200209  swedish             CEMP    FALSE        TRUE            FALSE                        11520_200209  false        .        
 {res}{space 2}11620  200209  swedish             CEMP    FALSE        TRUE            FALSE                        11620_200209  false        .        
 {res}{space 2}11810  200209  swedish             CEMP    FALSE        TRUE            FALSE                        11810_200209  false        .        
-{res}{space 2}11110  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11110_200609, clear:11110_200609 } true         3        
-{res}{space 2}11220  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11220_200609, clear:11220_200609 } true         3        
-{res}{space 2}11320  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11320_200609, clear:11320_200609 } true         3        
-{res}{space 2}11420  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11420_200609, clear:11420_200609 } true         3        
-{res}{space 2}11520  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11520_200609, clear:11520_200609 } true         3        
-{res}{space 2}11620  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11620_200609, clear:11620_200609 } true         3        
-{res}{space 2}11810  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11810_200609, clear:11810_200609 } true         3        
-{res}{space 2}11110  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11110_201009, clear:11110_201009 } true         3        
-{res}{space 2}11220  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11220_201009, clear:11220_201009 } true         3        
-{res}{space 2}11320  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11320_201009, clear:11320_201009 } true         3        
-{res}{space 2}11420  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11420_201009, clear:11420_201009 } true         3        
-{res}{space 2}11520  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11520_201009, clear:11520_201009 } true         3        
-{res}{space 2}11620  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11620_201009, clear:11620_201009 } true         3        
-{res}{space 2}11710  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11710_201009, clear:11710_201009 } true         3        
-{res}{space 2}11810  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11810_201009, clear:11810_201009 } true         3        
+{res}{space 2}11110  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11110_200609, clear:11110_200609 } true         .        
+{res}{space 2}11220  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11220_200609, clear:11220_200609 } true         .        
+{res}{space 2}11320  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11320_200609, clear:11320_200609 } true         .        
+{res}{space 2}11420  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11420_200609, clear:11420_200609 } true         .        
+{res}{space 2}11520  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11520_200609, clear:11520_200609 } true         .        
+{res}{space 2}11620  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11620_200609, clear:11620_200609 } true         .        
+{res}{space 2}11810  200609  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11810_200609, clear:11810_200609 } true         .        
+{res}{space 2}11110  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11110_201009, clear:11110_201009 } true         .        
+{res}{space 2}11220  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11220_201009, clear:11220_201009 } true         .        
+{res}{space 2}11320  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11320_201009, clear:11320_201009 } true         .        
+{res}{space 2}11420  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11420_201009, clear:11420_201009 } true         .        
+{res}{space 2}11520  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11520_201009, clear:11520_201009 } true         .        
+{res}{space 2}11620  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11620_201009, clear:11620_201009 } true         .        
+{res}{space 2}11710  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11710_201009, clear:11710_201009 } true         .        
+{res}{space 2}11810  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11810_201009, clear:11810_201009 } true         .        
 {txt}{hline 140}
 
 {com}.         * -> OK: works
@@ -1768,33 +1768,33 @@ file metadata.dta saved
 {res}{space 2}41320  199410  german              CEMP    FALSE        TRUE            FALSE                        41320_199410  false        .        
 {res}{space 2}41420  199410  german              CEMP    FALSE        TRUE            FALSE                        41420_199410  false        .        
 {res}{space 2}41521  199410  german              CEMP    FALSE        TRUE            FALSE                        41521_199410  false        .        
-{res}{space 2}41113  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_199809, clear:41113_199809 } true         3        
-{res}{space 2}41221  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         3        
-{res}{space 2}41320  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         3        
-{res}{space 2}41420  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         3        
-{res}{space 2}41521  199809  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         3        
-{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_200209, clear:41113_200209 } true         3        
-{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         3        
-{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         3        
-{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         3        
-{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         3        
-{res}{space 2}41113  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200509, clear:41113_200509 } true         2        
-{res}{space 2}41222  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41222_200509, clear:41222_200509 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
-{res}{space 2}41420  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200509, clear:41420_200509 } true         2        
-{res}{space 2}41521  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200509, clear:41521_200509 } true         2        
-{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         2        
-{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         2        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         2        
-{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         2        
-{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         4        
-{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         4        
-{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         4        
-{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         4        
-{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         4        
-{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         4        
-{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         4        
+{res}{space 2}41113  199809  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_199809, clear:41113_199809 } true         .        
+{res}{space 2}41221  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_199809, clear:41221_199809 } true         .        
+{res}{space 2}41320  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_199809, clear:41320_199809 } true         .        
+{res}{space 2}41420  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_199809, clear:41420_199809 } true         .        
+{res}{space 2}41521  199809  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_199809, clear:41521_199809 } true         .        
+{res}{space 2}41113  200209  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200209, clear:41113_200209 } true         .        
+{res}{space 2}41221  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41221_200209, clear:41221_200209 } true         .        
+{res}{space 2}41320  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_200209, clear:41320_200209 } true         .        
+{res}{space 2}41420  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_200209, clear:41420_200209 } true         .        
+{res}{space 2}41521  200209  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_200209, clear:41521_200209 } true         .        
+{res}{space 2}41113  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41113_200509, clear:41113_200509 } true         .        
+{res}{space 2}41222  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41222_200509, clear:41222_200509 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
+{res}{space 2}41420  200509  german              MARPOR  FALSE        TRUE            TRUE                         41420_200509  false        .        
+{res}{space 2}41521  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41521_200509, clear:41521_200509 } true         .        
+{res}{space 2}41113  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41113_200909, clear:41113_200909 } true         .        
+{res}{space 2}41223  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41223_200909, clear:41223_200909 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41420  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41420_200909, clear:41420_200909 } true         .        
+{res}{space 2}41521  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41521_200909, clear:41521_200909 } true         .        
+{res}{space 2}41113  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41113_201309, clear:41113_201309 } true         .        
+{res}{space 2}41223  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41223_201309, clear:41223_201309 } true         .        
+{res}{space 2}41320  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41320_201309, clear:41320_201309 } true         .        
+{res}{space 2}41420  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41420_201309, clear:41420_201309 } true         .        
+{res}{space 2}41521  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41521_201309, clear:41521_201309 } true         .        
+{res}{space 2}41952  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41952_201309, clear:41952_201309 } true         .        
+{res}{space 2}41953  201309  german              MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 41953_201309, clear:41953_201309 } true         .        
 {txt}{hline 140}
 (note: file metadata_ger.dta not found)
 file metadata_ger.dta saved
@@ -1818,10 +1818,10 @@ file metadata_ger.dta saved
 {txt}{hline 140}
 {space 2}party{space 2}date{space 4}language{space 12}source{space 2}has_eu_code{space 2}is_primary_doc{space 2}may_contradict_core_dataset{space 2}manifesto_id{space 2}annotations{space 2}handbook
 {hline 140}
-{res}{space 2}11220  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11220_201009, clear:11220_201009 } true         3        
-{res}{space 2}11320  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11320_201009, clear:11320_201009 } true         3        
-{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         2        
-{res}{space 2}41320  200509  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200509, clear:41320_200509 } true         2        
+{res}{space 2}11220  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11220_201009, clear:11220_201009 } true         .        
+{res}{space 2}11320  201009  swedish             MARPOR  FALSE        TRUE            FALSE                        {stata mp_corpus 11320_201009, clear:11320_201009 } true         .        
+{res}{space 2}41320  200909  german              MARPOR  TRUE         TRUE            FALSE                        {stata mp_corpus 41320_200909, clear:41320_200909 } true         .        
+{res}{space 2}41320  200509  german              MARPOR  FALSE        TRUE            TRUE                         {stata mp_corpus 41320_200509, clear:41320_200509 } true         .        
 {txt}{hline 140}
 
 {com}.         * -> OK: works
@@ -1834,8 +1834,8 @@ file metadata_ger.dta saved
 {txt}Corpus data retrieved from server for key(s): 42110_199910 42110_200211 42110_200610 42110_200809 
 {txt}No annotated corpus data found on server for key(s): 42110_199512        
 
-{txt}You are currently using corpus version 20161128161012. Please cite as: {res}
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 20161128161012. Berlin: WZB Berlin Social Science Center."
+{txt}You are currently using corpus version 2016-5. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
 
 
 {txt}
@@ -1862,8 +1862,8 @@ file metadata_ger.dta saved
 {res}Connecting to Manifesto Project DB API...
 {txt}Corpus data retrieved from server for key(s): 41320_200909 41320_200509 
 
-{txt}You are currently using corpus version 20161128161012. Please cite as: {res}
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 20161128161012. Berlin: WZB Berlin Social Science Center."
+{txt}You are currently using corpus version 2016-5. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
 
 
 {txt}
@@ -1879,8 +1879,8 @@ file metadata_ger.dta saved
 {txt}Corpus data retrieved from cache for key(s): 41320_200509 41320_200909 
 {txt}No annotated corpus data found on server for key(s): 41320_194908 41320_195309 41320_195709 41320_196109 41320_196509 41320_196909 41320_197211 41320_197610 41320_198010 41320_198303 41320_198701 41320_199012 41320_199410 
 
-{txt}You are currently using corpus version 20161128161012. Please cite as: {res}
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 20161128161012. Berlin: WZB Berlin Social Science Center."
+{txt}You are currently using corpus version 2016-5. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
 
 
 {txt}
@@ -1905,8 +1905,8 @@ file metadata_ger.dta saved
 {txt}Corpus data retrieved from server for key(s): 41320_199809 41320_200209 41320_200509 41320_200909 41320_201309 
 {txt}No annotated corpus data found on server for key(s): 41320_194908 41320_195309 41320_195709 41320_196109 41320_196509 41320_196909 41320_197211 41320_197610 41320_198010 41320_198303 41320_198701 41320_199012 41320_199410 
 
-{txt}You are currently using corpus version 20161128161012. Please cite as: {res}
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 20161128161012. Berlin: WZB Berlin Social Science Center."
+{txt}You are currently using corpus version 2016-5. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
 
 
 {txt}
@@ -1928,8 +1928,8 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {txt}Corpus data retrieved from server for key(s): 41320_199809 41320_200209 41320_200509 41320_200909 41320_201309 
 {txt}No annotated corpus data found on server for key(s): 41320_194908 41320_195309 41320_195709 41320_196109 41320_196509 41320_196909 41320_197211 41320_197610 41320_198010 41320_198303 41320_198701 41320_199012 41320_199410 
 
-{txt}You are currently using corpus version 20161128161012. Please cite as: {res}
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 20161128161012. Berlin: WZB Berlin Social Science Center."
+{txt}You are currently using corpus version 2016-5. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
 
 
 {txt}
@@ -1943,8 +1943,8 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {txt}Corpus data retrieved from cache for key(s): 41320_199809 41320_200209 41320_200509 41320_200909 41320_201309 
 {txt}No annotated corpus data found on server for key(s): 41320_194908 41320_195309 41320_195709 41320_196109 41320_196509 41320_196909 41320_197211 41320_197610 41320_198010 41320_198303 41320_198701 41320_199012 41320_199410 
 
-{txt}You are currently using corpus version 20161128161012. Please cite as: {res}
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 20161128161012. Berlin: WZB Berlin Social Science Center."
+{txt}You are currently using corpus version 2016-5. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
 
 
 {txt}
@@ -2050,8 +2050,8 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {txt}Corpus data retrieved from server for key(s): 41320_199809 41320_200209 41320_200509 41320_200909 41320_201309 
 {txt}No annotated corpus data found on server for key(s): 41320_194908 41320_195309 41320_195709 41320_196109 41320_196509 41320_196909 41320_197211 41320_197610 41320_198010 41320_198303 41320_198701 41320_199012 41320_199410 
 
-{txt}You are currently using corpus version 20161128161012. Please cite as: {res}
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 20161128161012. Berlin: WZB Berlin Social Science Center."
+{txt}You are currently using corpus version 2016-5. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
 
 
 {txt}
@@ -2253,8 +2253,8 @@ The new API Key is: 4d0e6feea68b86ff367a41fb26d4836a
 {txt}Corpus data retrieved from cache for key(s): 41320_199809 41320_200209 41320_200509 41320_200909 41320_201309 
 {txt}No annotated corpus data found on server for key(s): 41320_194908 41320_195309 41320_195709 41320_196109 41320_196509 41320_196909 41320_197211 41320_197610 41320_198010 41320_198303 41320_198701 41320_199012 41320_199410 
 
-{txt}You are currently using corpus version 20161128161012. Please cite as: {res}
-"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 20161128161012. Berlin: WZB Berlin Social Science Center."
+{txt}You are currently using corpus version 2016-5. Please cite as: {res}
+"Lehmann, Pola / Matthieß, Theres / Merz, Nicolas / Regel, Sven / Werner, Annika (2016): Manifesto Corpus. Version: 2016-5. Berlin: WZB Berlin Social Science Center."
 
 
 {txt}
